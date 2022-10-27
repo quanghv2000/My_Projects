@@ -1,0 +1,89 @@
+/** @Margin */
+.m-8 {
+  margin: 8px;
+}
+
+.m-12 {
+  margin: 12px;
+}
+
+.m-8 {
+  margin: 16px;
+}
+
+/** @Margin_Right */
+.mr-5 {
+  margin-right: 5px !important;
+}
+
+.mr-6 {
+  margin-right: 6px !important;
+}
+
+.mr-8 {
+  margin-right: 8px !important;
+}
+
+.mr-16 {
+  margin-right: 16px !important;
+}
+
+/** @Margin_Left */
+.ml-6 {
+  margin-left: 6px !important;
+}
+
+.ml-8 {
+  margin-left: 8px !important;
+}
+
+.ml-16 {
+  margin-left: 16px !important;
+}
+
+/** @Padding */
+.p-8 {
+  padding: 8px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+/** @Padding_Top */
+.pt-30 {
+  padding-top: 30px;
+}
+
+/** @Padding_Left */
+.p-16 {
+  padding: 16px;
+}
+
+.pl-8 {
+  padding-left: 8px;
+}
+
+.pl-16 {
+  padding-left: 16px;
+}
+
+/** @Flex */
+.d-flex {
+  display: flex !important;
+}
+
+.aligns-center {
+  align-items: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/** @Color */
+.color-red {
+  color: 'red' !important;
+}
+
+/** @h_tag */
