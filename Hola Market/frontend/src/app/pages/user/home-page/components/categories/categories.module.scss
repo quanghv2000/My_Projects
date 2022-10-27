@@ -1,0 +1,58 @@
+.categoryContent {
+  margin-top: 12px;
+  background-color: white;
+  border-radius: 5px;
+
+  h3 {
+    font-size: 18px;
+    padding: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    color: rgb(34, 34, 34);
+    margin: 0px;
+  }
+
+  .categoryList {
+    padding: 6px 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .categoryItem {
+      width: 14.285%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      padding: 6px 12px;
+      cursor: pointer;
+
+      .categoryImg {
+        width: 84px;
+        height: 84px;
+        border-radius: 20px;
+        transition: 0.5s;
+      }
+
+      .categoryName {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 14px;
+        color: #222222;
+        font-weight: 500;
+        transition: 0.5s;
+      }
+
+      &:hover > img {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 10px;
+      }
+
+      &:hover > p {
+        opacity: 0.6;
+      }
+    }
+  }
+}

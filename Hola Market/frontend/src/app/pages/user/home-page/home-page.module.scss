@@ -1,0 +1,24 @@
+.homePage {
+  box-sizing: border-box;
+  min-width: 1060px;
+  max-width: 1060px;
+  margin: auto;
+  padding: 0px 24px;
+
+  .carousel {
+    margin: 12px 0px;
+    height: 260px;
+    border-radius: 5px;
+    background-color: white;
+
+    .imgCarousel {
+      border-radius: 5px;
+      
+      img {
+        width: 100%;
+        height: 260px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

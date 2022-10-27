@@ -1,0 +1,99 @@
+.btnApp {
+  height: 32px !important;
+  margin: 0px !important;
+  font-size: 14px !important;
+  padding: 0px 12px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-items: center !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+
+.btnApp > span:first-child {
+  font-size: 16px !important;
+}
+
+.btnTag {
+  font-size: 13px !important;
+  padding: 0px 10px !important;
+  height: 26px !important;
+}
+
+.btnTag > span:first-child {
+  font-size: 14px !important;
+}
+
+.default {
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.add {
+  color: white !important;
+  border-color: #4bac4d !important;
+  background-color: #4bac4d !important;
+
+  &:hover {
+    border-color: #3b863c !important;
+    background-color: #3b863c !important;
+  }
+}
+
+.update {
+}
+
+.delete {
+}
+
+.export {
+  color: white !important;
+  border-color: #17a2b8 !important;
+  background-color: #17a2b8 !important;
+
+  &:hover {
+    border-color: #138496 !important;
+    background-color: #138496 !important;
+  }
+}
+
+.view {
+  &:hover {
+    border-color: #bae7ff !important;
+    background-color: #bae7ff !important;
+  }
+}
+
+.lock {
+  &:hover {
+    border-color: #ffccc7 !important;
+    background-color: #ffccc7 !important;
+  }
+}
+
+.unlock {
+  &:hover {
+    border-color: #d9f7be !important;
+    background-color: #d9f7be !important;
+  }
+}
+
+.verify {
+  &:hover {
+    border-color: #fff1b8 !important;
+    background-color: #fff1b8 !important;
+  }
+}
+
+.disabledStyle {
+  border-color: #cccccc !important;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+
+  &:hover {
+    cursor: no-drop !important;
+    border-color: #cccccc !important;
+    background-color: #cccccc !important;
+  }
+}

@@ -1,0 +1,117 @@
+.header {
+  min-width: 1060px;
+  max-width: 1060px;
+  height: 110px;
+  margin: 0 auto;
+  padding: 0px 24px;
+
+  &Top {
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+    .logo > h1 {
+      color: #ffffff;
+    }
+
+    .nav > .navbar {
+      display: flex;
+
+      .navItem {
+        padding: 0px 24px;
+
+        .navLink {
+          color: #222222;
+          display: flex;
+          align-items: center;
+          transition: 0.5s;
+
+          i {
+            font-size: 20px;
+          }
+
+          span {
+            font-size: 14px;
+          }
+
+          &:hover {
+            color: #333333;
+            opacity: 0.6;
+          }
+        }
+      }
+
+      .navItem:last-child {
+        padding-right: 0px !important;
+      }
+    }
+  }
+
+  &Bottom {
+    height: 56px;
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .inputSearch {
+      width: 65%;
+    }
+
+    .login {
+      color: #222222;
+      display: flex;
+      align-items: center;
+      transition: 0.5s;
+      cursor: pointer;
+
+      i {
+        font-size: 24px;
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: #333333;
+        opacity: 0.6;
+      }
+    }
+
+    .btnPosting {
+      button {
+        height: 38px;
+        font-weight: bold;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color: #ffba00;
+        border-color: #ffba00;
+        font-size: 0.875rem;
+        line-height: 1;
+        padding: 8px 16px;
+        background: linear-gradient(
+          67.33deg,
+          #e64b00 7.92%,
+          rgba(255, 115, 0, 0.9) 51.93%,
+          #fe9900 90.76%
+        );
+        transition: 0.5s;
+        outline: none;
+        cursor: pointer;
+
+        i {
+          font-size: 16px;
+          margin-right: 8px;
+        }
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

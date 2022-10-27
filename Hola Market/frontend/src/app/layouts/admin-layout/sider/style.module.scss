@@ -1,0 +1,26 @@
+.layout-sider {
+  background-color: white;
+}
+
+.siderNormal {
+  max-width: 220px !important;
+  min-width: 220px !important;
+  width: 220px !important;
+}
+
+.siderCollapsed {
+  max-width: 80px !important;
+  min-width: 80px !important;
+  width: 80px !important;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  height: 100vh;
+}

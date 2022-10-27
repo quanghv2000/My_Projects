@@ -1,0 +1,17 @@
+.layout-header {
+  padding: 0px 8px !important;
+  background-color: white !important;
+  display: flex;
+  align-items: center;
+
+  .toggle-collapsed {
+    padding: 8px 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      font-size: 16px;
+    }
+  }
+}
