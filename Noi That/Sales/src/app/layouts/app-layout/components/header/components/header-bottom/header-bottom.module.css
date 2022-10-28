@@ -22,14 +22,21 @@
     width: 278px;
     height: 100%;
     padding: 15px;
-    background-color: #253E57;
+    background-color: #253e57;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: #f1f1f1;
+    color: rgb(241, 241, 241);
     cursor: pointer;
+    transition: all 0.35s;
 }
+
+.category:hover {
+    background-color: rgb(37, 62, 87, 0.95);
+    color: rgb(241, 241, 241, 0.95);
+}
+
 
 .category>i:first-child {
     font-size: 1.4rem;

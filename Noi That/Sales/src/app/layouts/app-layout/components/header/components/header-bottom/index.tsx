@@ -3,16 +3,26 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './header-bottom.module.css';
 
-type IProps = {};
+type IProps = {
+  ctgVerOpening: boolean;
+  openCtgVerHanlder: () => void;
+};
 
-export const HeaderBottom: React.FC<IProps> = () => {
+export const HeaderBottom: React.FC<IProps> = ({
+  ctgVerOpening,
+  openCtgVerHanlder,
+}) => {
   return (
     <div className={styles.headerBottom}>
       <div className={styles.content}>
-        <div className={styles.category}>
+        <div className={styles.category} onClick={openCtgVerHanlder}>
           <i className="fa-solid fa-bars"></i>
           <h3>DANH MỤC SẢN PHẨM</h3>
-          <i className="fa-solid fa-angle-down"></i>
+          {ctgVerOpening ? (
+            <i className="fa-solid fa-angle-up"></i>
+          ) : (
+            <i className="fa-solid fa-angle-down"></i>
+          )}
         </div>
         <div className={styles.navLink}>
           <NavLink to="/gioi-thieu">
