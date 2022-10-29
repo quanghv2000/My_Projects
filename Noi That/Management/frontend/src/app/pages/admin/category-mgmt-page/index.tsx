@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment } from 'react';
 import { Table } from 'antd';
 import { Helmet } from 'react-helmet-async';
@@ -5,7 +6,8 @@ import { AppButton, AppInputSearch } from 'app/components';
 import { Link } from 'react-router-dom';
 import { ctgInfoColumns } from './components/ctg-info-columns';
 import { RootState } from 'types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCategoriesRequestAction } from './actions';
 
 import style from './style.module.scss';
 
@@ -13,6 +15,14 @@ export const AdminCategoryMGMTPage: React.FC<any> = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: RootState) => state);
   const { categoriesInfo } = storedData.CategoryMGMTPageReducer;
+
+  /** @Dispatch */
+  const dispatch = useDispatch();
+
+  /** @Effect */
+  React.useEffect(() => {
+    dispatch(getCategoriesRequestAction());
+  }, []);
 
   return (
     <Fragment>

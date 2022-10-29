@@ -1,7 +1,7 @@
 import { getCategoriesActionType } from '../../actions';
 
 export const getCategoriesReducer = {
-  [getCategoriesActionType.GET_CATEGORIES_REQUEST]: (state, action) => {
+  [getCategoriesActionType.GET_CATEGORIES_REQUEST]: state => {
     state.isLoading = true;
 
     return state;
@@ -15,7 +15,9 @@ export const getCategoriesReducer = {
     return state;
   },
   [getCategoriesActionType.GET_CATEGORIES_FAILURE]: (state, action) => {
+    const { payload } = action;
     state.isLoading = false;
+    state.error = payload;
 
     return state;
   },

@@ -40,15 +40,15 @@ export const ctgInfoColumns: ColumnsType<ICategoryInfo> = [
   },
   {
     title: 'Lần chỉnh sửa cuối',
-    dataIndex: 'lastmodifiedDate',
-    key: 'lastmodifiedDate',
-    render: lastmodifiedDate => <ColumnDate date={lastmodifiedDate} />,
+    dataIndex: 'lastModifiedDate',
+    key: 'lastModifiedDate',
+    render: lastModifiedDate => <ColumnDate date={lastModifiedDate} />,
   },
   {
     title: 'Người chỉnh sửa',
-    dataIndex: 'lastmodifiedBy',
-    key: 'lastmodifiedBy',
-    render: lastmodifiedBy => <span>{lastmodifiedBy}</span>,
+    dataIndex: 'lastModifiedBy',
+    key: 'lastModifiedBy',
+    render: lastModifiedBy => <span>{lastModifiedBy}</span>,
   },
   {
     title: 'Tác vụ',

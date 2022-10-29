@@ -1,6 +1,6 @@
 export interface IBaseModel {
-  createdDate?: Date;
+  createdDate?: Date | string;
   createdBy?: string;
-  lastmodifiedDate?: Date;
+  lastmodifiedDate?: Date | string;
   lastmodifiedBy?: string;
 }
