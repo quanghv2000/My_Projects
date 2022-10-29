@@ -1,7 +1,6 @@
 import React from 'react';
 import { ISubCategoryInfo } from 'models/api-model/response';
 import { Tooltip } from 'antd';
-import { EllipsisOutlined } from '@ant-design/icons';
 
 import styles from './style.module.scss';
 

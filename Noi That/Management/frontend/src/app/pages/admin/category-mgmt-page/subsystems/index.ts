@@ -1,2 +1,2 @@
-export * from './add-user';
-export * from './edit-user';
+export * from './add-category';
+export * from './update-category';

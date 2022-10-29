@@ -1,7 +1,7 @@
-import { IUserInfo } from 'models/api-model/response';
+import { ICategoryInfo } from 'models/api-model/response';
 
-export type AdminUserMGMTPageReducerType = {
+export type CategoryMGMTPageReducerType = {
   isLoading: boolean;
   error: boolean;
-  usersInfo: IUserInfo[];
+  categoriesInfo: ICategoryInfo[];
 };
