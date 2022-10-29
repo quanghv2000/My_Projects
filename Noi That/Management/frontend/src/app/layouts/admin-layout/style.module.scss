@@ -1,0 +1,14 @@
+.admin-layout {
+  display: flex;
+
+  .site-layout-background {
+    padding: 24px;
+    margin: 24px 16px;
+    height: 100vh;
+    background: #fff;
+
+    .breadcrumb {
+      margin: 0px 0px 20px !important;
+    }
+  }
+}

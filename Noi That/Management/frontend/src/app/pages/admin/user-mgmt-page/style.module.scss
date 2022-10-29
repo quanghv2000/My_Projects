@@ -1,0 +1,22 @@
+.userMGMT {
+  margin-top: 30px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .inputSearch {
+      width: 270px !important;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .tblUsers {
+    margin-top: 30px;
+  }
+}

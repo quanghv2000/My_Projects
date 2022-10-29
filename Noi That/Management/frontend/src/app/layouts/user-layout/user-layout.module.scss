@@ -1,0 +1,22 @@
+.userLayout {
+  height: auto;
+  background-color: rgb(244, 244, 244);
+
+  .header {
+    width: 100%;
+    background-color: #FDC531;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+  }
+
+  .content {
+    width: 100%;
+    padding-top: 110px;
+  }
+
+  .footer {
+    width: 100%;
+    background-color: #ffffff;
+  }
+}
