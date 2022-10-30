@@ -69,7 +69,6 @@ export const AdminCategoryMGMTPage: React.FC<any> = () => {
               id="inputSearch"
               placeholder="Nhập tên danh mục"
               className={`${style.inputSearch} mr-16`}
-              onSearch={openAddCategoryModal}
             />
           </div>
         </div>

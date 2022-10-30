@@ -31,7 +31,7 @@ export default function AdminLayout(props: IProps) {
       >
         <LayoutHeader collapsed={collapsed} handleCollapsed={handleCollapsed} />
         <Content
-          style={{ margin: '24px 16px 0', overflow: 'initial' }}
+          style={{ margin: '20px 16px', overflow: 'initial' }}
           className={style['site-layout-background']}
         >
           <Breadcrumb className={style['breadcrumb']}>
