@@ -1,4 +1,4 @@
-import { call, put } from 'redux-saga/effects';
+import { call, delay, put } from 'redux-saga/effects';
 import {
   getCategoriesFailureAction,
   getCategoriesRequestAction,
@@ -15,6 +15,7 @@ export function* getCategoriesSaga({
 }: ReturnType<typeof getCategoriesRequestAction>) {
   try {
     const categoriesInfo = yield call(getAllCategoriesServices);
+    yield delay(1000);
     yield put(getCategoriesSuccessAction(categoriesInfo));
   } catch (error: any) {
     yield put(getCategoriesFailureAction(error));

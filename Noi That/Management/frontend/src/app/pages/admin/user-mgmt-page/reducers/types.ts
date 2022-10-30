@@ -1,7 +1,7 @@
 import { IUserInfo } from 'models/api-model/response';
 
-export type AdminUserMGMTPageReducerType = {
-  isLoading: boolean;
+export type UserMGMTPageReducerType = {
+  isLoadingPage: boolean;
   error: boolean;
   usersInfo: IUserInfo[];
 };

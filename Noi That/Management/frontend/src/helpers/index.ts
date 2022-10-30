@@ -1,9 +1,4 @@
-// export function actionPayload<T = any, M = Record<string, string>>(
-//   payload: T,
-//   meta?: M,
-// ) {
-//   return { payload, meta };
-// }
+export * from './info-modal-dialog';
 
 export function actionPayload<T = any>(payload: T) {
   return { payload };

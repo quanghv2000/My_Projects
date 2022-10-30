@@ -1,5 +1,5 @@
 import { ThemeState } from 'styles/theme/slice/types';
-import { AdminUserMGMTPageReducerType } from 'app/pages/admin/user-mgmt-page/reducers/types';
+import { UserMGMTPageReducerType } from 'app/pages/admin/user-mgmt-page/reducers/types';
 import { CategoryMGMTPageReducerType } from 'app/pages/admin/category-mgmt-page/reducers/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
@@ -11,7 +11,7 @@ import { CategoryMGMTPageReducerType } from 'app/pages/admin/category-mgmt-page/
 */
 export interface RootState {
   theme?: ThemeState;
-  AdminUserMGMTPageReducer: AdminUserMGMTPageReducerType;
+  UserMGMTPageReducer: UserMGMTPageReducerType;
   CategoryMGMTPageReducer: CategoryMGMTPageReducerType;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

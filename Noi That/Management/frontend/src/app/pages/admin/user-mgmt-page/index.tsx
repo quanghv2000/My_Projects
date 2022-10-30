@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment } from 'react';
+import React from 'react';
 import { RootState } from 'types';
 import { useDispatch, useSelector } from 'react-redux';
-import { Badge, Select, Table } from 'antd';
+import { Badge, Select, Spin, Table } from 'antd';
 import { Helmet } from 'react-helmet-async';
 import { AppButton } from 'app/components/Button';
 import { AppInputSearch } from 'app/components/InputSearch';
@@ -24,21 +24,19 @@ const { Option } = Select;
 export const AdminUserMGMTPage: React.FC<any> = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: RootState) => state);
-  const { isLoading, usersInfo } = storedData.AdminUserMGMTPageReducer;
+  const { isLoadingPage, usersInfo } = storedData.UserMGMTPageReducer;
 
   /** @Dispatch */
   const dispatch = useDispatch();
+
+  /** @Component_State */
+  const [spinning, setSpinning] = React.useState<boolean>(true);
 
   /** @Declare */
   let dataSource: IUserInfo[] = [];
   if (usersInfo.length > 0) {
     dataSource = [...usersInfo];
   }
-
-  /** @Handle_Submit */
-  const getUsers = () => {
-    const data = dispatch(getUsersRequestAction());
-  };
 
   const addUser = () => {
     const newUser: IUserInfo = {
@@ -60,11 +58,15 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
 
   /** @Effect */
   React.useEffect(() => {
-    getUsers();
+    dispatch(getUsersRequestAction());
   }, []);
 
+  React.useEffect(() => {
+    setSpinning(isLoadingPage);
+  }, [isLoadingPage]);
+
   return (
-    <Fragment>
+    <Spin spinning={spinning}>
       <Helmet>
         <title>Admin - User Management Page</title>
         <meta name="description" content="Admin - User Management Page" />
@@ -75,7 +77,6 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
             <AppInputSearch
               id="inputSearch"
               placeholder="Nhập tài khoản người dùng"
-              loading={isLoading}
               onSearch={searchUers}
               className={`${style.inputSearch} mr-16`}
             />
@@ -84,7 +85,6 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
               className="mr-16"
               style={{ width: 210 }}
               onChange={searchUers}
-              disabled={isLoading}
             >
               <Option value="all">
                 <Badge color="blue" text={'Trạng thái (Tất cả - 205)'} />
@@ -103,7 +103,6 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
               defaultValue="all"
               style={{ width: 225 }}
               onChange={searchUers}
-              disabled={isLoading}
             >
               <Option value="all">
                 <ApartmentOutlined className="mr-8" />
@@ -127,16 +126,11 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
             </Select>
           </div>
           <div className={style.btn}>
-            <AppButton
-              className="mr-16"
-              type="export"
-              disabled={isLoading}
-              onClick={searchUers}
-            >
+            <AppButton className="mr-16" type="export" onClick={searchUers}>
               Xuất File
             </AppButton>
             <Link to="/admin/quan-ly-nguoi-dung/them-nguoi-dung">
-              <AppButton type="add" disabled={isLoading} onClick={addUser}>
+              <AppButton type="add" onClick={addUser}>
                 Thêm tài khoản
               </AppButton>
             </Link>
@@ -146,10 +140,9 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
           columns={userInfoColumns}
           dataSource={dataSource}
           className={style.tblUsers}
-          loading={isLoading}
           rowKey="id"
         />
       </div>
-    </Fragment>
+    </Spin>
   );
 };

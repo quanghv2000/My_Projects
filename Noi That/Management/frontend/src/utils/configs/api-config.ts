@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { openNotificationWithIcon } from './notification.config';
+import { showInfoModal } from 'helpers';
 
 export const API_URL = 'http://localhost:8081';
 export const apiMethod = {
@@ -56,15 +56,22 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
   response => {
+    console.log('response: ', response);
     return response;
   },
   error => {
+    if (!error?.response) {
+      showInfoModal(
+        'error',
+        'Không thể kết nối tới máy chủ. Vui lòng thử lại sau!',
+      );
+    }
     if (error?.response?.status === 401) {
       localStorage.clear();
       window.location.href = '/';
     }
     if (error?.response?.status === 500) {
-      openNotificationWithIcon('error');
+      showInfoModal('error', 'Hệ thống đang xảy ra lỗi. Vui lòng thử lại sau!');
     }
 
     return Promise.reject(error);

@@ -1,51 +1,76 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { Fragment } from 'react';
-import { Table } from 'antd';
+import React from 'react';
+import { Spin, Table } from 'antd';
 import { Helmet } from 'react-helmet-async';
 import { AppButton, AppInputSearch } from 'app/components';
-import { Link } from 'react-router-dom';
 import { ctgInfoColumns } from './components/ctg-info-columns';
 import { RootState } from 'types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesRequestAction } from './actions';
+import { AddCategoryModal } from './subsystems';
 
 import style from './style.module.scss';
+import { showInfoModal } from 'helpers/info-modal-dialog';
 
 export const AdminCategoryMGMTPage: React.FC<any> = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: RootState) => state);
-  const { categoriesInfo } = storedData.CategoryMGMTPageReducer;
+  const { isLoadingPage, categoriesInfo } = storedData.CategoryMGMTPageReducer;
 
   /** @Dispatch */
   const dispatch = useDispatch();
+
+  /** @Component_State */
+  const [spinning, setSpinning] = React.useState<boolean>(true);
+  const [openAddCtgModal, setOpenCtgModal] = React.useState<boolean>(false);
+
+  /** @Logic_Handler */
+  const openAddCategoryModal = () => {
+    setOpenCtgModal(true);
+  };
+
+  const closeAddCategoryModal = () => {
+    setOpenCtgModal(false);
+  };
 
   /** @Effect */
   React.useEffect(() => {
     dispatch(getCategoriesRequestAction());
   }, []);
 
+  React.useEffect(() => {
+    setSpinning(isLoadingPage);
+  }, [isLoadingPage]);
+
   return (
-    <Fragment>
+    <Spin spinning={spinning}>
       <Helmet>
         <title>Admin - Quản lý danh mục</title>
         <meta name="description" content="Admin - Quản lý danh mục" />
       </Helmet>
       <div className={style.ctgMGMT}>
         <div className={style.header}>
-          <div className="d-flex">
+          <div className={style.btn}>
+            <AppButton
+              className="mr-16"
+              type="export"
+              onClick={() => {
+                showInfoModal('info', 'Tính năng đang được phát triển!');
+              }}
+            >
+              Xuất File
+            </AppButton>
+            <AppButton type="add" onClick={openAddCategoryModal}>
+              Thêm danh mục
+            </AppButton>
+          </div>
+          <div>
             <AppInputSearch
               id="inputSearch"
               placeholder="Nhập tên danh mục"
               className={`${style.inputSearch} mr-16`}
+              onSearch={openAddCategoryModal}
             />
-          </div>
-          <div className={style.btn}>
-            <AppButton className="mr-16" type="export">
-              Xuất File
-            </AppButton>
-            <Link to="/admin/quan-ly-danh-muc/them-danh-muc">
-              <AppButton type="add">Thêm danh mục</AppButton>
-            </Link>
           </div>
         </div>
         <Table
@@ -55,6 +80,10 @@ export const AdminCategoryMGMTPage: React.FC<any> = () => {
           rowKey="id"
         />
       </div>
-    </Fragment>
+      <AddCategoryModal
+        isOpen={openAddCtgModal}
+        close={closeAddCategoryModal}
+      />
+    </Spin>
   );
 };

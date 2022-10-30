@@ -2,7 +2,7 @@ import { adminAddUserActionType } from '../../actions';
 
 export const addUserReducer = {
   [adminAddUserActionType.ADD_USER_REQUEST]: (state, action) => {
-    state.isLoading = true;
+    state.isLoadingPage = true;
 
     return state;
   },
@@ -11,13 +11,13 @@ export const addUserReducer = {
       payload: { newUser },
     } = action;
 
-    state.isLoading = false;
+    state.isLoadingPage = false;
     state.usersInfo.push(newUser);
 
     return state;
   },
   [adminAddUserActionType.ADD_USER_FAILURE]: (state, action) => {
-    state.isLoading = false;
+    state.isLoadingPage = false;
 
     return state;
   },

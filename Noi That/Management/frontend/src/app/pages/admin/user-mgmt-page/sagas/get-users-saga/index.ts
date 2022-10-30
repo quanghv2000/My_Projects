@@ -9,7 +9,7 @@ import { getAllUsersServices } from '../../services';
 export function* getUsersSaga() {
   try {
     const usersInfo = yield call(getAllUsersServices);
-    yield delay(1500);
+    yield delay(1000);
     yield put(getUsersSuccessAction(usersInfo));
   } catch (error: any) {
     yield put(getUsersFailureAction(error));

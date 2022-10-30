@@ -17,6 +17,10 @@
   align-items: center !important;
 }
 
+.ant-input::placeholder {
+  color: #000000;
+}
+
 /** @Margin */
 .m-8 {
   margin: 8px;
