@@ -8,9 +8,9 @@ import { RootState } from 'types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesRequestAction } from './actions';
 import { AddCategoryModal } from './subsystems';
+import { showInfoModal } from 'helpers/info-modal-dialog';
 
 import style from './style.module.scss';
-import { showInfoModal } from 'helpers/info-modal-dialog';
 
 export const AdminCategoryMGMTPage: React.FC<any> = () => {
   /** @Stored_Data */
@@ -80,8 +80,8 @@ export const AdminCategoryMGMTPage: React.FC<any> = () => {
         />
       </div>
       <AddCategoryModal
-        isOpen={openAddCtgModal}
-        close={closeAddCategoryModal}
+        isOpenModal={openAddCtgModal}
+        closeModal={closeAddCategoryModal}
       />
     </Spin>
   );

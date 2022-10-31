@@ -1,45 +1,59 @@
 import React from 'react';
-import { Modal } from 'antd';
+import { Button, Form, Input, Modal } from 'antd';
+
+import styles from './style.module.scss';
 
 type IProps = {
-  isOpen: boolean;
-  close: () => void;
+  isOpenModal: boolean;
+  closeModal: () => void;
 };
 
 export const AddCategoryModal: React.FC<IProps> = (props: IProps) => {
   /** @Props_Value */
-  const { isOpen, close } = props;
-  // const [confirmLoading, setConfirmLoading] = useState(false);
-  // const [modalText, setModalText] = useState('Content of the modal');
+  const { isOpenModal, closeModal } = props;
 
-  // const showModal = () => {
-  //   setOpenModal(true);
-  // };
+  /** @Form_Manager */
+  const [form] = Form.useForm();
 
-  // const handleOk = () => {
-  //   setModalText('The modal will be closed after two seconds');
-  //   setConfirmLoading(true);
-  //   setTimeout(() => {
-  //     setOpenModal(false);
-  //     setConfirmLoading(false);
-  //   }, 2000);
-  // };
-
-  // const handleCancel = () => {
-  //   console.log('Clicked cancel button');
-  //   setOpenModal(false);
-  // };
+  /** @Submit_Handler */
+  const onFinish = () => {
+    console.log('Success:', form);
+    closeModal();
+  };
 
   return (
     <>
       <Modal
-        title="Title"
-        open={isOpen}
-        // onOk={handleOk}
-        // confirmLoading={confirmLoading}
-        onCancel={close}
+        title="Tạo danh mục mới"
+        className={styles.modal}
+        open={isOpenModal}
+        footer={null}
+        onCancel={closeModal}
       >
-        <p>{'Tạo danh mục'}</p>
+        <Form
+          form={form}
+          labelCol={{ span: 6 }}
+          wrapperCol={{ span: 18 }}
+          onFinish={onFinish}
+        >
+          <div className={styles.modalBody}>
+            <Form.Item
+              label="Tên danh mục"
+              name="name"
+              rules={[{ required: true, message: 'Nhập tên danh mục!' }]}
+            >
+              <Input />
+            </Form.Item>
+          </div>
+          <div className={styles.modalFooter}>
+            <Button className="mr-8" onClick={closeModal}>
+              Hủy bỏ
+            </Button>
+            <Button type="primary" htmlType="submit">
+              Tạo
+            </Button>
+          </div>
+        </Form>
       </Modal>
     </>
   );

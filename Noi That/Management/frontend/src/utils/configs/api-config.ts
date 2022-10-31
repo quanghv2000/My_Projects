@@ -56,7 +56,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
   response => {
-    console.log('response: ', response);
     return response;
   },
   error => {
