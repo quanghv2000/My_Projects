@@ -1,0 +1,39 @@
+.profileLayout {
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+    display: inline-block;
+    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+}
+
+.profileHeader {
+    padding: 20px;
+}
+
+.profileName {
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: #212529;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.profileEmail {
+    font-size: 13px;
+    color: #787878;
+    font-weight: bold;
+}
+
+.profileImage {
+    margin-top: -24px;
+    -webkit-clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+    clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+    width: 100%;
+    margin-left: 0px;
+}
+
+.profileImage > img {
+    width: 100%;
+}
