@@ -8,7 +8,7 @@ import { RootState } from 'types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategoriesRequestAction } from './actions';
 import { AddCategoryModal } from './subsystems';
-import { showInfoModal } from 'helpers/info-modal-dialog';
+import { showInfoModal } from 'helpers';
 
 import style from './style.module.scss';
 

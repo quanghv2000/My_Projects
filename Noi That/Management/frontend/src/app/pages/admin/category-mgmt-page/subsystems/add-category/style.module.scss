@@ -1,17 +1,11 @@
-.modal {
-  .modalBody {
-    padding: 24px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .modalFooter {
-    margin: 0px;
-    padding: 10px 16px;
-    display: flex;
-    justify-content: flex-end;
-  }
+.modalBody {
+  padding: 24px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.modal > div:nth-child(2) > div:nth-child(3) {
-  padding: 0px !important;
+.modalFooter {
+  margin: 0px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: flex-end;
 }

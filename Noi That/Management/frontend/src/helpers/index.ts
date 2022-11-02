@@ -1,12 +1,9 @@
 export * from './info-modal-dialog';
+export * from './validation';
 
 export function actionPayload<T = any>(payload: T) {
   return { payload };
 }
-
-export const isNumeric = value => {
-  return /^-?\d+$/.test(value);
-};
 
 export function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
