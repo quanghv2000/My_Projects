@@ -15,4 +15,10 @@ export const userRoutes = [
     content: NotFoundPage,
     layout: UserLayout,
   },
+  {
+    path: '/resume',
+    breadcrumbs: ['Trang chủ'],
+    content: NotFoundPage,
+    layout: UserLayout,
+  },
 ];

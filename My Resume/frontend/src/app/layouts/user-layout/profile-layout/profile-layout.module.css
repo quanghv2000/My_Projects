@@ -16,12 +16,12 @@
     margin-bottom: 6px;
     text-transform: uppercase;
     color: #212529;
-    font-size: 17px;
+    font-size: 1.125rem;
     font-weight: bold;
 }
 
 .profileEmail {
-    font-size: 13px;
+    font-size: 0.875rem;
     color: #787878;
     font-weight: bold;
 }

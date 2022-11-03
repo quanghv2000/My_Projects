@@ -22,10 +22,10 @@ export function App() {
     <BrowserRouter>
       <Helmet
         titleTemplate="%s"
-        defaultTitle="Hola Market"
+        defaultTitle="My Resume"
         htmlAttributes={{ lang: i18n.language }}
       >
-        <meta name="description" content="Hola Market" />
+        <meta name="description" content="My Resume" />
       </Helmet>
 
       <Switch>
