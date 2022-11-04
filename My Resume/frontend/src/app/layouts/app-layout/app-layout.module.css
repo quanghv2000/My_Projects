@@ -1,0 +1,41 @@
+.userLayout {
+    overflow-x: hidden;
+    background: url('https://res.cloudinary.com/dtjin3cf6/image/upload/v1667398736/My%20Projects/My%20Resume/my_resume_bg_bnagqa.png');
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 36px;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        margin-top: 6px;
+    }
+}
+
+.content {
+    background-color: white;
+    min-height: 70vh;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    margin-bottom: 25px;
+    padding: 30px;
+}
+
+@media screen and (max-width: 720px) {
+    .content {
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .content {
+        padding: 16px;
+    }
+}

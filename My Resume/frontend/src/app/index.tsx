@@ -31,7 +31,6 @@ export function App() {
       <Switch>
         {routes.map((route, index) => {
           const Content = route.content;
-          const breadcrumbs = route.breadcrumbs ?? null;
           return (
             <Route
               exact
@@ -39,11 +38,7 @@ export function App() {
               path={route.path}
               render={props =>
                 route.layout ? (
-                  <route.layout
-                    {...props}
-                    content={<Content />}
-                    breadcrumbs={breadcrumbs}
-                  />
+                  <route.layout {...props} content={<Content />} />
                 ) : (
                   <route.content />
                 )

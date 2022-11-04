@@ -61,8 +61,9 @@
     align-items: center;
 }
 
-.socials > i {
+.socials > a {
     cursor: pointer;
     font-size: 20px;
     margin-right: 16px;
+    color: #333333;
 }

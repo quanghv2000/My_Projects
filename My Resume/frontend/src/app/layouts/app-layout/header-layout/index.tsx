@@ -29,12 +29,14 @@ export const HeaderLayout: React.FC<IProps> = () => {
     },
   ];
 
+  console.log('pathname: ', pathname);
+
   return (
     <div className={styles.headerLayout}>
       <nav className="navbar navbar-expand-xl">
-        <a className={styles.navbrand} href="/">
+        <NavLink className={styles.navbrand} to="/resume">
           <i className="fa-sharp fa-solid fa-house"></i>
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -71,9 +73,27 @@ export const HeaderLayout: React.FC<IProps> = () => {
           </ul>
           <div className="d-flex">
             <div className={styles.socials}>
-              <i className="fa-brands fa-square-facebook"></i>
-              <i className="fa-brands fa-twitter"></i>
-              <i className="fa-brands fa-github"></i>
+              <a
+                href="https://www.facebook.com/quanghavan29"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fa-brands fa-square-facebook"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/quanghavan29"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://github.com/quanghv2000"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fa-brands fa-github"></i>
+              </a>
             </div>
 
             <Link to={'/contact'} style={{ textDecoration: 'none' }}>
