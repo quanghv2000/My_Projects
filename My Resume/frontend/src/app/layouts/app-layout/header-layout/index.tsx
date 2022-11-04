@@ -29,8 +29,6 @@ export const HeaderLayout: React.FC<IProps> = () => {
     },
   ];
 
-  console.log('pathname: ', pathname);
-
   return (
     <div className={styles.headerLayout}>
       <nav className="navbar navbar-expand-xl">
@@ -55,9 +53,8 @@ export const HeaderLayout: React.FC<IProps> = () => {
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             {navLinkItems.map((navlink, index) => {
               return (
-                <li className="nav-item">
+                <li className="nav-item" key={index}>
                   <NavLink
-                    key={index}
                     to={navlink.pathname}
                     className={
                       navlink.pathname === pathname

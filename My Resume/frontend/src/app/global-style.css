@@ -2,13 +2,26 @@
     margin-top: 60px !important;
 }
 
-.p-24 {
-    padding: 24px !important;
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.mb_20 {
+    margin-bottom: 20px;
 }
 
 .mb_30 {
     margin-bottom: 30px;
 }
+
+.p-24 {
+    padding: 24px !important;
+}
+
 
 .section_title {
     position: relative;
