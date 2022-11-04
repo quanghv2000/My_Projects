@@ -7,7 +7,7 @@ type IProps = {};
 export const ContactInfo: React.FC<IProps> = () => {
   return (
     <>
-      <div className="section_title mb_20">
+      <div className="section_title mb_30">
         <span></span>
         <h6 className="section_title_text">Contact Information</h6>
       </div>
