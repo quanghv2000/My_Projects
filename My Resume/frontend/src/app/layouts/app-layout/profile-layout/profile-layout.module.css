@@ -6,6 +6,7 @@
     box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
     -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
     -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    padding-bottom: 30px;
 }
 
 .profileHeader {
@@ -34,6 +35,13 @@
     margin-left: 0px;
 }
 
-.profileImage > img {
+.profileImage>img {
     width: 100%;
+}
+
+.btnDownloadCV {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

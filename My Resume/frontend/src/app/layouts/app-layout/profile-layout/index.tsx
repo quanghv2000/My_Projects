@@ -1,3 +1,4 @@
+import { Button, Timeline } from 'app/components';
 import React from 'react';
 
 import styles from './profile-layout.module.css';
@@ -36,14 +37,14 @@ export const ProfileLayout: React.FC<IProps> = () => {
           />
         </ResumeTimeline> */}
         <div className={styles.btnDownloadCV}>
-          {/* <a
-            href={resumeInfo.cvLink}
+          <a
+            href={"https://www.topcv.vn/xem-cv/C1RQAgJcUlEAAVUCBlQHUAIPUAxWVwVUAVAEAw1850"}
             target="_blank"
             style={{ textDecoration: 'none' }}
             rel="noreferrer"
           >
-            <ResumeButton text={'Download CV'} icon={<GetAppIcon />} />
-          </a> */}
+            <Button text={'Download CV'} icon={<i className="fa fa-download"></i>}/>
+          </a>
         </div>
       </div>
     </div>

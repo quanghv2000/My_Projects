@@ -1,3 +1,4 @@
+import { Timeline } from 'app/components';
 import React from 'react';
 
 import styles from './resume.module.css';
@@ -11,6 +12,7 @@ export const ResumePage: React.FC<IProps> = () => {
         <span></span>
         <h6 className="section_title_text">Resume</h6>
       </div>
+      <Timeline />
     </div>
   );
 };
