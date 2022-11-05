@@ -7,6 +7,7 @@ export const P = styled.p`
   font-size: 1rem;
   line-height: 1.5;
   color: ${p => p.theme.textSecondary};
+  color: #333333;
   margin: 0.625rem 0 1.5rem 0;
 `;
 
@@ -26,7 +27,7 @@ export function NotFoundPage() {
           4
         </Title>
         <P>Page not found.</P>
-        <Link to={process.env.PUBLIC_URL + '/'}>Go to Home Page</Link>
+        <Link to='/resume'>Go to Resume Page</Link>
       </Wrapper>
     </React.Fragment>
   );
@@ -39,12 +40,15 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   min-height: 320px;
+  overflow-x: hidden;
+  background: url('https://res.cloudinary.com/dtjin3cf6/image/upload/v1667398736/My%20Projects/My%20Resume/my_resume_bg_bnagqa.png');
 `;
 
 const Title = styled.div`
   margin-top: -8vh;
   font-weight: bold;
   color: ${p => p.theme.text};
+  color: #333333;
   font-size: 3.375rem;
 
   span {
