@@ -1,0 +1,14 @@
+.dot {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot > span {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border: 2px solid #ffc500;
+    border-radius: 50%;
+    background-color: transparent;
+}

@@ -1,5 +1,6 @@
-import { Button, Timeline } from 'app/components';
 import React from 'react';
+import { Button } from 'app/components';
+import { ProfileInfos } from './components';
 
 import styles from './profile-layout.module.css';
 
@@ -21,21 +22,7 @@ export const ProfileLayout: React.FC<IProps> = () => {
       </figure>
 
       <div className={styles.profileInfo}>
-        {/* <ResumeTimeline icon={<PersonOutlineIcon />} title={null}>
-          <ResumeTimelineItem title="Name" text={resumeInfo.name} />
-          <ResumeTimelineItem title="Gender" text={resumeInfo.gender} />
-          <ResumeTimelineItem
-            title="Birthday"
-            text={moment(resumeInfo.dob).format('LL')}
-          />
-          <ResumeTimelineItem title="Phone" text={resumeInfo.phone} />
-          <ResumeTimelineItem title="School" text={resumeInfo.school} />
-          <ResumeTimelineItem
-            title="Job"
-            text={resumeInfo.job}
-            hiddenConnector={true}
-          />
-        </ResumeTimeline> */}
+        <ProfileInfos />
         <div className={styles.btnDownloadCV}>
           <a
             href={"https://www.topcv.vn/xem-cv/C1RQAgJcUlEAAVUCBlQHUAIPUAxWVwVUAVAEAw1850"}
