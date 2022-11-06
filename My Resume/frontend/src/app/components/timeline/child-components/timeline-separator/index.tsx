@@ -6,20 +6,23 @@ import styles from './timeline-separator.module.css';
 
 type IProps = {
   enabledDot?: boolean;
-  enabledConnector?: boolean;
+  connector?: {
+    enabled?: boolean;
+    height?: number | string;
+  };
   icon?: JSX.Element;
 };
 
 export const TimelineSeparator: React.FC<IProps> = (props: IProps) => {
   /** @Props_Value */
-  const { enabledDot, enabledConnector, icon } = props;
+  const { enabledDot, connector, icon } = props;
 
   return (
     <>
       <div className={styles.timelineSeparator}>
         {icon && <div className={styles.icon}>{icon}</div>}
         {enabledDot && <Dot />}
-        {enabledConnector && <Connector />}
+        {connector?.enabled && <Connector height={connector?.height}/>}
       </div>
     </>
   );

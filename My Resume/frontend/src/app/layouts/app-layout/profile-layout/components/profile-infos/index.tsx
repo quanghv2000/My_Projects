@@ -1,24 +1,33 @@
-import { Timeline } from "app/components";
-import { TimelineItem, TimelineSeparator } from "app/components/timeline/child-components";
-import React from "react";
+import { Timeline } from 'app/components';
+import {
+    TimelineItem,
+    TimelineSeparator,
+    TimelineContent,
+} from 'app/components/timeline/child-components';
+import React from 'react';
 
 import styles from './profile-infos.module.css';
 
-type IProps = {}
+type IProps = {};
 
 export const ProfileInfos: React.FC<IProps> = () => {
-    return (
-        <div className={styles.profileInfos}>
-            <Timeline>
-                <TimelineItem>
-                    <TimelineSeparator enabledConnector icon={<i className="fa fa-user"></i>} />
-                    {/* <TimelineContent /> */}
-                </TimelineItem>
-                <TimelineItem>
-                    <TimelineSeparator enabledDot enabledConnector />
-                    {/* <TimelineContent /> */}
-                </TimelineItem>
-            </Timeline>
-        </div>
-    )
-}
+  const connector = { enabled: true, height: 20 };
+  const info = {property: 'Name', value: 'Hà Văn Quang'}
+
+  return (
+    <div className={styles.profileInfos}>
+      <Timeline>
+        <TimelineItem>
+          <TimelineSeparator
+            connector={connector}
+            icon={<i className="fa fa-user"></i>}
+          />
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator enabledDot connector={connector} />
+          <TimelineContent info={info}/>
+        </TimelineItem>
+      </Timeline>
+    </div>
+  );
+};
