@@ -12,6 +12,9 @@ export const Connector: React.FC<IProps> = (props: IProps) => {
   const { style, className, height } = props;
 
   return (
-    <div className={`${className} ${styles.connector}`} style={{...style, height: height}}></div>
+    <div
+      className={`${className} ${styles.connector}`}
+      style={{ ...style, height: height }}
+    ></div>
   );
 };

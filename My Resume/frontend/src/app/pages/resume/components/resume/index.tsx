@@ -11,7 +11,7 @@ import styles from './resume.module.css';
 type IProps = {};
 
 export const Resume: React.FC<IProps> = (props: IProps) => {
-  const connector = {enabled: true, height: 20};
+  const connector = { enabled: true, height: 20 };
 
   return (
     <div className={styles.resume}>
@@ -27,11 +27,14 @@ export const Resume: React.FC<IProps> = (props: IProps) => {
                 connector={connector}
                 icon={<i className="fa fa-briefcase"></i>}
               />
-              <TimelineContent titleHeader='Work Experience'/>
+              <TimelineContent titleHeader="Work Experience" />
             </TimelineItem>
             <TimelineItem>
               <TimelineSeparator enabledDot connector={connector} />
-              <TimelineContent titleDot='FPT Software Company' timelinePeriod='05/2021 - 06/2023'/>
+              <TimelineContent
+                titleDot="FPT Software Company"
+                timelinePeriod="05/2021 - 06/2023"
+              />
             </TimelineItem>
           </Timeline>
         </div>
@@ -42,11 +45,14 @@ export const Resume: React.FC<IProps> = (props: IProps) => {
                 connector={connector}
                 icon={<i className="fa fa-graduation-cap"></i>}
               />
-              <TimelineContent titleHeader='Education'/>
+              <TimelineContent titleHeader="Education" />
             </TimelineItem>
             <TimelineItem>
               <TimelineSeparator enabledDot connector={connector} />
-              <TimelineContent titleDot='FPT University - Hà Nội' timelinePeriod='09/2018 - 09/2022'/>
+              <TimelineContent
+                titleDot="FPT University - Hà Nội"
+                timelinePeriod="09/2018 - 09/2022"
+              />
             </TimelineItem>
           </Timeline>
         </div>

@@ -27,7 +27,7 @@ export function NotFoundPage() {
           4
         </Title>
         <P>Page not found.</P>
-        <Link to='/resume'>Go to Resume Page</Link>
+        <Link to="/resume">Go to Resume Page</Link>
       </Wrapper>
     </React.Fragment>
   );

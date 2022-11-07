@@ -4,7 +4,7 @@ import styles from './timeline-content.module.css';
 
 type IProps = {
   info?: {
-    property?: string;
+    title?: string;
     value?: string;
   };
   titleHeader?: string;
@@ -61,7 +61,7 @@ export const TimelineContent: React.FC<IProps> = (props: IProps) => {
       {info && (
         <div className={styles.info}>
           <p style={{ color: '#272829', fontSize: '0.875rem', marginTop: -8 }}>
-            <span style={{ fontWeight: 'bold' }}>{info?.property}: </span>
+            <span style={{ fontWeight: 'bold' }}>{info?.title}: </span>
             <span>{info?.value}</span>
           </p>
         </div>

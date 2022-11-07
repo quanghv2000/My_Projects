@@ -32,3 +32,8 @@
     font-weight: 600;
     margin-left: 8px;
 }
+
+.footerCopyright > a:hover {
+    cursor: pointer;
+    color: rgb(247, 217, 120);
+}

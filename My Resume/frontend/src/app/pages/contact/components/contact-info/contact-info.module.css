@@ -24,3 +24,7 @@
     margin-right: 20px;
     color: #333333;
 }
+
+.contactInfoSocials > a:hover {
+    color: gray;
+}

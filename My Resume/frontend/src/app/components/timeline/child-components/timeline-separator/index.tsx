@@ -22,7 +22,7 @@ export const TimelineSeparator: React.FC<IProps> = (props: IProps) => {
       <div className={styles.timelineSeparator}>
         {icon && <div className={styles.icon}>{icon}</div>}
         {enabledDot && <Dot />}
-        {connector?.enabled && <Connector height={connector?.height}/>}
+        {connector?.enabled && <Connector height={connector?.height} />}
       </div>
     </>
   );

@@ -14,25 +14,31 @@ export const ProfileLayout: React.FC<IProps> = () => {
         <p className={styles.profileEmail}>quanghv2000.dev@gmail.com</p>
       </div>
 
-      <figure className={styles.profileImage}>
-        <img
-          src="https://res.cloudinary.com/fpt-food/image/upload/v1641068997/My%20Projects/NodeJS%20and%20ReactJS/profile_avatar_kdwi1n.jpg"
-          alt="profileImage"
-        />
-      </figure>
+      <div style={{ position: 'relative', height: 650 }}>
+        <figure className={styles.profileImage}>
+          <img
+            src="https://res.cloudinary.com/fpt-food/image/upload/v1641068997/My%20Projects/NodeJS%20and%20ReactJS/profile_avatar_kdwi1n.jpg"
+            alt="profileImage"
+          />
+        </figure>
 
-      <div className={styles.profileInfo}>
         <ProfileInfos />
-        <div className={styles.btnDownloadCV}>
-          <a
-            href={"https://www.topcv.vn/xem-cv/C1RQAgJcUlEAAVUCBlQHUAIPUAxWVwVUAVAEAw1850"}
-            target="_blank"
-            style={{ textDecoration: 'none' }}
-            rel="noreferrer"
-          >
-            <Button text={'Download CV'} icon={<i className="fa fa-download"></i>}/>
-          </a>
-        </div>
+      </div>
+
+      <div className={styles.btnDownloadCV}>
+        <a
+          href={
+            'https://www.topcv.vn/xem-cv/C1RQAgJcUlEAAVUCBlQHUAIPUAxWVwVUAVAEAw1850'
+          }
+          target="_blank"
+          style={{ textDecoration: 'none' }}
+          rel="noreferrer"
+        >
+          <Button
+            text={'Download CV'}
+            icon={<i className="fa fa-download"></i>}
+          />
+        </a>
       </div>
     </div>
   );
