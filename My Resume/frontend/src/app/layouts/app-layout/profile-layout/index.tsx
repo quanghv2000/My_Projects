@@ -35,7 +35,7 @@ export const ProfileLayout: React.FC<IProps> = () => {
             left: 10,
           }}
         >
-          <i className="fa fa-user"></i>
+          <i className="fa fa-user" style={{ color: '#2f4f4f' }}></i>
         </div>
       </div>
 
