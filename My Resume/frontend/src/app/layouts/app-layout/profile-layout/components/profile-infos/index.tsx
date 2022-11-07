@@ -19,7 +19,7 @@ export const ProfileInfos: React.FC<IProps> = () => {
         <TimelineItem>
           <TimelineSeparator
             connector={connector}
-            icon={<i className="fa fa-user"></i>}
+            // icon={<i className="fa fa-user"></i>}
           />
         </TimelineItem>
         <TimelineItem>

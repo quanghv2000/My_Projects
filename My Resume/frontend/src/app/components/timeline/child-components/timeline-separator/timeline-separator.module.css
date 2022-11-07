@@ -1,5 +1,6 @@
 .timelineSeparator {
-    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
     height: 100%;
     display: flex;
     flex-direction: column;

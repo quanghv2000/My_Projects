@@ -7,14 +7,15 @@ type IProps = {
     title?: string;
     value?: string;
   };
-  titleHeader?: string;
-  titleDot?: string;
-  timelinePeriod?: string;
+  titleHeader?: JSX.Element | string;
+  titleDot?: JSX.Element | string;
+  timelinePeriod?: JSX.Element | string;
+  description?: JSX.Element | string;
 };
 
 export const TimelineContent: React.FC<IProps> = (props: IProps) => {
   /** @Props_Value */
-  const { info, titleHeader, titleDot, timelinePeriod } = props;
+  const { info, titleHeader, titleDot, timelinePeriod, description } = props;
 
   return (
     <div className={styles.timelineContent}>
@@ -51,13 +52,23 @@ export const TimelineContent: React.FC<IProps> = (props: IProps) => {
           style={{
             fontSize: '0.85rem',
             color: 'gray',
-            fontWeight: 'bold',
+            fontWeight: 600,
+            margin: 0,
+            padding: 0,
+            marginBottom: 5,
           }}
         >
           {timelinePeriod}
         </p>
       )}
-      <div className={styles.timelineDescription}></div>
+      {description && (
+        <span
+          className={styles.description}
+          style={{ color: '#808080', fontSize: '13px' }}
+        >
+          {description}
+        </span>
+      )}
       {info && (
         <div className={styles.info}>
           <p style={{ color: '#272829', fontSize: '0.875rem', marginTop: -8 }}>

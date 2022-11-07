@@ -14,16 +14,32 @@ export const ProfileLayout: React.FC<IProps> = () => {
         <p className={styles.profileEmail}>quanghv2000.dev@gmail.com</p>
       </div>
 
-      <div style={{ position: 'relative', height: 650 }}>
+      <div style={{ position: 'relative' }}>
         <figure className={styles.profileImage}>
           <img
             src="https://res.cloudinary.com/fpt-food/image/upload/v1641068997/My%20Projects/NodeJS%20and%20ReactJS/profile_avatar_kdwi1n.jpg"
             alt="profileImage"
           />
         </figure>
-
-        <ProfileInfos />
+        <div
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: '50%',
+            backgroundColor: '#ffc500',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'absolute',
+            bottom: -20,
+            left: 10,
+          }}
+        >
+          <i className="fa fa-user"></i>
+        </div>
       </div>
+
+      <ProfileInfos />
 
       <div className={styles.btnDownloadCV}>
         <a
