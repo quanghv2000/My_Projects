@@ -32,7 +32,7 @@ export const Resume: React.FC<IProps> = (props: IProps) => {
             <TimelineItem>
               <TimelineSeparator
                 enabledDot
-                connector={{ enabled: true, height: 70 }}
+                connector={{ enabled: true, height: 74 }}
               />
               <TimelineContent
                 titleDot="FPT Software Company"
@@ -64,7 +64,7 @@ export const Resume: React.FC<IProps> = (props: IProps) => {
             <TimelineItem>
               <TimelineSeparator
                 enabledDot
-                connector={{ enabled: true, height: 70 }}
+                connector={{ enabled: true, height: 74 }}
               />
               <TimelineContent
                 titleDot="FPT University - Hà Nội"

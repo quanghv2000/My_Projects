@@ -64,7 +64,7 @@ export const TimelineContent: React.FC<IProps> = (props: IProps) => {
       {description && (
         <span
           className={styles.description}
-          style={{ color: '#808080', fontSize: '13px' }}
+          style={{ color: '#808080', fontSize: '14px' }}
         >
           {description}
         </span>

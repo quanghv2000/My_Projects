@@ -59,7 +59,6 @@ export const ContactForm: React.FC<IProps> = () => {
             text="Submit"
             icon={<i className="fa-solid fa-paper-plane"></i>}
             onClick={e => {
-              alert('??????');
               e.preventDefault();
             }}
           />
