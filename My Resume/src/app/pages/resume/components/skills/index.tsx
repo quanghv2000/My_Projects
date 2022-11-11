@@ -144,7 +144,7 @@ export const Skills: React.FC<IProps> = (props: IProps) => {
                 <div className={styles.skillDesDot}>
                   <Dot />
                 </div>
-                <div className={styles.skillDesInfo}>GitLap</div>
+                <div className={styles.skillDesInfo}>GitLab</div>
               </div>
               <div className={styles.skillDes}>
                 <div className={styles.skillDesDot}>
