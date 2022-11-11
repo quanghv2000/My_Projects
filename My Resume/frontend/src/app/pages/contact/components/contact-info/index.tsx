@@ -1,4 +1,5 @@
 import React from 'react';
+import { MyInfos } from 'app/my-infos';
 
 import styles from './contact-info.module.css';
 
@@ -13,46 +14,37 @@ export const ContactInfo: React.FC<IProps> = () => {
       </div>
       <div className={styles.contactInfos}>
         <div className={styles.contactInfoItem}>
-          <span>Name: </span> Hà Văn Quang
+          <span>Name: </span> {MyInfos.name}
         </div>
         <div className={styles.contactInfoItem}>
-          <span>Phone: </span> 0986.915.765
+          <span>Phone: </span> {MyInfos.phone}
         </div>
         <div className={styles.contactInfoItem}>
-          <span>Email: </span> quanghv2000.dev@gmail.com
+          <span>Email: </span> {MyInfos.email}
         </div>
         <div className={styles.contactInfoItem}>
-          <span>Address: </span> Xuân Giang - Sóc Sơn - Hả Nội
+          <span>Address: </span> {MyInfos.address}
         </div>
         <div className={styles.contactInfoItem}>
-          <span>School: </span> FPT University
+          <span>School: </span> {MyInfos.school}
         </div>
         <div className={styles.contactInfoItem}>
-          <span>Job: </span> Fullstack Developer
+          <span>Job: </span> {MyInfos.job}
         </div>
         <div>
           <div className={styles.contactInfoSocials}>
-            <a
-              href="https://www.facebook.com/quanghavan29"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-square-facebook"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/quanghavan29"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-            <a
-              href="https://github.com/quanghv2000"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-github"></i>
-            </a>
+            {MyInfos.socials.map((item, index) => {
+              return (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <i className={item.icon}></i>
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

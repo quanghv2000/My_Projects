@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { INavLink } from 'models/common';
 import { Button } from 'app/components';
+import { MyInfos } from 'app/my-infos';
 
 import styles from './header-layout.module.css';
 
@@ -77,27 +78,18 @@ export const HeaderLayout: React.FC<IProps> = () => {
           </ul>
           <div className={`${styles.headerLeft} d-flex`}>
             <div className={styles.socials}>
-              <a
-                href="https://www.facebook.com/quanghavan29"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fa-brands fa-square-facebook"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/quanghavan29"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fa-brands fa-twitter"></i>
-              </a>
-              <a
-                href="https://github.com/quanghv2000"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
+              {MyInfos.socials.map((item, index) => {
+                return (
+                  <a
+                    key={index}
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className={item.icon}></i>
+                  </a>
+                );
+              })}
             </div>
 
             <Link to={'/contact'} style={{ textDecoration: 'none' }}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'app/components';
 import { ProfileInfos } from './components';
+import { MyInfos } from 'app/my-infos';
 
 import styles from './profile-layout.module.css';
 
@@ -10,16 +11,13 @@ export const ProfileLayout: React.FC<IProps> = () => {
   return (
     <div className={styles.profileLayout}>
       <div className={styles.profileHeader}>
-        <h3 className={styles.profileName}>Hà Văn Quang</h3>
-        <p className={styles.profileEmail}>quanghv2000.dev@gmail.com</p>
+        <h3 className={styles.profileName}>{MyInfos.name}</h3>
+        <p className={styles.profileEmail}>{MyInfos.email}</p>
       </div>
 
       <div style={{ position: 'relative' }}>
         <figure className={styles.profileImage}>
-          <img
-            src="https://res.cloudinary.com/fpt-food/image/upload/v1641068997/My%20Projects/NodeJS%20and%20ReactJS/profile_avatar_kdwi1n.jpg"
-            alt="profileImage"
-          />
+          <img src={MyInfos.imgUrl} alt="profileImage" />
         </figure>
         <div
           style={{
@@ -43,9 +41,7 @@ export const ProfileLayout: React.FC<IProps> = () => {
 
       <div className={styles.btnDownloadCV}>
         <a
-          href={
-            'https://www.topcv.vn/xem-cv/C1RQAgJcUlEAAVUCBlQHUAIPUAxWVwVUAVAEAw1850'
-          }
+          href={MyInfos.cvUrl}
           target="_blank"
           style={{ textDecoration: 'none' }}
           rel="noreferrer"

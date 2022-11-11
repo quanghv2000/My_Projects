@@ -1,10 +1,11 @@
+import React from 'react';
 import { Timeline } from 'app/components';
 import {
   TimelineItem,
   TimelineSeparator,
   TimelineContent,
 } from 'app/components/timeline/child-components';
-import React from 'react';
+import { MyInfos } from 'app/my-infos';
 
 import styles from './profile-infos.module.css';
 
@@ -17,38 +18,33 @@ export const ProfileInfos: React.FC<IProps> = () => {
     <div className={styles.profileInfos}>
       <Timeline>
         <TimelineItem>
-          <TimelineSeparator
-            connector={connector}
-            // icon={<i className="fa fa-user"></i>}
-          />
+          <TimelineSeparator connector={connector} />
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator enabledDot connector={connector} />
-          <TimelineContent info={{ title: 'Name', value: 'Hà Văn Quang' }} />
+          <TimelineContent info={{ title: 'Name', value: MyInfos.name }} />
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator enabledDot connector={connector} />
-          <TimelineContent info={{ title: 'Gender', value: 'Male' }} />
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineSeparator enabledDot connector={connector} />
-          <TimelineContent
-            info={{ title: 'Birthday', value: '29 June, 2000' }}
-          />
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineSeparator enabledDot connector={connector} />
-          <TimelineContent info={{ title: 'Phone', value: '0986.915.765' }} />
+          <TimelineContent info={{ title: 'Gender', value: MyInfos.gender }} />
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator enabledDot connector={connector} />
           <TimelineContent
-            info={{ title: 'School', value: 'FPT University' }}
+            info={{ title: 'Birthday', value: MyInfos.birthDay }}
           />
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator enabledDot connector={connector} />
+          <TimelineContent info={{ title: 'Phone', value: MyInfos.phone }} />
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineSeparator enabledDot connector={connector} />
+          <TimelineContent info={{ title: 'School', value: MyInfos.school }} />
         </TimelineItem>
         <TimelineItem>
           <TimelineSeparator enabledDot />
-          <TimelineContent info={{ title: 'Job', value: 'Web Developer' }} />
+          <TimelineContent info={{ title: 'Job', value: MyInfos.job }} />
         </TimelineItem>
       </Timeline>
     </div>
