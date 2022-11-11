@@ -5,6 +5,9 @@ import styles from './about-me.module.css';
 type IProps = {};
 
 export const AboutMePage: React.FC<IProps> = () => {
+  /** @Declare */
+  const numOfYearsExp = new Date().getFullYear() - 2021;
+
   return (
     <div className={styles.aboutMe}>
       <div className="section_title mb_30">
@@ -13,19 +16,19 @@ export const AboutMePage: React.FC<IProps> = () => {
       </div>
       <div>
         <p>
-          The “about us” page is a must-have page (this can be a page on your
-          website, separate landing page or even “about me” website as a type of
-          portfolio) used by all types of businesses to give customers more
-          insight into who is involved with a given business and exactly what it
-          does.
+          <b>Hello! I'm "Quang Cối".</b> I Have <b>{numOfYearsExp}+ years</b> of
+          experience in building Web applications and experience in working on
+          projects, good teamwork skills & self-training skills, problem
+          solving, organizing, work well under pressure.
         </p>
         <br />
         <p>
-          Your “About me” page forms the first impression of a company or
-          product, puts a name and a face to your business, and gives website
-          visitor the opportunity to develop a connection with you(a good reason
-          for a visitor to stay on your website!), and it is your best chance to
-          convert more visits to enquiries/ more enquiries to customers.
+          In addition, I am also a music lover and I can play traditional
+          instruments such as <b>Flute</b>.
+        </p>
+        <br />
+        <p>
+          My goal is to become <b>Fullstack Web Developer</b>.
         </p>
       </div>
     </div>

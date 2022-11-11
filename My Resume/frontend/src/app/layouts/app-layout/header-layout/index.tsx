@@ -31,7 +31,7 @@ export const HeaderLayout: React.FC<IProps> = () => {
 
   return (
     <div className={styles.headerLayout}>
-      <nav className="navbar navbar-expand-xl">
+      <nav className={`${styles.navbar} navbar navbar-expand-sm`}>
         <NavLink className={styles.navbrand} to="/resume">
           <i className="fa-sharp fa-solid fa-house"></i>
         </NavLink>
@@ -50,10 +50,17 @@ export const HeaderLayout: React.FC<IProps> = () => {
           ></i>
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul className={`${styles.navbarNav} navbar-nav mr-auto`}>
             {navLinkItems.map((navlink, index) => {
               return (
-                <li className="nav-item" key={index}>
+                <li
+                  className={`${
+                    navlink.pathname === pathname
+                      ? styles.navItemActive
+                      : styles.navItem
+                  } nav-item`}
+                  key={index}
+                >
                   <NavLink
                     to={navlink.pathname}
                     className={
@@ -68,7 +75,7 @@ export const HeaderLayout: React.FC<IProps> = () => {
               );
             })}
           </ul>
-          <div className="d-flex">
+          <div className={`${styles.headerLeft} d-flex`}>
             <div className={styles.socials}>
               <a
                 href="https://www.facebook.com/quanghavan29"

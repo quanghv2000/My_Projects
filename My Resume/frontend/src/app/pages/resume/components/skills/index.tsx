@@ -53,13 +53,7 @@ export const Skills: React.FC<IProps> = (props: IProps) => {
                 <div className={styles.skillDesDot}>
                   <Dot />
                 </div>
-                <div className={styles.skillDesInfo}>Bootstrap</div>
-              </div>
-              <div className={styles.skillDes}>
-                <div className={styles.skillDesDot}>
-                  <Dot />
-                </div>
-                <div className={styles.skillDesInfo}>Antd, Fluent UI</div>
+                <div className={styles.skillDesInfo}>Bootstrap, Antd</div>
               </div>
             </div>
           </div>
@@ -99,7 +93,6 @@ export const Skills: React.FC<IProps> = (props: IProps) => {
                 </div>
                 <div className={styles.skillDesInfo}>Docker</div>
               </div>
-              <div className={styles.skillDes}></div>
             </div>
           </div>
           <div
@@ -133,7 +126,6 @@ export const Skills: React.FC<IProps> = (props: IProps) => {
                 <div className={styles.skillDesInfo}>MSSQL Server</div>
               </div>
               <div className={styles.skillDes}></div>
-              <div className={styles.skillDes}></div>
             </div>
           </div>
           <div
@@ -160,7 +152,6 @@ export const Skills: React.FC<IProps> = (props: IProps) => {
                 </div>
                 <div className={styles.skillDesInfo}>SVN</div>
               </div>
-              <div className={styles.skillDes}></div>
               <div className={styles.skillDes}></div>
               <div className={styles.skillDes}></div>
             </div>
