@@ -47,8 +47,8 @@ const Profile = () => {
         <img src={resumeInfo.avatarUrl} alt="" />
       </figure>
 
-      <div className={style['profile_information']}>
-        <ResumeTimeline icon={<PersonOutlineIcon />} title={null}>
+      {/* <div className={style['profile_information']}>
+        {/* <ResumeTimeline icon={<PersonOutlineIcon />} title={null}>
           <ResumeTimelineItem title="Name" text={resumeInfo.name} />
           <ResumeTimelineItem title="Gender" text={resumeInfo.gender} />
           <ResumeTimelineItem
@@ -62,18 +62,11 @@ const Profile = () => {
             text={resumeInfo.job}
             hiddenConnector={true}
           />
-        </ResumeTimeline>
+        </ResumeTimeline> */}
         <div className={style['btn_download_cv']}>
-          <a
-            href={resumeInfo.cvLink}
-            target="_blank"
-            style={{ textDecoration: 'none' }}
-            rel="noreferrer"
-          >
-            <ResumeButton text={'Download CV'} icon={<GetAppIcon />} />
-          </a>
+
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
