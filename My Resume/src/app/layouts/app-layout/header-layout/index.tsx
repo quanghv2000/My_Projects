@@ -59,16 +59,24 @@ export const HeaderLayout: React.FC<IProps> = () => {
                     navlink.pathname === pathname
                       ? styles.navItemActive
                       : styles.navItem
+                  } ${
+                    pathname === '/' && navlink.pathname === '/resume'
+                      ? styles.navItemActive
+                      : styles.navItem
                   } nav-item`}
                   key={index}
                 >
                   <NavLink
                     to={navlink.pathname}
-                    className={
+                    className={`${
                       navlink.pathname === pathname
                         ? styles.navlinkActive
                         : styles.navlink
-                    }
+                    } ${
+                      pathname === '/' && navlink.pathname === '/resume'
+                        ? styles.navlinkActive
+                        : styles.navlink
+                    }`}
                   >
                     {navlink.caption}
                   </NavLink>
