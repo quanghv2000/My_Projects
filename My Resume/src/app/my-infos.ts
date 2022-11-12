@@ -1,28 +1,28 @@
 const HTML_CSS = [
   {
     key: 'html-css',
-    type: 'HTML-CSS',
+    type: 'HTML-CSS 1',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'html-css',
-    type: 'HTML-CSS',
+    type: 'HTML-CSS 2',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'html-css',
-    type: 'HTML-CSS',
+    type: 'HTML-CSS 3',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'html-css',
-    type: 'HTML-CSS',
+    type: 'HTML-CSS 4',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
@@ -32,35 +32,35 @@ const HTML_CSS = [
 const REACTJS = [
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS 5',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS 6',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS 7',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS 8',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS 9',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
@@ -70,28 +70,28 @@ const REACTJS = [
 const NODEJS = [
   {
     key: 'nodejs',
-    type: 'NodeJS',
+    type: 'NodeJS 10',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'nodejs',
-    type: 'NodeJS',
+    type: 'NodeJS 11',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'nodejs',
-    type: 'NodeJS',
+    type: 'NodeJS 12',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
   {
     key: 'nodejs',
-    type: 'NodeJS',
+    type: 'NodeJS 13',
     name: 'Coming Soon',
     imgUrl:
       'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',

@@ -60,3 +60,42 @@
     justify-content: flex-end;
     margin-top: 30px;
 }
+
+.tabsCbx>button {
+    background-color: #ffc500;
+    border-color: #ffc500;
+    font-weight: bold;
+    color: #0E2431;
+    outline: navajowhite;
+    display: flex;
+    transition: all 0.35s;
+}
+
+.tabsCbx>button:hover {
+    background-color: rgba(255, 197, 0, 0.8) !important;
+    border-color: rgba(255, 197, 0, 0.8) !important;
+    color: #333 !important;
+}
+
+.tabsCbx>button:focus {
+    background-color: rgba(255, 197, 0, 0.8) !important;
+    border-color: #ffc500 !important;
+    box-shadow: none !important;
+}
+
+.tabsCbx {
+    display: none;
+}
+
+@media screen and (max-width: 575.5px) {
+    .tabs {
+        display: none;
+    }
+
+    .tabsCbx {
+        display: block;
+        display: flex;
+        padding: 0px;
+        margin: 0px;
+    }
+}
