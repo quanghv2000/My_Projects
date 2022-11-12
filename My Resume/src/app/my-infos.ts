@@ -1,3 +1,127 @@
+const HTML_CSS = [
+  {
+    key: 'html-css',
+    type: 'HTML-CSS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'html-css',
+    type: 'HTML-CSS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'html-css',
+    type: 'HTML-CSS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'html-css',
+    type: 'HTML-CSS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+];
+
+const REACTJS = [
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+];
+
+const NODEJS = [
+  {
+    key: 'nodejs',
+    type: 'NodeJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'nodejs',
+    type: 'NodeJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'nodejs',
+    type: 'NodeJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'nodejs',
+    type: 'NodeJS',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+];
+
+const OTHERS = [
+  {
+    key: 'other-projects',
+    type: 'Java Spring',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'other-projects',
+    type: 'ASP.NET',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+  {
+    key: 'other-projects',
+    type: 'Android',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+  },
+];
+
 export const MyInfos = {
   name: 'Hà Văn Quang',
   email: 'quanghv2000.dev@gmail.com',
@@ -28,4 +152,5 @@ export const MyInfos = {
       icon: 'fa-brands fa-github',
     },
   ],
+  projects: [...HTML_CSS, ...REACTJS, ...NODEJS, ...OTHERS],
 };
