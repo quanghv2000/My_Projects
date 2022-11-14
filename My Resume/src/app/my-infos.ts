@@ -134,7 +134,7 @@ export const MyInfos = {
   cvUrl:
     'https://www.topcv.vn/xem-cv/C1RQAgJcUlEAAVUCBlQHUAIPUAxWVwVUAVAEAw1850',
   imgUrl:
-    'https://res.cloudinary.com/fpt-food/image/upload/v1641068997/My%20Projects/NodeJS%20and%20ReactJS/profile_avatar_kdwi1n.jpg',
+    'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668432524/My%20Projects/My%20Resume/my-resume-avatar_fejnii.jpg',
   socials: [
     {
       name: 'Facebook',
