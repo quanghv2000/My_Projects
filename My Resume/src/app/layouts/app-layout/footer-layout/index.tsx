@@ -9,16 +9,10 @@ export const FooterLayout: React.FC<IProps> = () => {
     <div className={styles.footerLayout}>
       <p className={styles.footerTitle}>Fullstack Developer</p>
       <p className={styles.footerCopyright}>
-        Designed and Developed by<a href="/">Resume Builder</a>
+        Designed and Developed by<a href="/">Quang Cối</a>
         <br />
         Clone idea from
-        <a
-          href="https://www.facebook.com/TravOnline-107102920886921/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Travonline
-        </a>
+        <a href="/">Resume Builder</a>
       </p>
     </div>
   );
