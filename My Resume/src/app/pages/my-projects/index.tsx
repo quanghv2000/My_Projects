@@ -2,6 +2,7 @@ import React from 'react';
 import { MyInfos } from 'app/my-infos';
 
 import styles from './my-projects.module.css';
+import { Dialog } from './components';
 
 type IProps = {};
 
@@ -124,6 +125,8 @@ export const MyProjectsPage: React.FC<IProps> = () => {
                 <div
                   className="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-12"
                   key={index}
+                  data-toggle="modal"
+                  data-target=".bd-example-modal-lg"
                 >
                   <div className={styles.card}>
                     <img
@@ -186,6 +189,7 @@ export const MyProjectsPage: React.FC<IProps> = () => {
           </nav>
         )}
       </div>
+      <Dialog />
     </div>
   );
 };
