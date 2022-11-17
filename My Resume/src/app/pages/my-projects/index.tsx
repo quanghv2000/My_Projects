@@ -12,13 +12,14 @@ export const MyProjectsPage: React.FC<IProps> = () => {
   /** @State_Component */
   const [tabActive, setTabActive] = React.useState<string>('all');
   const [currentPage, setCurrentPage] = React.useState<number>(1);
-  const [projects, setProjects] = React.useState(MyInfos.projects);
+  const [projectInfo, setProjectInfo] = React.useState({});
+  const [projectList, setProjects] = React.useState(MyInfos.projects);
 
   const pageTotal = React.useMemo(() => {
-    return projects.length % pageSize === 0
-      ? projects.length / pageSize
-      : Math.floor(projects.length / pageSize) + 1;
-  }, [projects]);
+    return projectList.length % pageSize === 0
+      ? projectList.length / pageSize
+      : Math.floor(projectList.length / pageSize) + 1;
+  }, [projectList]);
 
   const pageItems = React.useMemo(() => {
     let result: number[] = [];
@@ -95,7 +96,7 @@ export const MyProjectsPage: React.FC<IProps> = () => {
               {tabActive === 'all'
                 ? 'ALL PROJECTS'
                 : tabActive.toLocaleUpperCase()}
-              {` (${projects.length})`}
+              {` (${projectList.length})`}
             </span>
             <i className="fa fa-sort-down ml-2"></i>
           </button>
@@ -118,25 +119,28 @@ export const MyProjectsPage: React.FC<IProps> = () => {
           </div>
         </div>
         <div className="row mt-2">
-          {projects
+          {projectList
             .slice((currentPage - 1) * pageSize, currentPage * pageSize)
-            .map((item, index) => {
+            .map((project, index) => {
               return (
                 <div
-                  className="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-12"
                   key={index}
+                  className="col-xl-4 col-lg-6 col-md-4 col-sm-6 col-12"
                   data-toggle="modal"
                   data-target=".bd-example-modal-lg"
+                  onClick={() => {
+                    setProjectInfo(project);
+                  }}
                 >
                   <div className={styles.card}>
                     <img
-                      src={item.imgUrl}
+                      src={project.imgUrl}
                       className={styles.cardImg}
                       alt="project-img"
                     />
                     <div className="mt-2">
-                      <h5 className={styles.cardTitle}>{item.name}</h5>
-                      <p className={styles.cardText}>{item.type}</p>
+                      <h5 className={styles.cardTitle}>{project.name}</h5>
+                      <p className={styles.cardText}>{project.type}</p>
                     </div>
                   </div>
                 </div>
@@ -145,7 +149,7 @@ export const MyProjectsPage: React.FC<IProps> = () => {
         </div>
       </div>
       <div className={styles.pagination}>
-        {projects.length > pageSize && (
+        {projectList.length > pageSize && (
           <nav>
             <ul className="pagination">
               {currentPage > 1 && (
@@ -189,7 +193,7 @@ export const MyProjectsPage: React.FC<IProps> = () => {
           </nav>
         )}
       </div>
-      <Dialog />
+      <Dialog projectInfo={projectInfo} />
     </div>
   );
 };

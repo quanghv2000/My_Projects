@@ -60,10 +60,14 @@ const REACTJS = [
   },
   {
     key: 'reactjs',
-    type: 'ReactJS 9',
-    name: 'Coming Soon',
+    type: 'ReactJS',
+    name: 'Try Glasses App',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668693523/My%20Projects/My%20Resume/My%20Projects/ReactJS/try-glasses_rrzjqb.jpg',
+    linkWeb: 'https://try-glasses.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%201%20-%20ReactJS%20Basic/Projects/try_glasses',
+    description: 'ReactJS - Try Glasses App',
   },
 ];
 

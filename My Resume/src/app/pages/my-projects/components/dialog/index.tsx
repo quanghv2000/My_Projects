@@ -1,11 +1,14 @@
 import React from 'react';
 
+import styles from './dialog.module.css';
+
 type IProps = {
+  projectInfo?: any;
   isOpen?: boolean;
   onClose?: () => void;
 };
 
-export const Dialog: React.FC<IProps> = () => {
+export const Dialog: React.FC<IProps> = ({ projectInfo }) => {
   return (
     <div
       className="modal fade bd-example-modal-lg p-0"
@@ -21,7 +24,7 @@ export const Dialog: React.FC<IProps> = () => {
           alignItems: 'center',
         }}
       >
-        <div className="modal-content" style={{ width: 700, height: 532 }}>
+        <div className="modal-content" style={{ height: 'auto' }}>
           <div
             style={{
               height: 64,
@@ -36,14 +39,21 @@ export const Dialog: React.FC<IProps> = () => {
                 fontWeight: 'bold',
                 margin: 0,
                 padding: 0,
+                textTransform: 'uppercase',
               }}
             >
-              NestJS &amp; ReactJS - Website Đặt Vé Xem Phim
+              {projectInfo.name}
             </p>
           </div>
-          <div
-            style={{ backgroundColor: 'gray', height: 365, margin: '0px 24px' }}
-          ></div>
+          <div style={{ margin: '0px 24px', height: 'auto' }}>
+            <a href={projectInfo.linkWeb} target="_blank" rel="noreferrer">
+              <img
+                src={projectInfo.imgUrl}
+                alt="projectImg.jpg"
+                style={{ width: '100%' }}
+              />
+            </a>
+          </div>
           <div
             style={{
               display: 'flex',
@@ -52,9 +62,15 @@ export const Dialog: React.FC<IProps> = () => {
               padding: '16px 24px 8px',
             }}
           >
-            <p style={{ margin: 0, padding: 0, fontSize: '1rem' }}>
-              Project NestJS &amp; ReactJS - Website Đặt Vé Xem Phim. Thanks for
-              watching!
+            <p
+              style={{
+                margin: 0,
+                padding: 0,
+                fontSize: '1rem',
+                fontWeight: 600,
+              }}
+            >
+              {projectInfo.description}
             </p>
           </div>
           <div
@@ -62,21 +78,39 @@ export const Dialog: React.FC<IProps> = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              paddingBottom: 8,
             }}
           >
-            <a href="/" style={{ margin: '8px 12px' }}>
-              <i
-                className="fab fa-youtube"
-                style={{ fontSize: '22px', color: '#2f4f4f' }}
-              ></i>
-            </a>
-            <a href="/" style={{ margin: '8px 12px' }}>
+            {projectInfo?.linkYoutobe && (
+              <a
+                href={projectInfo?.linkYoutobe}
+                target="_blank"
+                style={{ margin: '8px 12px' }}
+                rel="noreferrer"
+              >
+                <i
+                  className="fab fa-youtube"
+                  style={{ fontSize: '22px', color: '#2f4f4f' }}
+                ></i>
+              </a>
+            )}
+            <a
+              href={projectInfo.linkGithub}
+              target="_blank"
+              style={{ margin: '8px 12px' }}
+              rel="noreferrer"
+            >
               <i
                 className="fab fa-github"
                 style={{ fontSize: '22px', color: '#2f4f4f' }}
               ></i>
             </a>
-            <a href="/" style={{ margin: '8px 12px' }}>
+            <a
+              href={projectInfo.linkWeb}
+              target="_blank"
+              style={{ margin: '8px 12px' }}
+              rel="noreferrer"
+            >
               <i
                 className="fa fa-globe"
                 style={{ fontSize: '22px', color: '#2f4f4f' }}
