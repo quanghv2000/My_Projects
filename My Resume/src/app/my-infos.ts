@@ -48,7 +48,40 @@ const HTML_CSS = [
 const REACTJS = [
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS - Redux',
+    name: 'Book Tickets App',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668877604/My%20Projects/My%20Resume/My%20Projects/ReactJS/book-tickets-app_zfm1uc.jpg',
+    linkWeb: 'http://book-tickets-app.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/book_tickets_app',
+    description: 'ReactJS - Book Tickets App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Redux',
+    name: 'Burger Order App',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668878460/My%20Projects/My%20Resume/My%20Projects/ReactJS/burger-order-app_gte7vp.jpg',
+    linkWeb: 'https://burger-order-app.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/burger_order_app',
+    description: 'ReactJS - Burger Order App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Redux',
+    name: 'Redux Cart App',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668880242/My%20Projects/My%20Resume/My%20Projects/ReactJS/redux-cart-app_f6vivn.jpg',
+    linkWeb: 'http://redux-cart-app.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/redux_cart_app',
+    description: 'ReactJS - Redux Cart App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Basic',
     name: 'Movies Layout',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668831140/My%20Projects/My%20Resume/My%20Projects/ReactJS/movies-layout_ixrrlk.jpg',
@@ -59,7 +92,18 @@ const REACTJS = [
   },
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS - Basic',
+    name: 'Caculator App',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668876500/My%20Projects/My%20Resume/My%20Projects/ReactJS/caculator-app_g1sob0.jpg',
+    linkWeb: 'http://caculator-app.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%201%20-%20ReactJS%20Basic/Projects/caculator_app',
+    description: 'ReactJS - Caculator App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Basic',
     name: 'Elearning Layout',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668836819/My%20Projects/My%20Resume/My%20Projects/ReactJS/elearning-layout_z9pvb5.jpg',
@@ -71,7 +115,7 @@ const REACTJS = [
   {
     key: 'reactjs',
     type: 'ReactJS',
-    name: 'Choose Car App',
+    name: 'Choose Car App - Basic',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668855002/My%20Projects/My%20Resume/My%20Projects/ReactJS/choose-car_u6fquc.jpg',
     linkWeb: 'https://choose-car.surge.sh/',
@@ -81,7 +125,7 @@ const REACTJS = [
   },
   {
     key: 'reactjs',
-    type: 'ReactJS',
+    type: 'ReactJS - Basic',
     name: 'Try Glasses App',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668830194/My%20Projects/My%20Resume/My%20Projects/ReactJS/try-glasses_i9bli3.jpg',
@@ -89,13 +133,6 @@ const REACTJS = [
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%201%20-%20ReactJS%20Basic/Projects/try_glasses',
     description: 'ReactJS - Try Glasses App',
-  },
-  {
-    key: 'reactjs',
-    type: 'ReactJS 5',
-    name: 'Coming Soon',
-    imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
 ];
 
