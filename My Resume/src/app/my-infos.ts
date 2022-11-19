@@ -71,6 +71,17 @@ const REACTJS = [
   {
     key: 'reactjs',
     type: 'ReactJS',
+    name: 'Choose Car App',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668855002/My%20Projects/My%20Resume/My%20Projects/ReactJS/choose-car_u6fquc.jpg',
+    linkWeb: 'https://choose-car.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%201%20-%20ReactJS%20Basic/Projects/choose_car',
+    description: 'ReactJS - Choose Car App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
     name: 'Try Glasses App',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668830194/My%20Projects/My%20Resume/My%20Projects/ReactJS/try-glasses_i9bli3.jpg',
