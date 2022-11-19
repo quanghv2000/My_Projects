@@ -48,27 +48,6 @@ const HTML_CSS = [
 const REACTJS = [
   {
     key: 'reactjs',
-    type: 'ReactJS 5',
-    name: 'Coming Soon',
-    imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
-  },
-  {
-    key: 'reactjs',
-    type: 'ReactJS 6',
-    name: 'Coming Soon',
-    imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
-  },
-  {
-    key: 'reactjs',
-    type: 'ReactJS 7',
-    name: 'Coming Soon',
-    imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
-  },
-  {
-    key: 'reactjs',
     type: 'ReactJS',
     name: 'Movies Layout',
     imgUrl:
@@ -81,6 +60,17 @@ const REACTJS = [
   {
     key: 'reactjs',
     type: 'ReactJS',
+    name: 'Elearning Layout',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668836819/My%20Projects/My%20Resume/My%20Projects/ReactJS/elearning-layout_z9pvb5.jpg',
+    linkWeb: 'https://elearning-layout.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%204%20-%20SASS%20and%20SCSS/Elearning_Layout',
+    description: 'ReactJS - SCSS - Elearning Layout',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS',
     name: 'Try Glasses App',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668830194/My%20Projects/My%20Resume/My%20Projects/ReactJS/try-glasses_i9bli3.jpg',
@@ -88,6 +78,13 @@ const REACTJS = [
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%201%20-%20ReactJS%20Basic/Projects/try_glasses',
     description: 'ReactJS - Try Glasses App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS 5',
+    name: 'Coming Soon',
+    imgUrl:
+      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
   },
 ];
 
