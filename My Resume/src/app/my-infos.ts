@@ -25,8 +25,8 @@ const HTML_CSS = [
     type: 'HTML-CSS',
     name: 'Bake Layout',
     imgUrl:
-      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668825578/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/bake-layout_ptljcs.jpg',
-    linkWeb: 'https://bake-layout.herokuapp.com/',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668828124/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/bake-layout_u7rdke.jpg',
+    linkWeb: 'https://w3-fast.github.io/bake-layout/',
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/Bake_Layout',
     description: 'HTML-CSS - Bake Layout',
