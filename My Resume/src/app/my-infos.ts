@@ -8,17 +8,21 @@ const HTML_CSS = [
   },
   {
     key: 'html-css',
-    type: 'HTML-CSS 2',
-    name: 'Coming Soon',
+    type: 'HTML-CSS',
+    name: 'VUS Layout',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829866/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/vus-layout_e2sugq.jpg',
+    linkWeb: 'https://w3-fast.github.io/vus-layout/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/VUS_Layout',
+    description: 'HTML-CSS - VUS Layout',
   },
   {
     key: 'html-css',
     type: 'HTML-CSS',
     name: 'KLK Layout',
     imgUrl:
-      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829054/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/klk-layout_txm3rl.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829911/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/klk-layout_lzrejs.jpg',
     linkWeb: 'https://w3-fast.github.io/klk-layout/',
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/KLK_Layout',
@@ -29,7 +33,7 @@ const HTML_CSS = [
     type: 'HTML-CSS',
     name: 'Bake Layout',
     imgUrl:
-      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668828124/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/bake-layout_u7rdke.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829769/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/bake-layout_f1igsk.jpg',
     linkWeb: 'https://w3-fast.github.io/bake-layout/',
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/Bake_Layout',
@@ -71,7 +75,7 @@ const REACTJS = [
     type: 'ReactJS',
     name: 'Try Glasses App',
     imgUrl:
-      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668693523/My%20Projects/My%20Resume/My%20Projects/ReactJS/try-glasses_rrzjqb.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668830194/My%20Projects/My%20Resume/My%20Projects/ReactJS/try-glasses_i9bli3.jpg',
     linkWeb: 'https://try-glasses.surge.sh/',
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%201%20-%20ReactJS%20Basic/Projects/try_glasses',
