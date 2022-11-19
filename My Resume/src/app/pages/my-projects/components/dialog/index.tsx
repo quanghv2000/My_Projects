@@ -105,17 +105,19 @@ export const Dialog: React.FC<IProps> = ({ projectInfo }) => {
                 style={{ fontSize: '22px', color: '#2f4f4f' }}
               ></i>
             </a>
-            <a
-              href={projectInfo.linkWeb}
-              target="_blank"
-              style={{ margin: '8px 12px' }}
-              rel="noreferrer"
-            >
-              <i
-                className="fa fa-globe"
-                style={{ fontSize: '22px', color: '#2f4f4f' }}
-              ></i>
-            </a>
+            {projectInfo.linkWeb && (
+              <a
+                href={projectInfo.linkWeb}
+                target="_blank"
+                style={{ margin: '8px 12px' }}
+                rel="noreferrer"
+              >
+                <i
+                  className="fa fa-globe"
+                  style={{ fontSize: '22px', color: '#2f4f4f' }}
+                ></i>
+              </a>
+            )}
           </div>
         </div>
       </div>

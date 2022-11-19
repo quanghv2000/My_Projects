@@ -137,6 +137,16 @@ export const MyProjectsPage: React.FC<IProps> = () => {
                       src={project.imgUrl}
                       className={styles.cardImg}
                       alt="project-img"
+                      style={
+                        project.key === 'other-projects' ||
+                        project.key ===
+                          'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg'
+                          ? {
+                              width: '255.48px',
+                              height: '143.7px',
+                            }
+                          : {}
+                      }
                     />
                     <div className="mt-2">
                       <h5 className={styles.cardTitle}>{project.name}</h5>

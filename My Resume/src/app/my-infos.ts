@@ -134,23 +134,32 @@ const OTHERS = [
   {
     key: 'other-projects',
     type: 'Java Spring',
-    name: 'Coming Soon',
+    name: 'Flat Shop',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
-  },
-  {
-    key: 'other-projects',
-    type: 'ASP.NET',
-    name: 'Coming Soon',
-    imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668855575/My%20Projects/My%20Resume/My%20Projects/Others/flatshop_1_r1nywe.png',
+    linkYoutobe: 'https://www.youtube.com/watch?v=0si0qdsfBQI',
+    linkGithub: 'https://github.com/quanghavan29/FlatShop',
+    description: 'Java Spring - Flat Shop',
   },
   {
     key: 'other-projects',
     type: 'Android',
-    name: 'Coming Soon',
+    name: 'FU Food',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668855575/My%20Projects/My%20Resume/My%20Projects/Others/fu_food_y1rwsm.jpg',
+    linkYoutobe: 'https://www.youtube.com/watch?v=8AMy7oMwRkM',
+    linkGithub: 'https://github.com/quanghavan29/Android-FU-Food',
+    description: 'Android - FU Food',
+  },
+  {
+    key: 'other-projects',
+    type: 'ASP.NET',
+    name: 'Luxury Clone',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668855575/My%20Projects/My%20Resume/My%20Projects/Others/luxstay_yisow8.png',
+    linkYoutobe: 'https://www.youtube.com/watch?v=aLl1Pbtl0YA',
+    linkGithub: 'https://github.com/quanghavan29/ASP.NET-MVC',
+    description: 'ASP.NET - Luxury Clone',
   },
 ];
 
