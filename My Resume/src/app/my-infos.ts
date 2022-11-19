@@ -1,10 +1,25 @@
 const HTML_CSS = [
   {
     key: 'html-css',
-    type: 'HTML-CSS 1',
-    name: 'Coming Soon',
+    type: 'HTML-CSS',
+    name: 'KLK Layout',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829911/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/klk-layout_lzrejs.jpg',
+    linkWeb: 'https://w3-fast.github.io/klk-layout/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/KLK_Layout',
+    description: 'HTML-CSS - KLK Layout',
+  },
+  {
+    key: 'html-css',
+    type: 'HTML-CSS',
+    name: 'Instruction Layout',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668832368/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/instruction-layout_ueq3fc.jpg',
+    linkWeb: 'https://w3-fast.github.io/instruction-layout/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%203%20-%20Bootstrap%20and%20Responsive%20Design/Instruction_Layout',
+    description: 'HTML-CSS - Instruction Layout',
   },
   {
     key: 'html-css',
@@ -16,17 +31,6 @@ const HTML_CSS = [
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/VUS_Layout',
     description: 'HTML-CSS - VUS Layout',
-  },
-  {
-    key: 'html-css',
-    type: 'HTML-CSS',
-    name: 'KLK Layout',
-    imgUrl:
-      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829911/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/klk-layout_lzrejs.jpg',
-    linkWeb: 'https://w3-fast.github.io/klk-layout/',
-    linkGithub:
-      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/KLK_Layout',
-    description: 'HTML-CSS - KLK Layout',
   },
   {
     key: 'html-css',
@@ -65,10 +69,14 @@ const REACTJS = [
   },
   {
     key: 'reactjs',
-    type: 'ReactJS 8',
-    name: 'Coming Soon',
+    type: 'ReactJS',
+    name: 'Movies Layout',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668831140/My%20Projects/My%20Resume/My%20Projects/ReactJS/movies-layout_ixrrlk.jpg',
+    linkWeb: 'https://movies-layout.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%203%20-%20Bootstrap%20and%20Responsive%20Design/Movie_Layout',
+    description: 'ReactJS - Movies Layout',
   },
   {
     key: 'reactjs',
