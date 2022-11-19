@@ -15,10 +15,14 @@ const HTML_CSS = [
   },
   {
     key: 'html-css',
-    type: 'HTML-CSS 3',
-    name: 'Coming Soon',
+    type: 'HTML-CSS',
+    name: 'KLK Layout',
     imgUrl:
-      'https://t4.ftcdn.net/jpg/03/50/27/15/360_F_350271567_1VXWXf7bEPD9jrJdRizsUsTPJQFIlTRc.jpg',
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668829054/My%20Projects/My%20Resume/My%20Projects/HTML-CSS/klk-layout_txm3rl.jpg',
+    linkWeb: 'https://w3-fast.github.io/klk-layout/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/HTML-CSS/Course%201%20-%20HTML%20-%20CSS%2C%20HTML5%20-%20CSS3/KLK_Layout',
+    description: 'HTML-CSS - KLK Layout',
   },
   {
     key: 'html-css',
