@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './dialog.module.css';
+// import styles from './dialog.module.css';
 
 type IProps = {
   projectInfo?: any;
