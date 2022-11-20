@@ -48,6 +48,17 @@ const HTML_CSS = [
 const REACTJS = [
   {
     key: 'reactjs',
+    type: 'ReactJS - Hooks',
+    name: 'User Management',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668923973/My%20Projects/My%20Resume/My%20Projects/ReactJS/user-management_rsndx7.jpg',
+    linkWeb: 'https://user-mgmt.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%203%20-%20ReactJS%20Hooks/Projects/user_management',
+    description: 'ReactJS - User Management',
+  },
+  {
+    key: 'reactjs',
     type: 'ReactJS - Redux',
     name: 'Rock Paper Scissors Game',
     imgUrl:
@@ -67,6 +78,17 @@ const REACTJS = [
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/book_tickets_app',
     description: 'ReactJS - Book Tickets App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Redux',
+    name: 'Sicbo Game',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668923042/My%20Projects/My%20Resume/My%20Projects/ReactJS/sicbo-game_fr11ri.jpg',
+    linkWeb: 'https://my-sicbo-game.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/redux_sicbo_game',
+    description: 'ReactJS - Sicbo Game',
   },
   {
     key: 'reactjs',
