@@ -1,8 +1,8 @@
 import React from 'react';
 import { MyInfos } from 'app/my-infos';
+import { Dialog } from './components';
 
 import styles from './my-projects.module.css';
-import { Dialog } from './components';
 
 type IProps = {};
 
