@@ -49,6 +49,17 @@ const REACTJS = [
   {
     key: 'reactjs',
     type: 'ReactJS - Redux',
+    name: 'Rock Paper Scissors Game',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668921848/My%20Projects/My%20Resume/My%20Projects/ReactJS/rps-game_n0mlkz.jpg',
+    linkWeb: 'https://my-rps-game.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/redux_rock_paper_scissors_game',
+    description: 'ReactJS - Rock Paper Scissors Game',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Redux',
     name: 'Book Tickets App',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668877604/My%20Projects/My%20Resume/My%20Projects/ReactJS/book-tickets-app_zfm1uc.jpg',
