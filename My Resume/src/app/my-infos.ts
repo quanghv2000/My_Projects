@@ -49,6 +49,18 @@ const REACTJS = [
   {
     key: 'reactjs',
     type: 'ReactJS - Hooks',
+    name: 'Game Bầu Cua',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668925879/My%20Projects/My%20Resume/My%20Projects/ReactJS/bau-cua-game_shkrnj.jpg',
+    linkWeb: 'https://bau-cua-game.surge.sh/',
+    linkYoutobe: 'https://www.youtube.com/watch?v=hY2aWeOBotE',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%203%20-%20ReactJS%20Hooks/Projects/game_bau_cua',
+    description: 'ReactJS - Game Bầu Cua',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Hooks',
     name: 'User Management',
     imgUrl:
       'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668923973/My%20Projects/My%20Resume/My%20Projects/ReactJS/user-management_rsndx7.jpg',
@@ -111,6 +123,17 @@ const REACTJS = [
     linkGithub:
       'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%202%20-%20ReactJS%20Components/Projects/redux_cart_app',
     description: 'ReactJS - Redux Cart App',
+  },
+  {
+    key: 'reactjs',
+    type: 'ReactJS - Redux',
+    name: 'To Do List',
+    imgUrl:
+      'https://res.cloudinary.com/dtjin3cf6/image/upload/v1668924926/My%20Projects/My%20Resume/My%20Projects/ReactJS/to-do-list_khkxnu.jpg',
+    linkWeb: 'https://w3-to-do-list.surge.sh/',
+    linkGithub:
+      'https://github.com/quanghv2000/Cyberlearn/tree/main/ReactJS/Course%203%20-%20ReactJS%20Hooks/Projects/to_do_list',
+    description: 'ReactJS - To Do List',
   },
   {
     key: 'reactjs',
