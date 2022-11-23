@@ -34,11 +34,12 @@ export const SignInPageReducer = createReducer(initialState, {
     action,
   ) => {
     const { payload } = action;
-    state.isLoadingPage = false;
 
-    state.signInStatus = false;
-    state.error = payload;
-
-    return state;
+    return {
+      ...state,
+      isLoadingPage: false,
+      signInStatus: false,
+      error: payload,
+    };
   },
 });
