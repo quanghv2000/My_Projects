@@ -46,7 +46,7 @@ export const SignInPage: React.FC<IProps> = () => {
   /** @Effect */
   React.useEffect(() => {
     if (signInStatus) {
-      window.location.href = '/home';
+      // window.location.href = '/home';
     }
   }, [signInStatus]);
 

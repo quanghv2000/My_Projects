@@ -1,5 +1,6 @@
 import { errorRespone } from 'helpers';
 import { LocalStorage } from 'utils/constants';
+import jwt from 'jwt-decode';
 import { all, takeLatest, call, put, delay } from 'redux-saga/effects';
 import {
   signInActionType,
@@ -7,7 +8,6 @@ import {
   signInRequestAction,
   signInSuccessAction,
 } from '../actions';
-
 import { signInServices } from '../services';
 import { getAccountServices } from '../services/get-account';
 
@@ -26,7 +26,11 @@ export function* signInSaga(action: ReturnType<typeof signInRequestAction>) {
 
     localStorage.setItem(LocalStorage.ACCESS_TOKEN, accessToken);
 
-    const userInfo = yield call(() => getAccountServices());
+    const userInfo = jwt(accessToken);
+
+    console.log('userInfo Verified: ', userInfo);
+
+    // const userInfo = yield call(() => getAccountServices());
 
     yield put(signInSuccessAction(userInfo));
   } catch (error: any) {

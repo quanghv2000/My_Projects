@@ -15,7 +15,7 @@ export const Header: React.FC<IProps> = () => {
   const storedData = useSelector((state: RootState) => state);
   const { userInfo } = storedData.SignInPageReducer;
 
-  console.log('userInfo: ', userInfo);
+  console.log('userInfo in home: ', userInfo);
 
   /** @Dispatch */
   const dispatch = useDispatch();
@@ -139,9 +139,9 @@ export const Header: React.FC<IProps> = () => {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <NavLink className="dropdown-item" to="/sign-in">
                     Sign out
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
