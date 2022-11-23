@@ -1,7 +1,8 @@
-import { API_URL, requestAPI } from 'utils/configs';
+import { requestAPI } from 'utils/configs';
+import { AppAPI } from 'utils/constants';
 
 export const signInServices = async userLogin => {
-  const apiUrl = `${API_URL}/api/authenticate`;
+  const apiUrl = AppAPI.LightX.SIGN_IN_REQUEST;
   const res = await requestAPI.post(apiUrl, userLogin);
 
   return res.data;

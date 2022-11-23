@@ -27,7 +27,7 @@ export const LoadingSpinner: React.FC<IProps> = (props: IProps) => {
             className="spinner-border text-secondary"
             style={{ position: 'absolute', top: '30%' }}
           >
-            <span className="sr-only">Loading...</span>
+            {/* <span className="sr-only">Loading...</span> */}
           </div>
         </div>
       )}

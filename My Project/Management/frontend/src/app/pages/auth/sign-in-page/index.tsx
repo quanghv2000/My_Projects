@@ -1,14 +1,27 @@
-import { LoadingSpinner } from 'app/components';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { signInServices } from './services';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'types';
+import { signInRequestAction } from './actions';
+import { LoadingSpinner } from 'app/components';
 
 type IProps = {};
 
 export const SignInPage: React.FC<IProps> = () => {
-  /** @State_Component */
-  const [isLoadingPage, setIsLoadingPage] = React.useState<boolean>(false);
+  /** @Stored_Data */
+  const storedData = useSelector((state: RootState) => state);
+  const { isLoadingPage, userInfo, signInStatus, error } =
+    storedData.SignInPageReducer;
 
+  console.log('isLoadingPage: ', isLoadingPage);
+  console.log('userInfo: ', userInfo);
+  console.log('signInStatus: ', signInStatus);
+  console.log('error: ', error);
+
+  /** @Dispatch */
+  const dispatch = useDispatch();
+
+  /** @Use_Form */
   const {
     register,
     handleSubmit,
@@ -17,28 +30,25 @@ export const SignInPage: React.FC<IProps> = () => {
     formState: { errors },
   } = useForm();
 
+  /** @Logic_Handler */
   const onLogin = async formData => {
     const userLogin = {
       username: formData.username,
       password: formData.password,
-      remember: formData.remember,
+      rememberMe: formData.rememberMe,
     };
 
     console.log('userLogin: ', userLogin);
 
-    try {
-      setIsLoadingPage(true);
-      const res = await signInServices(userLogin);
-
-      console.log('response: ', res);
-    } catch (error: any) {
-      console.log('error: ', error?.response);
-    }
-
-    setTimeout(() => {
-      setIsLoadingPage(false);
-    }, 2000);
+    dispatch(signInRequestAction(userLogin));
   };
+
+  /** @Effect */
+  React.useEffect(() => {
+    if (signInStatus) {
+      window.location.href = '/home';
+    }
+  }, [signInStatus]);
 
   return (
     <>
@@ -80,29 +90,36 @@ export const SignInPage: React.FC<IProps> = () => {
               <input
                 type="checkbox"
                 className="form-check-input"
-                {...register('remember')}
+                {...register('rememberMe')}
               />
               <label
                 className="form-check-label"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  setValue('remember', !getValues('remember'));
+                  setValue('rememberMe', !getValues('rememberMe'));
                 }}
               >
-                Remember
+                Remember me
               </label>
             </div>
             <div>
-              <label className="form-label">Fogot Password?</label>
+              <label className="form-label" style={{ cursor: 'pointer' }}>
+                Fogot password?
+              </label>
             </div>
           </div>
+          {error.status === 400 && (
+            <p className="text-danger" style={{ fontSize: '1rem' }}>
+              {error?.data?.message}
+            </p>
+          )}
           <button type="submit" className="btn btn-success w-100">
             Sign In
           </button>
         </form>
         <div>
           <div className="text-center m-3">
-            <p>--- or ---</p>
+            <p style={{ fontSize: '1rem' }}>--- or ---</p>
           </div>
           <div>
             <button type="button" className="btn btn-primary w-100">

@@ -4,10 +4,12 @@ import { SignInPageReducerType } from './types';
 
 export const initialState: SignInPageReducerType = {
   isLoadingPage: false,
-  error: false,
+  signInStatus: false,
+  userInfo: {},
+  error: {},
 };
 
-export const CategoryMGMTPageReducer = createReducer(initialState, {
+export const SignInPageReducer = createReducer(initialState, {
   [signInActionType.SIGN_IN_REQUEST]: (state: SignInPageReducerType) => {
     state.isLoadingPage = true;
 
@@ -19,9 +21,13 @@ export const CategoryMGMTPageReducer = createReducer(initialState, {
   ) => {
     const { payload } = action;
 
-    state.isLoadingPage = false;
-
-    return state;
+    return {
+      ...state,
+      isLoadingPage: false,
+      signInStatus: true,
+      userInfo: payload,
+      error: {},
+    };
   },
   [signInActionType.SIGN_IN_FAILURE]: (
     state: SignInPageReducerType,
@@ -29,6 +35,8 @@ export const CategoryMGMTPageReducer = createReducer(initialState, {
   ) => {
     const { payload } = action;
     state.isLoadingPage = false;
+
+    state.signInStatus = false;
     state.error = payload;
 
     return state;

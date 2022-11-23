@@ -1,8 +1,16 @@
+import { IErrorRespone } from 'models/base';
+
 export * from './info-modal-dialog';
 export * from './validation';
 
 export function actionPayload<T = any>(payload: T) {
   return { payload };
+}
+
+export function errorRespone(errorRes: any): IErrorRespone {
+  const { data, status, statusText } = errorRes?.response;
+
+  return { data, status, statusText };
 }
 
 export function getQueryVariable(variable) {

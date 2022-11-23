@@ -3,6 +3,9 @@
  */
 
 import { combineReducers } from '@reduxjs/toolkit';
+// Auth Reducer
+import { SignInPageReducer } from 'app/pages/auth/sign-in-page/reducers';
+// Admin Reducer
 import { UserMGMTPageReducer } from 'app/pages/admin/user-mgmt-page/reducers';
 import { CategoryMGMTPageReducer } from 'app/pages/admin/category-mgmt-page/reducers';
 
@@ -18,6 +21,11 @@ export function createReducer(injectedReducers: InjectedReducersType = {}) {
   } else {
     return combineReducers({
       ...injectedReducers,
+
+      // Auth Reducer
+      SignInPageReducer,
+
+      // Admin Reducer
       UserMGMTPageReducer,
       CategoryMGMTPageReducer,
     });

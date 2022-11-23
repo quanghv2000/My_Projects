@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { showInfoModal } from 'helpers';
+import { LocalStorage } from 'utils/constants';
 
 export const API_URL = 'http://localhost:8081';
 export const apiMethod = {
@@ -46,9 +47,7 @@ export async function request(
   return parseJSON(response);
 }
 
-const accessToken =
-  localStorage.getItem('accessToken') ??
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjY2MTA0MzY2LCJleHAiOjE2NjYxMDQ2NjZ9.bOIdF1XvyDvawPyTeGrhVFBvKa0C66z1P0hfTqmnlzI';
+const accessToken = localStorage.getItem(LocalStorage.ACCESS_TOKEN);
 
 const axiosInstance = axios.create({
   headers: { Authorization: `Bearer ${accessToken}` },
@@ -58,6 +57,7 @@ axiosInstance.interceptors.response.use(
   response => {
     return response;
   },
+
   error => {
     if (!error?.response) {
       showInfoModal(
@@ -79,14 +79,14 @@ axiosInstance.interceptors.response.use(
 
 axiosInstance.interceptors.request.use(
   (config: any) => {
-    const accessToken =
-      localStorage.getItem('accessToken') ??
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjY2MTA0MzY2LCJleHAiOjE2NjYxMDQ2NjZ9.bOIdF1XvyDvawPyTeGrhVFBvKa0C66z1P0hfTqmnlzI';
+    const accessToken = localStorage.getItem(LocalStorage.ACCESS_TOKEN);
     config.headers.Authorization = 'Bearer ' + accessToken;
+
     if (config.headers.Authorization === 'Bearer null') {
       delete axiosInstance.defaults.headers.common['Authorization'];
       config.headers.Authorization = '';
     }
+
     return config;
   },
   error => {

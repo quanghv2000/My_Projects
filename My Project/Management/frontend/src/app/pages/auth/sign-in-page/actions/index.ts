@@ -9,6 +9,7 @@ export const signInActionType = {
 
 export const signInRequestAction = createAction(
   signInActionType.SIGN_IN_REQUEST,
+  payload => actionPayload(payload),
 );
 
 export const signInSuccessAction = createAction(
@@ -18,5 +19,5 @@ export const signInSuccessAction = createAction(
 
 export const signInFailureAction = createAction(
   signInActionType.SIGN_IN_FAILURE,
-  payload => payload,
+  payload => actionPayload(payload),
 );
