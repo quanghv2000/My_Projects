@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Card, Col, Row, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { Line } from '@ant-design/plots';
+import AdminLayout from 'app/layouts/admin-layout';
 
 export const AdminDashboardPage: React.FC<any> = () => {
   const [data, setData] = React.useState([]);
@@ -50,67 +51,71 @@ export const AdminDashboardPage: React.FC<any> = () => {
   };
 
   return (
-    <Fragment>
-      <Helmet>
-        <title>Admin - Trang chủ</title>
-        <meta name="description" content="Admin - Dashboard Page" />
-      </Helmet>
-      <div className="site-statistic-demo-card">
-        <Row gutter={16}>
-          <Col span={6}>
-            <Card>
-              <Statistic
-                title="Active"
-                value={11.28}
-                precision={2}
-                valueStyle={{ color: '#3f8600' }}
-                prefix={<ArrowUpOutlined />}
-                suffix="%"
-              />
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card>
-              <Statistic
-                title="Idle"
-                value={9.3}
-                precision={2}
-                valueStyle={{ color: '#cf1322' }}
-                prefix={<ArrowDownOutlined />}
-                suffix="%"
-              />
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card>
-              <Statistic
-                title="Active"
-                value={11.28}
-                precision={2}
-                valueStyle={{ color: '#3f8600' }}
-                prefix={<ArrowUpOutlined />}
-                suffix="%"
-              />
-            </Card>
-          </Col>
-          <Col span={6}>
-            <Card>
-              <Statistic
-                title="Idle"
-                value={9.3}
-                precision={2}
-                valueStyle={{ color: '#cf1322' }}
-                prefix={<ArrowDownOutlined />}
-                suffix="%"
-              />
-            </Card>
-          </Col>
-        </Row>
-        <Row style={{ marginTop: 40 }}>
-          <Col span={24}>{DemoLine()}</Col>
-          {/* <Col span={6}>{DemoPie()}</Col> */}
-        </Row>
-      </div>
-    </Fragment>
+    <AdminLayout
+      content={
+        <Fragment>
+          <Helmet>
+            <title>Admin - Trang chủ</title>
+            <meta name="description" content="Admin - Dashboard Page" />
+          </Helmet>
+          <div className="site-statistic-demo-card">
+            <Row gutter={16}>
+              <Col span={6}>
+                <Card>
+                  <Statistic
+                    title="Active"
+                    value={11.28}
+                    precision={2}
+                    valueStyle={{ color: '#3f8600' }}
+                    prefix={<ArrowUpOutlined />}
+                    suffix="%"
+                  />
+                </Card>
+              </Col>
+              <Col span={6}>
+                <Card>
+                  <Statistic
+                    title="Idle"
+                    value={9.3}
+                    precision={2}
+                    valueStyle={{ color: '#cf1322' }}
+                    prefix={<ArrowDownOutlined />}
+                    suffix="%"
+                  />
+                </Card>
+              </Col>
+              <Col span={6}>
+                <Card>
+                  <Statistic
+                    title="Active"
+                    value={11.28}
+                    precision={2}
+                    valueStyle={{ color: '#3f8600' }}
+                    prefix={<ArrowUpOutlined />}
+                    suffix="%"
+                  />
+                </Card>
+              </Col>
+              <Col span={6}>
+                <Card>
+                  <Statistic
+                    title="Idle"
+                    value={9.3}
+                    precision={2}
+                    valueStyle={{ color: '#cf1322' }}
+                    prefix={<ArrowDownOutlined />}
+                    suffix="%"
+                  />
+                </Card>
+              </Col>
+            </Row>
+            <Row style={{ marginTop: 40 }}>
+              <Col span={24}>{DemoLine()}</Col>
+              {/* <Col span={6}>{DemoPie()}</Col> */}
+            </Row>
+          </div>
+        </Fragment>
+      }
+    />
   );
 };

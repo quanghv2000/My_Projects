@@ -13,7 +13,7 @@ export function* addUserSaga({
   payload,
 }: ReturnType<typeof addUserRequestAction>) {
   try {
-    yield delay(1500);
+    yield delay(250);
     yield put(addUserSuccessAction(payload));
   } catch (error: any) {
     yield put(addUserFailureAction(error));

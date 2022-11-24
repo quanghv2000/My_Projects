@@ -11,6 +11,7 @@ import { AddCategoryModal } from './subsystems';
 import { showInfoModal } from 'helpers';
 
 import style from './style.module.scss';
+import AdminLayout from 'app/layouts/admin-layout';
 
 export const AdminCategoryMGMTPage: React.FC<any> = () => {
   /** @Stored_Data */
@@ -43,46 +44,50 @@ export const AdminCategoryMGMTPage: React.FC<any> = () => {
   }, [isLoadingPage]);
 
   return (
-    <Spin spinning={spinning}>
-      <Helmet>
-        <title>Admin - Quản lý danh mục</title>
-        <meta name="description" content="Admin - Quản lý danh mục" />
-      </Helmet>
-      <div className={style.ctgMGMT}>
-        <div className={style.header}>
-          <div className={style.btn}>
-            <AppButton
-              className="mr-16"
-              type="export"
-              onClick={() => {
-                showInfoModal('info', 'Tính năng đang được phát triển!');
-              }}
-            >
-              Xuất File
-            </AppButton>
-            <AppButton type="add" onClick={openAddCategoryModal}>
-              Thêm danh mục
-            </AppButton>
-          </div>
-          <div>
-            <AppInputSearch
-              id="inputSearch"
-              placeholder="Nhập tên danh mục"
-              className={`${style.inputSearch} mr-16`}
+    <AdminLayout
+      content={
+        <Spin spinning={spinning}>
+          <Helmet>
+            <title>Admin - Quản lý danh mục</title>
+            <meta name="description" content="Admin - Quản lý danh mục" />
+          </Helmet>
+          <div className={style.ctgMGMT}>
+            <div className={style.header}>
+              <div className={style.btn}>
+                <AppButton
+                  className="mr-16"
+                  type="export"
+                  onClick={() => {
+                    showInfoModal('info', 'Tính năng đang được phát triển!');
+                  }}
+                >
+                  Xuất File
+                </AppButton>
+                <AppButton type="add" onClick={openAddCategoryModal}>
+                  Thêm danh mục
+                </AppButton>
+              </div>
+              <div>
+                <AppInputSearch
+                  id="inputSearch"
+                  placeholder="Nhập tên danh mục"
+                  className={`${style.inputSearch} mr-16`}
+                />
+              </div>
+            </div>
+            <Table
+              columns={ctgInfoColumns}
+              dataSource={categoriesInfo}
+              className={style.tblCategories}
+              rowKey="id"
             />
           </div>
-        </div>
-        <Table
-          columns={ctgInfoColumns}
-          dataSource={categoriesInfo}
-          className={style.tblCategories}
-          rowKey="id"
-        />
-      </div>
-      <AddCategoryModal
-        isOpenModal={openAddCtgModal}
-        closeModal={closeAddCategoryModal}
-      />
-    </Spin>
+          <AddCategoryModal
+            isOpenModal={openAddCtgModal}
+            closeModal={closeAddCategoryModal}
+          />
+        </Spin>
+      }
+    />
   );
 };

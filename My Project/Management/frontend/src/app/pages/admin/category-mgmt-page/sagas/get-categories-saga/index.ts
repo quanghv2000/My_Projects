@@ -15,7 +15,7 @@ export function* getCategoriesSaga({
 }: ReturnType<typeof getCategoriesRequestAction>) {
   try {
     const categoriesInfo = yield call(getAllCategoriesServices);
-    yield delay(1000);
+    yield delay(250);
     yield put(getCategoriesSuccessAction(categoriesInfo));
   } catch (error: any) {
     yield put(getCategoriesFailureAction(error));

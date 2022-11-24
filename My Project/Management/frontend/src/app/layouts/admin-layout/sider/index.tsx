@@ -37,7 +37,7 @@ export default function LayoutSider(props: IProps) {
       }}
       className={`${style['layout-sider']} ${style[siderStyle]}`}
     >
-      <NavLink to={'/trang-chu'}>
+      <NavLink to={'/admin/dashboard'}>
         <div className={style['logo']}>
           <h3>Logo</h3>
         </div>

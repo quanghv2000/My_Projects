@@ -18,6 +18,7 @@ import {
 } from '@ant-design/icons';
 
 import style from './style.module.scss';
+import AdminLayout from 'app/layouts/admin-layout';
 
 const { Option } = Select;
 
@@ -66,83 +67,87 @@ export const AdminUserMGMTPage: React.FC<any> = () => {
   }, [isLoadingPage]);
 
   return (
-    <Spin spinning={spinning}>
-      <Helmet>
-        <title>Admin - User Management Page</title>
-        <meta name="description" content="Admin - User Management Page" />
-      </Helmet>
-      <div className={style.userMGMT}>
-        <div className={style.header}>
-          <div className="d-flex">
-            <AppInputSearch
-              id="inputSearch"
-              placeholder="Nhập tài khoản người dùng"
-              onSearch={searchUers}
-              className={`${style.inputSearch} mr-16`}
-            />
-            <Select
-              defaultValue="all"
-              className="mr-16"
-              style={{ width: 210 }}
-              onChange={searchUers}
-            >
-              <Option value="all">
-                <Badge color="blue" text={'Trạng thái (Tất cả - 205)'} />
-              </Option>
-              <Option value="isActive">
-                <Badge color="green" text="Đang hoạt động (144)" />
-              </Option>
-              <Option value="isLocked">
-                <Badge color="red" text="Đang bị khóa (21)" />
-              </Option>
-              <Option value="unverified">
-                <Badge color="gold" text="Chưa xác minh (40)" />
-              </Option>
-            </Select>
-            <Select
-              defaultValue="all"
-              style={{ width: 225 }}
-              onChange={searchUers}
-            >
-              <Option value="all">
-                <ApartmentOutlined className="mr-8" />
-                <span>{'Phân quyền (Tất cả - 205)'}</span>
-              </Option>
-              <Option value="ROLE_ADMIN">
-                <CrownOutlined
-                  className="mr-8"
-                  style={{
-                    color: '#FEC339',
-                    stroke: '#FEC339',
-                    strokeWidth: 30,
-                  }}
+    <AdminLayout
+      content={
+        <Spin spinning={spinning}>
+          <Helmet>
+            <title>Admin - User Management Page</title>
+            <meta name="description" content="Admin - User Management Page" />
+          </Helmet>
+          <div className={style.userMGMT}>
+            <div className={style.header}>
+              <div className="d-flex">
+                <AppInputSearch
+                  id="inputSearch"
+                  placeholder="Nhập tài khoản người dùng"
+                  onSearch={searchUers}
+                  className={`${style.inputSearch} mr-16`}
                 />
-                <span>{'Quản trị viên (55)'}</span>
-              </Option>
-              <Option value="ROLE_USER">
-                <UserOutlined className="mr-8" />
-                <span>{'Người dùng (160)'}</span>
-              </Option>
-            </Select>
+                <Select
+                  defaultValue="all"
+                  className="mr-16"
+                  style={{ width: 210 }}
+                  onChange={searchUers}
+                >
+                  <Option value="all">
+                    <Badge color="blue" text={'Trạng thái (Tất cả - 205)'} />
+                  </Option>
+                  <Option value="isActive">
+                    <Badge color="green" text="Đang hoạt động (144)" />
+                  </Option>
+                  <Option value="isLocked">
+                    <Badge color="red" text="Đang bị khóa (21)" />
+                  </Option>
+                  <Option value="unverified">
+                    <Badge color="gold" text="Chưa xác minh (40)" />
+                  </Option>
+                </Select>
+                <Select
+                  defaultValue="all"
+                  style={{ width: 225 }}
+                  onChange={searchUers}
+                >
+                  <Option value="all">
+                    <ApartmentOutlined className="mr-8" />
+                    <span>{'Phân quyền (Tất cả - 205)'}</span>
+                  </Option>
+                  <Option value="ROLE_ADMIN">
+                    <CrownOutlined
+                      className="mr-8"
+                      style={{
+                        color: '#FEC339',
+                        stroke: '#FEC339',
+                        strokeWidth: 30,
+                      }}
+                    />
+                    <span>{'Quản trị viên (55)'}</span>
+                  </Option>
+                  <Option value="ROLE_USER">
+                    <UserOutlined className="mr-8" />
+                    <span>{'Người dùng (160)'}</span>
+                  </Option>
+                </Select>
+              </div>
+              <div className={style.btn}>
+                <AppButton className="mr-16" type="export" onClick={searchUers}>
+                  Xuất File
+                </AppButton>
+                <Link to="/admin/quan-ly-nguoi-dung/them-nguoi-dung">
+                  <AppButton type="add" onClick={addUser}>
+                    Thêm tài khoản
+                  </AppButton>
+                </Link>
+              </div>
+            </div>
+            <Table
+              columns={userInfoColumns}
+              dataSource={dataSource}
+              className={style.tblUsers}
+              rowKey="id"
+            />
           </div>
-          <div className={style.btn}>
-            <AppButton className="mr-16" type="export" onClick={searchUers}>
-              Xuất File
-            </AppButton>
-            <Link to="/admin/quan-ly-nguoi-dung/them-nguoi-dung">
-              <AppButton type="add" onClick={addUser}>
-                Thêm tài khoản
-              </AppButton>
-            </Link>
-          </div>
-        </div>
-        <Table
-          columns={userInfoColumns}
-          dataSource={dataSource}
-          className={style.tblUsers}
-          rowKey="id"
-        />
-      </div>
-    </Spin>
+        </Spin>
+      }
+    />
   );
 };

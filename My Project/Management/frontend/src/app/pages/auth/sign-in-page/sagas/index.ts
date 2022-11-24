@@ -18,7 +18,7 @@ export function* signInSaga(action: ReturnType<typeof signInRequestAction>) {
   const { payload } = action;
 
   try {
-    yield delay(300);
+    yield delay(250);
 
     const signInRes = yield call(() => signInServices(payload));
     const { accessToken } = signInRes;

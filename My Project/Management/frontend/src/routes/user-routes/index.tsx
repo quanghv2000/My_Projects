@@ -3,6 +3,14 @@ import { LocalStorage } from 'utils/constants';
 import { Redirect, Route } from 'react-router-dom';
 import { SignInPage } from 'app/pages/auth';
 import { HomePage, ProfilePage } from 'app/pages/user';
+import {
+  AdminCategoryMGMTPage,
+  AdminDashboardPage,
+  AdminSystemMGMTPage,
+  AdminUserMGMTPage,
+} from 'app/pages/admin';
+import ExampleAntd from 'app/pages/admin/example-antd';
+import { AdminAddUserPage } from 'app/pages/admin/user-mgmt-page/subsystems';
 
 type IProps = {
   component: any;
@@ -54,6 +62,36 @@ export const userRoutes = [
   {
     path: '/sign-in',
     component: SignInPage,
+    private: false,
+  },
+  {
+    path: '/admin/dashboard',
+    component: AdminDashboardPage,
+    private: false,
+  },
+  {
+    path: '/admin/quan-ly-nguoi-dung',
+    component: AdminUserMGMTPage,
+    private: false,
+  },
+  {
+    path: '/admin/quan-ly-danh-muc',
+    component: AdminCategoryMGMTPage,
+    private: false,
+  },
+  {
+    path: '/admin/quan-ly-he-thong',
+    component: AdminSystemMGMTPage,
+    private: false,
+  },
+  {
+    path: '/admin/example-antd',
+    component: ExampleAntd,
+    private: false,
+  },
+  {
+    path: '/admin/quan-ly-nguoi-dung/them-nguoi-dung',
+    component: AdminAddUserPage,
     private: false,
   },
 ];

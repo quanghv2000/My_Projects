@@ -58,17 +58,17 @@ export const UserHeaderLayout: React.FC<IProps> = () => {
           <div>
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li>
-                <a href="/" className="nav-link px-2 text-white">
+                <a href="/home" className="nav-link px-2 text-white">
                   Home
                 </a>
               </li>
               <li>
-                <a href="/" className="nav-link px-2 text-white">
+                <a href="/about" className="nav-link px-2 text-white">
                   About
                 </a>
               </li>
               <li>
-                <a href="/" className="nav-link px-2 text-white">
+                <a href="/me" className="nav-link px-2 text-white">
                   Contact
                 </a>
               </li>
