@@ -30,6 +30,8 @@ export const UserHeaderLayout: React.FC<IProps> = () => {
   );
 
   /** @Logic_Handler */
+  const showSignInDialog = () => {};
+
   const onLogout = () => {
     localStorage.clear();
     window.location.href = '/home';
@@ -138,16 +140,16 @@ export const UserHeaderLayout: React.FC<IProps> = () => {
               </div>
             ) : (
               <div className="text-end">
-                <NavLink to={'/sign-in'}>
-                  <button type="button" className="btn btn-outline-light mr-3">
-                    Sign-in
-                  </button>
-                </NavLink>
-                <NavLink to={'/sign-in'}>
-                  <button type="button" className="btn btn-warning">
-                    Sign-up
-                  </button>
-                </NavLink>
+                <button
+                  type="button"
+                  className="btn btn-outline-light mr-3"
+                  onClick={showSignInDialog}
+                >
+                  Sign-in
+                </button>
+                <button type="button" className="btn btn-warning">
+                  Sign-up
+                </button>
               </div>
             )}
           </div>

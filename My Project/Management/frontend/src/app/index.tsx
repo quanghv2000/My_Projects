@@ -12,6 +12,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { NotFoundPage } from 'app/pages/common';
 import { PrivateUserRoute, userRoutes } from 'routes/user-routes';
+import { adminRoutes, PrivateAdminRoute } from 'routes/admin-routes';
 
 import 'antd/dist/antd.min.css';
 import './global-style.scss';
@@ -32,6 +33,18 @@ export function App() {
     );
   });
 
+  const adminRouteComponents = adminRoutes?.map((item: any, key) => {
+    return item?.private ? (
+      <PrivateAdminRoute
+        path={item?.path}
+        component={item?.component}
+        key={key}
+      />
+    ) : (
+      <Route exact path={item?.path} component={item?.component} key={key} />
+    );
+  });
+
   return (
     <BrowserRouter>
       <Helmet
@@ -43,31 +56,11 @@ export function App() {
       </Helmet>
 
       <Switch>
-        {/* {routes.map((route, index) => {
-          const Page = route.page;
-          const breadcrumbs = route?.breadcrumbs ?? null;
-          return (
-            <Route
-              exact
-              key={index}
-              path={route.path}
-              render={props =>
-                route?.layout ? (
-                  <route.layout
-                    {...props}
-                    content={<Page />}
-                    breadcrumbs={breadcrumbs}
-                  />
-                ) : (
-                  <Page />
-                )
-              }
-            />
-          );
-        })} */}
-
         {/* User Router */}
         {userRouteComponents}
+
+        {/* Admin Router */}
+        {adminRouteComponents}
 
         <Route component={NotFoundPage} />
       </Switch>
