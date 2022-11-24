@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from 'types';
 import { signInRequestAction } from './actions';
 import { LoadingSpinner } from 'app/components';
+import { useHistory } from 'react-router-dom';
 
 type IProps = {};
 
@@ -12,11 +13,6 @@ export const SignInPage: React.FC<IProps> = () => {
   const storedData = useSelector((state: RootState) => state);
   const { isLoadingPage, userInfo, signInStatus, error } =
     storedData.SignInPageReducer;
-
-  console.log('isLoadingPage: ', isLoadingPage);
-  console.log('userInfo: ', userInfo);
-  console.log('signInStatus: ', signInStatus);
-  console.log('error: ', error);
 
   /** @Dispatch */
   const dispatch = useDispatch();
@@ -38,17 +34,26 @@ export const SignInPage: React.FC<IProps> = () => {
       rememberMe: formData.rememberMe,
     };
 
-    console.log('userLogin: ', userLogin);
-
     dispatch(signInRequestAction(userLogin));
   };
+
+  /** @Use_History */
+  const history = useHistory();
 
   /** @Effect */
   React.useEffect(() => {
     if (signInStatus) {
-      // window.location.href = '/home';
+      if (userInfo.authorities?.includes('ROLE_USER')) {
+        history.push('/home');
+        return;
+      }
+
+      if (userInfo.authorities?.includes('ROLE_ADMIN')) {
+        history.push('/admin/dashboard');
+        return;
+      }
     }
-  }, [signInStatus]);
+  }, [signInStatus, userInfo, history]);
 
   return (
     <>

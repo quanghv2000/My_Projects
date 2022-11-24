@@ -1,26 +1,21 @@
-import React from 'react';
-import { LayoutFooter } from './footer';
-import { LayoutHeader } from './header';
+import { UserFooterLayout, UserHeaderLayout } from './components';
 
 import styles from './user-layout.module.scss';
 
-type IProps = {
-  content?: JSX.Element;
-};
-
-export const UserLayout: React.FC<IProps> = (props: IProps) => {
-  /** @Props_Value */
-  const { content } = props;
-
-  return (
-    <div className={styles.userLayout}>
-      <div className={styles.header}>
-        <LayoutHeader />
+export const UserLayout = Content => {
+  return function () {
+    return (
+      <div className={styles.userLayout}>
+        <div className={styles.header}>
+          <UserHeaderLayout />
+        </div>
+        <div className={styles.content}>
+          <Content />
+        </div>
+        <div className={styles.footer}>
+          <UserFooterLayout />
+        </div>
       </div>
-      <div className={styles.content}>{content}</div>
-      <div className={styles.footer}>
-        <LayoutFooter />
-      </div>
-    </div>
-  );
+    );
+  };
 };

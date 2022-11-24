@@ -5,6 +5,7 @@ import { SignInPageReducerType } from 'app/pages/auth/sign-in-page/reducers/type
 // Admin Reducer Type
 import { UserMGMTPageReducerType } from 'app/pages/admin/user-mgmt-page/reducers/types';
 import { CategoryMGMTPageReducerType } from 'app/pages/admin/category-mgmt-page/reducers/types';
+import { UserLayoutPageReducerType } from 'app/layouts/user-layout/reducer/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -22,5 +23,8 @@ export interface RootState {
   // Admin Reducer Type
   UserMGMTPageReducer: UserMGMTPageReducerType;
   CategoryMGMTPageReducer: CategoryMGMTPageReducerType;
+
+  // User Reducer Type
+  UserLayoutPageReducer: UserLayoutPageReducerType;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

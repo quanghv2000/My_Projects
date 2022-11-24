@@ -11,13 +11,27 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
 import { NotFoundPage } from 'app/pages/common';
-import { routes } from 'routes';
+import { PrivateUserRoute, userRoutes } from 'routes/user-routes';
 
 import 'antd/dist/antd.min.css';
 import './global-style.scss';
 
 export function App() {
   const { i18n } = useTranslation();
+
+  /** Routes */
+  const userRouteComponents = userRoutes?.map((item: any, key) => {
+    return item?.private ? (
+      <PrivateUserRoute
+        path={item?.path}
+        component={item?.component}
+        key={key}
+      />
+    ) : (
+      <Route exact path={item?.path} component={item?.component} key={key} />
+    );
+  });
+
   return (
     <BrowserRouter>
       <Helmet
@@ -29,7 +43,7 @@ export function App() {
       </Helmet>
 
       <Switch>
-        {routes.map((route, index) => {
+        {/* {routes.map((route, index) => {
           const Page = route.page;
           const breadcrumbs = route?.breadcrumbs ?? null;
           return (
@@ -50,7 +64,11 @@ export function App() {
               }
             />
           );
-        })}
+        })} */}
+
+        {/* User Router */}
+        {userRouteComponents}
+
         <Route component={NotFoundPage} />
       </Switch>
     </BrowserRouter>

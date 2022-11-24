@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './footer.module.scss';
 
-export const LayoutFooter: React.FC<any> = () => {
+export const UserFooterLayout: React.FC<any> = () => {
   return (
     <footer>
-      <div className={`${styles.footerContent}`}>
+      <div className={`${styles.footerContent} container`}>
         <div className={`${styles.item} ${styles.link}`}>
           <h3 className={styles.footerTitle}>Liên kết</h3>
           <div className={`${styles.link}`}>

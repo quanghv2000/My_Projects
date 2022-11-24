@@ -67,7 +67,7 @@ axiosInstance.interceptors.response.use(
     }
     if (error?.response?.status === 401) {
       localStorage.clear();
-      window.location.href = '/';
+      window.location.href = '/sign-in';
     }
     if (error?.response?.status === 500) {
       showInfoModal('error', 'Hệ thống đang xảy ra lỗi. Vui lòng thử lại sau!');

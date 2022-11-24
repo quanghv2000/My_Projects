@@ -8,6 +8,8 @@ import { SignInPageReducer } from 'app/pages/auth/sign-in-page/reducers';
 // Admin Reducer
 import { UserMGMTPageReducer } from 'app/pages/admin/user-mgmt-page/reducers';
 import { CategoryMGMTPageReducer } from 'app/pages/admin/category-mgmt-page/reducers';
+// User Reducer
+import { UserLayoutPageReducer } from 'app/layouts/user-layout/reducer';
 
 import { InjectedReducersType } from 'utils/types/injector-typings';
 
@@ -28,6 +30,9 @@ export function createReducer(injectedReducers: InjectedReducersType = {}) {
       // Admin Reducer
       UserMGMTPageReducer,
       CategoryMGMTPageReducer,
+
+      // User Reducer
+      UserLayoutPageReducer,
     });
   }
 }

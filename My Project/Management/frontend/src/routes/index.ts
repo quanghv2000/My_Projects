@@ -7,13 +7,13 @@ import { userRoutes } from './user-routes';
 
 /** @Routes */
 export const routes: RouteType[] = [
-  ...authRoutes,
-  ...adminRoutes,
-  ...userRoutes,
-  {
-    path: '/admin/example-antd',
-    page: ExampleAntd,
-    breadcrumbs: ['Example Antd'],
-    layout: AdminLayout,
-  },
+  // ...authRoutes,
+  // ...adminRoutes,
+  // ...userRoutes,
+  // {
+  //   path: '/admin/example-antd',
+  //   page: ExampleAntd,
+  //   breadcrumbs: ['Example Antd'],
+  //   layout: AdminLayout,
+  // },
 ];
