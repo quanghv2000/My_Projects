@@ -45,11 +45,13 @@ export const SignInPage: React.FC<IProps> = () => {
     if (signInStatus) {
       if (userInfo.authorities?.includes('ROLE_USER')) {
         history.push('/home');
+        // window.location.href = '/home';
         return;
       }
 
       if (userInfo.authorities?.includes('ROLE_ADMIN')) {
         history.push('/admin/dashboard');
+        // window.location.href = '/admin/dashboard';
         return;
       }
     }
@@ -59,7 +61,7 @@ export const SignInPage: React.FC<IProps> = () => {
     <>
       <LoadingSpinner isLoading={isLoadingPage} />
       <div
-        className="container mt-5 p-5 border border-secondary rounded"
+        className="container p-5 border border-secondary rounded"
         style={{ width: 500 }}
       >
         <h3 className="text-center">Sign In</h3>

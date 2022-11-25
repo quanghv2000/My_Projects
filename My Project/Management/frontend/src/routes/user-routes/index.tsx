@@ -1,8 +1,8 @@
 import React from 'react';
 import { LocalStorage } from 'utils/constants';
 import { Redirect, Route } from 'react-router-dom';
-import { SignInPage } from 'app/pages/auth';
 import { HomePage, ProfilePage } from 'app/pages/user';
+import { ForbiddenPage, UnauthorizedPage } from 'app/pages/common';
 
 type IProps = {
   component: any;
@@ -26,7 +26,7 @@ export const PrivateUserRoute: React.FC<IProps> = props => {
         ) : (
           <Redirect
             to={{
-              pathname: '/sign-in',
+              pathname: '/unauthorized',
             }}
           />
         )
@@ -47,13 +47,18 @@ export const userRoutes = [
     private: false,
   },
   {
+    path: '/unauthorized',
+    component: UnauthorizedPage,
+    private: false,
+  },
+  {
+    path: '/forbidden',
+    component: ForbiddenPage,
+    private: false,
+  },
+  {
     path: '/profile',
     component: ProfilePage,
     private: true,
-  },
-  {
-    path: '/sign-in',
-    component: SignInPage,
-    private: false,
   },
 ];

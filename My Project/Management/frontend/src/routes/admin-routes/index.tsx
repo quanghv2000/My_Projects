@@ -34,7 +34,7 @@ export const PrivateAdminRoute: React.FC<IProps> = props => {
         ) : (
           <Redirect
             to={{
-              pathname: '/sign-in',
+              pathname: '/unauthorized',
             }}
           />
         )

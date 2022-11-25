@@ -6,8 +6,12 @@ type IProps = {};
 const HomePage: React.FC<IProps> = () => {
   return (
     <>
-      <div className="text-center" style={{ height: '500px' }}>
-        <h1>Home Page</h1>
+      <div className="text-center">
+        <img
+          src="https://t2.ta88.com/imgtop//2022/11/13/hr-home%E2%80%AF_wc-pc.webp"
+          alt="carousel-img"
+          style={{ width: '100%' }}
+        />
       </div>
     </>
   );

@@ -14,6 +14,7 @@ import { NotFoundPage } from 'app/pages/common';
 import { PrivateUserRoute, userRoutes } from 'routes/user-routes';
 import { adminRoutes, PrivateAdminRoute } from 'routes/admin-routes';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'antd/dist/antd.min.css';
 import './global-style.scss';
 

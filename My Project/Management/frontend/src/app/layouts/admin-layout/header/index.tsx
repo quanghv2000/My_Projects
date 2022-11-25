@@ -15,9 +15,9 @@ export default function LayoutHeader(props: IProps) {
   const { collapsed, handleCollapsed } = props;
 
   /** @Logic_Handler */
-  const onLogout = () => {
+  const handleLogout = () => {
     localStorage.clear();
-    window.location.href = '/sign-in';
+    window.location.href = '/home';
   };
 
   return (
@@ -37,7 +37,7 @@ export default function LayoutHeader(props: IProps) {
         )}
       </div>
       <div style={{ paddingRight: 8 }}>
-        <Button onClick={onLogout}>Logout</Button>
+        <Button onClick={handleLogout}>Logout</Button>
       </div>
     </Header>
   );
