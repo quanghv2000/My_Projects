@@ -1,12 +1,12 @@
 import { ActionType } from 'types/reducers';
 import { signInActionType } from '../actions';
-import { ActionPayloadType, SignInDialogReducerType } from './types';
+import { ActionPayloadType, SignInModalReducerType } from './types';
 
-const initialState: SignInDialogReducerType = {
-  contents: ''
+const initialState: SignInModalReducerType = {
+  signInModalStatus: false
 };
 
-const SignInDialogReducer: (state: SignInDialogReducerType, action: ActionType<ActionPayloadType>) => SignInDialogReducerType = (
+const SignInModalReducer: (state: SignInModalReducerType, action: ActionType<ActionPayloadType>) => SignInModalReducerType = (
   state = initialState,
   action: ActionType<ActionPayloadType>
 ) => {
@@ -28,4 +28,4 @@ const SignInDialogReducer: (state: SignInDialogReducerType, action: ActionType<A
   }
 };
 
-export default SignInDialogReducer;
+export default SignInModalReducer;

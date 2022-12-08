@@ -1,4 +1,4 @@
-export const DIALOG_STATUS = {
+export const MODAL_STATUS = {
   OPENING: true,
   CLOSED: false
 };

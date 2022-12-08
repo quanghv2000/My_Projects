@@ -2,36 +2,42 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useDispatch } from 'react-redux';
 import { Captcha } from 'app/components';
-import { signInRequestAction } from './actions';
-// import { signInService } from './services/sign-in';
-// import { IUserLogin } from './models';
+import { useSelector, useDispatch } from 'react-redux';
+import { IRootState } from 'types/RootState';
+import { MODAL_STATUS } from 'const';
+import { MODALS_NAME } from 'app/modals/constants';
 
-type IProps = {
-  isShowing: boolean;
-  onClose: () => void;
-};
+import { closeModalsAction } from 'app/modals/actions';
 
-export const SignInDialog: React.FC<IProps> = (props) => {
-  /** @Props_Values */
-  const { isShowing, onClose } = props;
+export const SignInModal: React.FC = () => {
+  /** @Stored_Data */
+  const storedData = useSelector((state: IRootState) => state);
+  const { modalsOpening } = storedData.ModalsReducer;
 
+  const modalStatus = React.useMemo(() => {
+    if (modalsOpening.includes(MODALS_NAME.SIGN_IN_MODAL)) {
+      return MODAL_STATUS.OPENING;
+    }
+
+    return MODAL_STATUS.CLOSED;
+  }, [modalsOpening]);
+
+  /** @Dispacth_Store */
   const dispatch = useDispatch();
+
+  /** @Logic_Handler */
+  const handleCloseModal = () => {
+    dispatch(closeModalsAction([MODALS_NAME.SIGN_IN_MODAL]));
+  };
 
   /** @Submit_Handler */
   const handleLogin = async (e: any) => {
     e.preventDefault();
-    // const userLogin: IUserLogin = { username: 'username', password: '123' };
-
-    // const res = await signInService(userLogin);
-
-    // console.log('res: ', res);
-    dispatch(signInRequestAction());
   };
 
   return (
-    <Modal show={isShowing} onHide={onClose}>
+    <Modal show={modalStatus} onHide={handleCloseModal}>
       <div style={{ padding: 30 }}>
         <h3 className="text-center m-0">Sign In</h3>
         <Form className="mt-4">

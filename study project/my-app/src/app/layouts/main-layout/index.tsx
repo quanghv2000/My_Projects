@@ -1,3 +1,4 @@
+import { SignInModal, SignUpModal, ForgotPasswordModal } from 'app/modals';
 import React, { FunctionComponent } from 'react';
 import { Header, Footer } from './components';
 
@@ -12,6 +13,9 @@ export const MainLayout: React.FC<IProps> = (props) => {
     <>
       <Header />
       <Content />
+      <SignInModal />
+      <SignUpModal />
+      <ForgotPasswordModal />
       <Footer />
     </>
   );

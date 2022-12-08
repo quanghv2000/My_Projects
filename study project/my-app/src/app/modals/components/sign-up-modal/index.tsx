@@ -2,23 +2,37 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useSelector, useDispatch } from 'react-redux';
+import { MODAL_STATUS } from 'const';
+import { MODALS_NAME } from 'app/modals/constants';
+import { closeModalsAction } from 'app/modals/actions';
+import { IRootState } from 'types/RootState';
 
-type IProps = {
-  isShowing: boolean;
-  onClose: () => void;
-};
+type IProps = {};
 
-export const SignUpDialog: React.FC<IProps> = (props) => {
-  /** @Props_Values */
-  const { isShowing, onClose } = props;
+export const SignUpModal: React.FC<IProps> = (props) => {
+  /** @Stored_Data */
+  const storedData = useSelector((state: IRootState) => state);
+  const { modalsOpening } = storedData.ModalsReducer;
 
-  /** @Submit_Handler */
-  const handleRegister = async (e: any) => {
-    e.preventDefault();
+  const modalStatus = React.useMemo(() => {
+    if (modalsOpening.includes(MODALS_NAME.SIGN_UP_MODAL)) {
+      return MODAL_STATUS.OPENING;
+    }
+
+    return MODAL_STATUS.CLOSED;
+  }, [modalsOpening]);
+
+  /** @Dispacth_Store */
+  const dispatch = useDispatch();
+
+  /** @Logic_Handler */
+  const handleCloseModal = () => {
+    dispatch(closeModalsAction([MODALS_NAME.SIGN_UP_MODAL]));
   };
 
   return (
-    <Modal show={isShowing} onHide={onClose}>
+    <Modal show={modalStatus} onHide={handleCloseModal}>
       <div style={{ padding: 30 }}>
         <h3 className="text-center m-0">Sign Up</h3>
         <Form className="mt-4">
@@ -53,31 +67,13 @@ export const SignUpDialog: React.FC<IProps> = (props) => {
             <Form.Control as="textarea" rows={3} placeholder="Enter description" />
           </Form.Group>
           <div className="d-flex justify-content-end">
-            <Button
-              variant="primary"
-              type="button"
-              className="bg-danger border-danger me-3"
-              style={{ fontWeight: 'bold', marginTop: 30 }}
-              onClick={handleRegister}
-            >
+            <Button variant="primary" type="button" className="bg-danger border-danger me-3" style={{ fontWeight: 'bold', marginTop: 30 }}>
               Reset
             </Button>
-            <Button
-              variant="primary"
-              type="submit"
-              className="bg-success border-success me-3"
-              style={{ fontWeight: 'bold', marginTop: 30 }}
-              onClick={handleRegister}
-            >
+            <Button variant="primary" type="submit" className="bg-success border-success me-3" style={{ fontWeight: 'bold', marginTop: 30 }}>
               Sign up
             </Button>
-            <Button
-              variant="default"
-              type="button"
-              className="bg-secondary border-secondary"
-              style={{ fontWeight: 'bold', marginTop: 30, color: 'white' }}
-              onClick={handleRegister}
-            >
+            <Button variant="default" type="button" className="bg-secondary border-secondary" style={{ fontWeight: 'bold', marginTop: 30, color: 'white' }}>
               Cancel
             </Button>
           </div>

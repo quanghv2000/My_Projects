@@ -1,30 +1,25 @@
 import React from 'react';
-import { SignInDialog } from 'app/pages/auth/sign-in-dialog';
-import { DIALOG_STATUS } from 'const';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from 'routes/constants';
-import { SignUpDialog } from 'app/pages/auth/sign-up-dialog';
+import { MODALS_NAME } from 'app/modals/constants';
+import { openModalsAction } from 'app/modals/actions';
 
 export const Header: React.FC = () => {
-  /** @State_Component */
-  const [signInDialogStatus, setSignInDialogStatus] = React.useState<boolean>(DIALOG_STATUS.CLOSED);
-  const [signUpDialogStatus, setSignUpDialogStatus] = React.useState<boolean>(DIALOG_STATUS.CLOSED);
+  /** @Dispacth_Store */
+  const dispatch = useDispatch();
 
   /** @Logic_Handler */
-  const openSignInDialog = () => {
-    setSignInDialogStatus(DIALOG_STATUS.OPENING);
+  const handleOpenSignInModal = () => {
+    dispatch(openModalsAction([MODALS_NAME.SIGN_IN_MODAL]));
   };
 
-  const closeSignInDialog = () => {
-    setSignInDialogStatus(DIALOG_STATUS.CLOSED);
+  const handleOpenSignUpModal = () => {
+    dispatch(openModalsAction([MODALS_NAME.SIGN_UP_MODAL]));
   };
 
-  const openSignUpDialog = () => {
-    setSignUpDialogStatus(DIALOG_STATUS.OPENING);
-  };
-
-  const closeSignUpDialog = () => {
-    setSignUpDialogStatus(DIALOG_STATUS.CLOSED);
+  const handleOpenForgotPasswordModal = () => {
+    dispatch(openModalsAction([MODALS_NAME.FORGOT_PASSWORD_MODAL]));
   };
 
   return (
@@ -54,15 +49,16 @@ export const Header: React.FC = () => {
           </form>
 
           <div className="text-end">
-            <button type="button" className="btn btn-outline-light me-3" onClick={openSignInDialog}>
+            <button type="button" className="btn btn-outline-light me-3" onClick={handleOpenSignInModal}>
               Sign-in
             </button>
-            <button type="button" className="btn btn-warning" onClick={openSignUpDialog}>
+            <button type="button" className="btn btn-warning me-3" onClick={handleOpenSignUpModal}>
               Sign-up
             </button>
+            <button type="button" className="btn btn-danger" onClick={handleOpenForgotPasswordModal}>
+              Forgot Password
+            </button>
           </div>
-          <SignInDialog onClose={closeSignInDialog} isShowing={signInDialogStatus} />
-          <SignUpDialog onClose={closeSignUpDialog} isShowing={signUpDialogStatus} />
         </div>
       </div>
     </header>

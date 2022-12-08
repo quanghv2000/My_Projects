@@ -23,6 +23,7 @@ module.exports = {
     'no-case-declarations': 'off',
     'no-use-before-define': 'off',
     'no-undef': 'off',
+    'react/require-default-props': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'react/no-array-index-key': 'off',
     'react/jsx-filename-extension': 'off',

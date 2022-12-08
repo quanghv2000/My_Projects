@@ -1,6 +1,5 @@
 import { MainLayout } from 'app/layouts';
-import { AboutPage, ContactPage, HomePage } from 'app/pages/user';
-import { NotFoundPage } from 'app/pages/common';
+import { AboutPage, ContactPage, HomePage, NotFoundPage } from 'app/pages';
 import { IRoute } from './types';
 
 export const routes: IRoute[] = [

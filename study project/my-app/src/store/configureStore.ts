@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage
 import thunk from 'redux-thunk';
 import data from 'store/reducers/data';
 import dataPersist from 'store/reducers/data-persist';
-import SignInDialogReducer from 'app/pages/auth/sign-in-dialog/reducers';
+import ModalsReducer from 'app/modals/reducers';
 
 const persistConfig = {
   key: 'root',
@@ -16,7 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   data,
   dataPersist,
-  SignInDialogReducer
+  ModalsReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
