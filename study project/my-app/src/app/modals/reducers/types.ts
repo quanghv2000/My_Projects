@@ -1,5 +1,5 @@
 export type ModalsReducerType = {
-  modalsOpening: string[];
+  modalOpening: string;
 };
 
 export type ActionPayloadType = any;

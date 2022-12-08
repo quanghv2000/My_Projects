@@ -3,7 +3,7 @@ import { modalsActionType } from '../actions';
 import { ActionPayloadType, ModalsReducerType } from './types';
 
 const initialState: ModalsReducerType = {
-  modalsOpening: []
+  modalOpening: ''
 };
 
 const ModalsReducer: (state: ModalsReducerType, action: ActionType<ActionPayloadType>) => ModalsReducerType = (
@@ -11,14 +11,12 @@ const ModalsReducer: (state: ModalsReducerType, action: ActionType<ActionPayload
   action: ActionType<ActionPayloadType>
 ) => {
   switch (action.type) {
-    case modalsActionType.OPEN_MODALS: {
+    case modalsActionType.OPEN_MODAL: {
       const { payload } = action;
-      return { ...state, modalsOpening: [...payload] };
+      return { ...state, modalOpening: payload };
     }
-    case modalsActionType.CLOSE_MODALS: {
-      const { payload } = action;
-      const modalsOpening = state.modalsOpening.filter((item) => !payload.includes(item));
-      return { ...state, modalsOpening };
+    case modalsActionType.CLOSE_MODAL: {
+      return { ...state, modalOpening: '' };
     }
     default:
       return state;

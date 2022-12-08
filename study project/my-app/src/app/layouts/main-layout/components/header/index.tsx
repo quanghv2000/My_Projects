@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from 'routes/constants';
 import { MODALS_NAME } from 'app/modals/constants';
-import { openModalsAction } from 'app/modals/actions';
+import { openModalAction } from 'app/modals/actions';
 
 export const Header: React.FC = () => {
   /** @Dispacth_Store */
@@ -11,15 +11,15 @@ export const Header: React.FC = () => {
 
   /** @Logic_Handler */
   const handleOpenSignInModal = () => {
-    dispatch(openModalsAction([MODALS_NAME.SIGN_IN_MODAL]));
+    dispatch(openModalAction(MODALS_NAME.SIGN_IN_MODAL));
   };
 
   const handleOpenSignUpModal = () => {
-    dispatch(openModalsAction([MODALS_NAME.SIGN_UP_MODAL]));
+    dispatch(openModalAction(MODALS_NAME.SIGN_UP_MODAL));
   };
 
   const handleOpenForgotPasswordModal = () => {
-    dispatch(openModalsAction([MODALS_NAME.FORGOT_PASSWORD_MODAL]));
+    dispatch(openModalAction(MODALS_NAME.FORGOT_PASSWORD_MODAL));
   };
 
   return (

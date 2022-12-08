@@ -2,23 +2,38 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { MODAL_STATUS } from 'const';
+import { useSelector, useDispatch } from 'react-redux';
+import { IRootState } from 'types/RootState';
+import { MODALS_NAME } from 'app/modals/constants';
 
-type IProps = {
-  isModalOpening: boolean;
-  onCloseModal: () => void;
-};
+import { closeModalAction } from 'app/modals/actions';
+
+type IProps = {};
 
 export const ForgotPasswordModal: React.FC<IProps> = (props) => {
-  /** @Props_Value */
-  const { isModalOpening, onCloseModal } = props;
+  /** @Stored_Data */
+  const storedData = useSelector((state: IRootState) => state);
+  const { modalOpening } = storedData.ModalsReducer;
+
+  const modalStatus = React.useMemo(() => {
+    if (modalOpening === MODALS_NAME.FORGOT_PASSWORD_MODAL) {
+      return MODAL_STATUS.OPENING;
+    }
+
+    return MODAL_STATUS.CLOSED;
+  }, [modalOpening]);
+
+  /** @Dispacth_Store */
+  const dispatch = useDispatch();
 
   /** @Logic_Handler */
   const handleCloseModal = () => {
-    onCloseModal();
+    dispatch(closeModalAction());
   };
 
   return (
-    <Modal show={isModalOpening} onHide={handleCloseModal}>
+    <Modal show={modalStatus} onHide={handleCloseModal}>
       <Modal.Header closeButton>
         <Modal.Title>Forgot Your Password</Modal.Title>
       </Modal.Header>

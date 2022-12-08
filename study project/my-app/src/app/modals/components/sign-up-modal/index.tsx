@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from 'react-redux';
 import { MODAL_STATUS } from 'const';
 import { MODALS_NAME } from 'app/modals/constants';
-import { closeModalsAction } from 'app/modals/actions';
+import { closeModalAction } from 'app/modals/actions';
 import { IRootState } from 'types/RootState';
 
 type IProps = {};
@@ -13,22 +13,22 @@ type IProps = {};
 export const SignUpModal: React.FC<IProps> = (props) => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
-  const { modalsOpening } = storedData.ModalsReducer;
+  const { modalOpening } = storedData.ModalsReducer;
 
   const modalStatus = React.useMemo(() => {
-    if (modalsOpening.includes(MODALS_NAME.SIGN_UP_MODAL)) {
+    if (modalOpening === MODALS_NAME.SIGN_UP_MODAL) {
       return MODAL_STATUS.OPENING;
     }
 
     return MODAL_STATUS.CLOSED;
-  }, [modalsOpening]);
+  }, [modalOpening]);
 
   /** @Dispacth_Store */
   const dispatch = useDispatch();
 
   /** @Logic_Handler */
   const handleCloseModal = () => {
-    dispatch(closeModalsAction([MODALS_NAME.SIGN_UP_MODAL]));
+    dispatch(closeModalAction());
   };
 
   return (

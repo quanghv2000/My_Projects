@@ -8,27 +8,39 @@ import { IRootState } from 'types/RootState';
 import { MODAL_STATUS } from 'const';
 import { MODALS_NAME } from 'app/modals/constants';
 
-import { closeModalsAction } from 'app/modals/actions';
+import { closeModalAction } from 'app/modals/actions';
+import { ForgotPasswordModal } from '../forgot-password-modal';
 
 export const SignInModal: React.FC = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
-  const { modalsOpening } = storedData.ModalsReducer;
+  const { modalOpening } = storedData.ModalsReducer;
 
   const modalStatus = React.useMemo(() => {
-    if (modalsOpening.includes(MODALS_NAME.SIGN_IN_MODAL)) {
+    if (modalOpening === MODALS_NAME.SIGN_IN_MODAL) {
       return MODAL_STATUS.OPENING;
     }
 
     return MODAL_STATUS.CLOSED;
-  }, [modalsOpening]);
+  }, [modalOpening]);
 
   /** @Dispacth_Store */
   const dispatch = useDispatch();
 
+  /** @Component_State */
+  const [forgotPasswordModalStatus, setForgotPasswordModalStatus] = React.useState<boolean>(MODAL_STATUS.CLOSED);
+
   /** @Logic_Handler */
-  const handleCloseModal = () => {
-    dispatch(closeModalsAction([MODALS_NAME.SIGN_IN_MODAL]));
+  const handleCloseSignInModal = () => {
+    dispatch(closeModalAction());
+  };
+
+  const handleOpenForgotPasswordModal = () => {
+    setForgotPasswordModalStatus(MODAL_STATUS.OPENING);
+  };
+
+  const handleCloseForgotPasswordModal = () => {
+    setForgotPasswordModalStatus(MODAL_STATUS.CLOSED);
   };
 
   /** @Submit_Handler */
@@ -37,7 +49,7 @@ export const SignInModal: React.FC = () => {
   };
 
   return (
-    <Modal show={modalStatus} onHide={handleCloseModal}>
+    <Modal show={modalStatus} onHide={handleCloseSignInModal} style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 0 } : {}}>
       <div style={{ padding: 30 }}>
         <h3 className="text-center m-0">Sign In</h3>
         <Form className="mt-4">
@@ -51,7 +63,9 @@ export const SignInModal: React.FC = () => {
           </Form.Group>
           <Form.Group className="mb-3 d-flex justify-content-between">
             <Form.Check type="checkbox" label="Remember me" />
-            <Form.Label style={{ cursor: 'pointer' }}>Forgot password?</Form.Label>
+            <Form.Label style={{ cursor: 'pointer' }} onClick={handleOpenForgotPasswordModal}>
+              Forgot password?
+            </Form.Label>
           </Form.Group>
           <Captcha />
           <Button
@@ -69,6 +83,7 @@ export const SignInModal: React.FC = () => {
         </p>
         {/* <SocialsSignIn /> */}
       </div>
+      <ForgotPasswordModal isModalOpening={forgotPasswordModalStatus} onCloseModal={handleCloseForgotPasswordModal} />
     </Modal>
   );
 };

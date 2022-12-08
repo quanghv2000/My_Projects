@@ -1,14 +1,13 @@
 export const modalsActionType = {
-  OPEN_MODALS: 'MODALS/OPEN_MODALS',
-  CLOSE_MODALS: 'MODALS/CLOSE_MODALS'
+  OPEN_MODAL: 'MODALS/OPEN_MODAL',
+  CLOSE_MODAL: 'MODALS/CLOSE_MODAL'
 };
 
-export const openModalsAction = (payload: string[]) => ({
-  type: modalsActionType.OPEN_MODALS,
+export const openModalAction = (payload: string) => ({
+  type: modalsActionType.OPEN_MODAL,
   payload
 });
 
-export const closeModalsAction = (payload: string[]) => ({
-  type: modalsActionType.CLOSE_MODALS,
-  payload
+export const closeModalAction = () => ({
+  type: modalsActionType.CLOSE_MODAL
 });
