@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -8,7 +9,10 @@ import { IRootState } from 'types/RootState';
 import { MODAL_STATUS } from 'utils/constants';
 import { MODALS_NAME } from 'app/modals/constants';
 import { openModalAction, closeModalAction } from 'app/modals/actions';
+import { notifications, validations } from 'helpers';
 import { ForgotPasswordModal } from '../forgot-password-modal';
+import { ISignInFormData, IUserSignIn } from './models';
+import { initialFormData } from './constants';
 
 export const SignInModal: React.FC = () => {
   /** @Stored_Data */
@@ -28,6 +32,9 @@ export const SignInModal: React.FC = () => {
 
   /** @Component_State */
   const [forgotPasswordModalStatus, setForgotPasswordModalStatus] = React.useState<boolean>(MODAL_STATUS.CLOSED);
+  const [formData, setFormData] = React.useState<ISignInFormData>(initialFormData);
+
+  console.log('form data: ', formData);
 
   /** @Logic_Handler */
   const handleCloseSignInModal = () => {
@@ -46,37 +53,88 @@ export const SignInModal: React.FC = () => {
     setForgotPasswordModalStatus(MODAL_STATUS.CLOSED);
   };
 
+  const handleChangeFormData = (e: any) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
   /** @Submit_Handler */
-  const handleLogin = async (e: any) => {
+  const handleSignIn = async (e: any) => {
     e.preventDefault();
+
+    const { username, password, rememberMe, captcha } = formData;
+
+    const usernameValidation = validations.username(username);
+    if (!usernameValidation.isValid) {
+      notifications.show('error', usernameValidation.errorMessage);
+      return;
+    }
+
+    const passwordValidation = validations.password(password);
+    if (!passwordValidation.isValid) {
+      notifications.show('error', passwordValidation.errorMessage);
+      return;
+    }
+
+    if (!isCaptchaValid(captcha)) {
+      notifications.show('error', 'Captcha is invalid!');
+      return;
+    }
+
+    const userSignIn: IUserSignIn = {
+      username,
+      password,
+      rememberMe
+    };
+
+    console.log('Sign in successfully: ', userSignIn);
+  };
+
+  /** @Validation */
+  const isCaptchaValid = (captcha: string) => {
+    if (!captcha) {
+      return false;
+    }
+
+    return true;
   };
 
   return (
     <Modal show={modalStatus} onHide={handleCloseSignInModal} style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 1 } : {}}>
-      <div style={{ padding: 30 }}>
+      <div style={{ padding: 30, userSelect: 'none' }}>
         <h3 className="text-center m-0">Sign In</h3>
         <Form className="mt-4">
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" autoComplete="username" />
+            <Form.Control type="text" placeholder="Enter username" name="username" autoComplete="username" onChange={handleChangeFormData} />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter password" autoComplete="password" />
+            <Form.Control type="password" placeholder="Enter password" name="password" autoComplete="password" onChange={handleChangeFormData} />
           </Form.Group>
           <Form.Group className="mb-3 d-flex justify-content-between">
-            <Form.Check type="checkbox" label="Remember me" />
+            <div
+              style={{ cursor: 'pointer' }}
+              className="d-flex align-items-center"
+              onClick={() => {
+                setFormData({ ...formData, rememberMe: !formData.rememberMe });
+              }}
+            >
+              <input type="checkbox" name="rememberMe" checked={formData.rememberMe} style={{ width: 15, height: 15 }} className="me-1" />
+              <span>Remember me</span>
+            </div>
             <Form.Label style={{ cursor: 'pointer' }} onClick={handleOpenForgotPasswordModal}>
               Forgot password?
             </Form.Label>
           </Form.Group>
-          <Captcha />
+          <Captcha onChangeCaptcha={handleChangeFormData} />
           <Button
             variant="primary"
             type="submit"
             className="w-100 bg-success border-success"
             style={{ fontWeight: 'bold', marginTop: 30 }}
-            onClick={handleLogin}
+            onClick={handleSignIn}
           >
             Sign In
           </Button>

@@ -38,6 +38,11 @@ export const Header: React.FC = () => {
                 Contact
               </NavLink>
             </li>
+            <li>
+              <NavLink to={ROUTES.PROFILE_PAGE_ROUTE} className="nav-link text-white">
+                Profile
+              </NavLink>
+            </li>
           </ul>
 
           <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

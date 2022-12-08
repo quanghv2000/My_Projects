@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const Captcha: React.FC = () => (
+type IProps = {
+  onChangeCaptcha?: (e: any) => void;
+};
+
+export const Captcha: React.FC<IProps> = ({ onChangeCaptcha }) => (
   <>
     <label className="mb-2">Captcha</label>
     <div className="row d-flex align-items-center">
@@ -11,7 +15,7 @@ export const Captcha: React.FC = () => (
         <i className="fa fa-sync-alt" style={{ fontSize: 30, color: '#17A2B8', cursor: 'pointer' }} />
       </div>
       <div className="form-group col-5">
-        <input type="text" className="form-control" placeholder="Enter captcha" />
+        <input type="text" className="form-control" name="captcha" placeholder="Enter captcha" onChange={onChangeCaptcha} />
       </div>
     </div>
   </>

@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 type IProps = {
   page: FunctionComponent<any>;
@@ -10,19 +9,14 @@ export const ProtectedRoute: React.FC<IProps> = (props) => {
   /** @Props_Value */
   const { page: Page, layout: Layout } = props;
 
-  /** @Router */
-  const navigate = useNavigate();
-
   const authed = true;
   const authorized = true;
 
   if (!authed) {
-    navigate('/unauthenticated');
+    window.location.href = '/unauthenticated';
+  } else if (!authorized) {
+    window.location.href = '/unauthorized';
   }
 
-  if (!authorized) {
-    navigate('/unauthorized');
-  }
-
-  return <Layout content={Page} />;
+  return <>{authed && authorized && <Layout content={Page} />}</>;
 };

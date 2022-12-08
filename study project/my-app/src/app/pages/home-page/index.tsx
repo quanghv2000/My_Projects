@@ -7,8 +7,11 @@ export const HomePage: React.FC = () => {
   console.log('storedData: ', storedData);
 
   return (
-    <div style={{ height: '500px', textAlign: 'center' }}>
-      <h3>Home Page</h3>
+    <div
+      className="mt-5"
+      style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+    >
+      <h1>Home Page</h1>
     </div>
   );
 };

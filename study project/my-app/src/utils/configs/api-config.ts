@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { showInfoModal } from 'helpers';
+import { notifications } from 'helpers';
 
 import { LocalStorage } from 'utils/constants';
 
@@ -35,7 +35,7 @@ axiosInstance.interceptors.response.use(
 
   (error: ResponseError) => {
     if (!error?.response) {
-      showInfoModal('error', 'Không thể kết nối tới máy chủ. Vui lòng thử lại sau!');
+      notifications.show('error', 'Không thể kết nối tới máy chủ. Vui lòng thử lại sau!');
     }
     if (error?.response?.status === 401) {
       localStorage.clear();
@@ -45,7 +45,7 @@ axiosInstance.interceptors.response.use(
       window.location.href = '/forbidden';
     }
     if (error?.response?.status === 500) {
-      showInfoModal('error', 'Hệ thống đang xảy ra lỗi. Vui lòng thử lại sau!');
+      notifications.show('error', 'Hệ thống đang xảy ra lỗi. Vui lòng thử lại sau!');
     }
 
     return Promise.reject(error);

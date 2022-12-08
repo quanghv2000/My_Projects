@@ -10,10 +10,13 @@ export const UnauthorizedPage: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h1 style={{ fontSize: '4em' }}>Error 401!</h1>
+    <div
+      className="mt-5"
+      style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+    >
+      <h1 style={{ fontSize: '4em' }}>Error 403!</h1>
       <h3 style={{ textTransform: 'uppercase' }}>Unauthorized</h3>
-      <button type="button" onClick={redirectToHomePage}>
+      <button type="button" onClick={redirectToHomePage} className="btn btn-warning mt-3">
         Go To Home Page
       </button>
     </div>
