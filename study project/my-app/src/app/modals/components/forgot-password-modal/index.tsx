@@ -41,7 +41,7 @@ export const ForgotPasswordModal: React.FC<IProps> = (props) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter your email" />
+              <Form.Control type="email" placeholder="Enter your email" autoComplete="email" />
             </Form.Group>
           </Form>
         </Modal.Body>

@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from 'react-redux';
-import { MODAL_STATUS } from 'const';
+import { MODAL_STATUS } from 'utils/constants';
 import { MODALS_NAME } from 'app/modals/constants';
 import { openModalAction, closeModalAction } from 'app/modals/actions';
 import { IRootState } from 'types/RootState';
@@ -42,33 +42,33 @@ export const SignUpModal: React.FC<IProps> = (props) => {
         <Form className="mt-4">
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" />
+            <Form.Control type="text" placeholder="Enter username" autoComplete="username" />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter password" />
+            <Form.Control type="password" placeholder="Enter password" autoComplete="password" />
           </Form.Group>
           <div className="row">
             <div className="col-6">
               <Form.Group className="mb-3">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" placeholder="Enter email" autoComplete="email" />
               </Form.Group>
             </div>
             <div className="col-6">
               <Form.Group className="mb-3">
                 <Form.Label>Phone</Form.Label>
-                <Form.Control type="text" placeholder="Enter phone" />
+                <Form.Control type="text" placeholder="Enter phone" autoComplete="phone" />
               </Form.Group>
             </div>
           </div>
           <Form.Group className="mb-3">
             <Form.Label>Address</Form.Label>
-            <Form.Control type="text" placeholder="Enter address" />
+            <Form.Control type="text" placeholder="Enter address" autoComplete="address" />
           </Form.Group>
           <Form.Group>
             <Form.Label>Description</Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="Enter description" />
+            <Form.Control as="textarea" rows={3} placeholder="Enter description" autoComplete="description" />
           </Form.Group>
           <div className="d-flex justify-content-end">
             <Button variant="primary" type="button" className="bg-danger border-danger me-3" style={{ fontWeight: 'bold', marginTop: 30 }}>
@@ -84,7 +84,7 @@ export const SignUpModal: React.FC<IProps> = (props) => {
         </Form>
         <p className="text-center mt-4" style={{ fontSize: 16 }}>
           Already have an account?
-          <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }} onClick={handleOpenSignInModal}>
+          <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline', marginLeft: 4 }} onClick={handleOpenSignInModal}>
             Sign in
           </span>
         </p>

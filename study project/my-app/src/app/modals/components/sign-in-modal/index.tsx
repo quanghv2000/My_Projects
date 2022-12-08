@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { Captcha } from 'app/components';
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from 'types/RootState';
-import { MODAL_STATUS } from 'const';
+import { MODAL_STATUS } from 'utils/constants';
 import { MODALS_NAME } from 'app/modals/constants';
 import { openModalAction, closeModalAction } from 'app/modals/actions';
 import { ForgotPasswordModal } from '../forgot-password-modal';
@@ -51,8 +51,6 @@ export const SignInModal: React.FC = () => {
     e.preventDefault();
   };
 
-  console.log('re-render');
-
   return (
     <Modal show={modalStatus} onHide={handleCloseSignInModal} style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 1 } : {}}>
       <div style={{ padding: 30 }}>
@@ -60,11 +58,11 @@ export const SignInModal: React.FC = () => {
         <Form className="mt-4">
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" />
+            <Form.Control type="text" placeholder="Enter username" autoComplete="username" />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter password" />
+            <Form.Control type="password" placeholder="Enter password" autoComplete="password" />
           </Form.Group>
           <Form.Group className="mb-3 d-flex justify-content-between">
             <Form.Check type="checkbox" label="Remember me" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from 'routes/constants';
 
-export const NotFoundPage: React.FC = () => {
+export const UnauthorizedPage: React.FC = () => {
   const navigate = useNavigate();
 
   const redirectToHomePage = () => {
@@ -11,7 +11,8 @@ export const NotFoundPage: React.FC = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h1 style={{ fontSize: '4em' }}>Oops 404!</h1>
+      <h1 style={{ fontSize: '4em' }}>Error 401!</h1>
+      <h3 style={{ textTransform: 'uppercase' }}>Unauthorized</h3>
       <button type="button" onClick={redirectToHomePage}>
         Go To Home Page
       </button>

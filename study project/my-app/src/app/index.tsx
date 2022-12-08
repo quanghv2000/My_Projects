@@ -2,13 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { NotificationContainer } from 'react-notifications';
 import { routes } from 'routes';
+import { ProtectedRoute } from 'routes/protected-route';
 
 const App: React.FC = () => {
   const renderRoutes = () =>
     routes.map((route, index) => {
-      const { path, page: Element, layout: Layout } = route;
+      const { path, page: Page, layout: Layout } = route;
 
-      return <Route key={index} path={path} element={<Layout content={Element} />} />;
+      return route.isProtected ? (
+        <Route key={index} path={path} element={<ProtectedRoute page={Page} layout={Layout} />} />
+      ) : (
+        <Route key={index} path={path} element={<Layout content={Page} />} />
+      );
     });
 
   return (

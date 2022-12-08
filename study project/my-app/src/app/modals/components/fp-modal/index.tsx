@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { MODAL_STATUS } from 'const';
+import { MODAL_STATUS } from 'utils/constants';
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from 'types/RootState';
 import { MODALS_NAME } from 'app/modals/constants';
@@ -41,7 +41,7 @@ export const ForgotPasswordModal: React.FC<IProps> = (props) => {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter your email" />
+            <Form.Control type="email" placeholder="Enter your email" autoComplete="email" />
           </Form.Group>
         </Form>
       </Modal.Body>
