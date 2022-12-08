@@ -18,10 +18,6 @@ export const Header: React.FC = () => {
     dispatch(openModalAction(MODALS_NAME.SIGN_UP_MODAL));
   };
 
-  const handleOpenForgotPasswordModal = () => {
-    dispatch(openModalAction(MODALS_NAME.FORGOT_PASSWORD_MODAL));
-  };
-
   return (
     <header className="p-3 bg-dark text-white">
       <div className="container">
@@ -54,9 +50,6 @@ export const Header: React.FC = () => {
             </button>
             <button type="button" className="btn btn-warning me-3" onClick={handleOpenSignUpModal}>
               Sign-up
-            </button>
-            <button type="button" className="btn btn-danger" onClick={handleOpenForgotPasswordModal}>
-              Forgot Password
             </button>
           </div>
         </div>
