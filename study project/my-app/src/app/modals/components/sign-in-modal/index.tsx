@@ -7,8 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from 'types/RootState';
 import { MODAL_STATUS } from 'const';
 import { MODALS_NAME } from 'app/modals/constants';
-
-import { closeModalAction } from 'app/modals/actions';
+import { openModalAction, closeModalAction } from 'app/modals/actions';
 import { ForgotPasswordModal } from '../forgot-password-modal';
 
 export const SignInModal: React.FC = () => {
@@ -35,6 +34,10 @@ export const SignInModal: React.FC = () => {
     dispatch(closeModalAction());
   };
 
+  const handleOpenSignUpModal = () => {
+    dispatch(openModalAction(MODALS_NAME.SIGN_UP_MODAL));
+  };
+
   const handleOpenForgotPasswordModal = () => {
     setForgotPasswordModalStatus(MODAL_STATUS.OPENING);
   };
@@ -48,8 +51,10 @@ export const SignInModal: React.FC = () => {
     e.preventDefault();
   };
 
+  console.log('re-render');
+
   return (
-    <Modal show={modalStatus} onHide={handleCloseSignInModal} style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 0 } : {}}>
+    <Modal show={modalStatus} onHide={handleCloseSignInModal} style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 1 } : {}}>
       <div style={{ padding: 30 }}>
         <h3 className="text-center m-0">Sign In</h3>
         <Form className="mt-4">
@@ -79,7 +84,10 @@ export const SignInModal: React.FC = () => {
           </Button>
         </Form>
         <p className="text-center mt-3" style={{ fontSize: 16 }}>
-          You don't have an account? <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }}>Sign up</span>
+          You don't have an account?{' '}
+          <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }} onClick={handleOpenSignUpModal}>
+            Sign up
+          </span>
         </p>
         {/* <SocialsSignIn /> */}
       </div>

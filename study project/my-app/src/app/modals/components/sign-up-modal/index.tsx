@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from 'react-redux';
 import { MODAL_STATUS } from 'const';
 import { MODALS_NAME } from 'app/modals/constants';
-import { closeModalAction } from 'app/modals/actions';
+import { openModalAction, closeModalAction } from 'app/modals/actions';
 import { IRootState } from 'types/RootState';
 
 type IProps = {};
@@ -29,6 +29,10 @@ export const SignUpModal: React.FC<IProps> = (props) => {
   /** @Logic_Handler */
   const handleCloseModal = () => {
     dispatch(closeModalAction());
+  };
+
+  const handleOpenSignInModal = () => {
+    dispatch(openModalAction(MODALS_NAME.SIGN_IN_MODAL));
   };
 
   return (
@@ -79,7 +83,10 @@ export const SignUpModal: React.FC<IProps> = (props) => {
           </div>
         </Form>
         <p className="text-center mt-4" style={{ fontSize: 16 }}>
-          Already have an account? <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }}>Sign in</span>
+          Already have an account?
+          <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }} onClick={handleOpenSignInModal}>
+            Sign in
+          </span>
         </p>
       </div>
     </Modal>
