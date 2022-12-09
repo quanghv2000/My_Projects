@@ -1,5 +1,5 @@
-import { ModalsReducerType } from 'app/modals/reducers/types';
+import { GlobalReducerType } from 'app/layouts/main-layout/reducers/types';
 
 export interface IRootState {
-  ModalsReducer: ModalsReducerType;
+  GlobalReducer: GlobalReducerType;
 }

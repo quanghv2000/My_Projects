@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -6,18 +5,18 @@ import Form from 'react-bootstrap/Form';
 import { Captcha } from 'app/components';
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from 'types/RootState';
-import { MODAL_STATUS } from 'utils/constants';
-import { MODALS_NAME } from 'app/modals/constants';
-import { openModalAction, closeModalAction } from 'app/modals/actions';
+import { MODALS_NAME, MODAL_STATUS } from 'utils/constants';
 import { notifications, validations } from 'helpers';
+import { closeModalAction, openModalAction } from 'app/layouts/main-layout/actions';
 import { ForgotPasswordModal } from '../forgot-password-modal';
 import { ISignInFormData, IUserSignIn } from './models';
 import { initialFormData } from './constants';
+import { signInRequestAction } from './actions';
 
 export const SignInModal: React.FC = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
-  const { modalOpening } = storedData.ModalsReducer;
+  const { modalOpening } = storedData.GlobalReducer;
 
   const modalStatus = React.useMemo(() => {
     if (modalOpening === MODALS_NAME.SIGN_IN_MODAL) {
@@ -59,6 +58,15 @@ export const SignInModal: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  /** @Validation */
+  const isCaptchaValid = (captcha: string) => {
+    if (!captcha) {
+      return false;
+    }
+
+    return true;
+  };
+
   /** @Submit_Handler */
   const handleSignIn = async (e: any) => {
     e.preventDefault();
@@ -88,16 +96,7 @@ export const SignInModal: React.FC = () => {
       rememberMe
     };
 
-    console.log('Sign in successfully: ', userSignIn);
-  };
-
-  /** @Validation */
-  const isCaptchaValid = (captcha: string) => {
-    if (!captcha) {
-      return false;
-    }
-
-    return true;
+    dispatch(signInRequestAction(userSignIn));
   };
 
   return (
@@ -121,7 +120,16 @@ export const SignInModal: React.FC = () => {
                 setFormData({ ...formData, rememberMe: !formData.rememberMe });
               }}
             >
-              <input type="checkbox" name="rememberMe" checked={formData.rememberMe} style={{ width: 15, height: 15 }} className="me-1" />
+              <input
+                type="checkbox"
+                name="rememberMe"
+                checked={formData.rememberMe}
+                style={{ width: 15, height: 15 }}
+                className="me-1"
+                onChange={() => {
+                  setFormData({ ...formData, rememberMe: !formData.rememberMe });
+                }}
+              />
               <span>Remember me</span>
             </div>
             <Form.Label style={{ cursor: 'pointer' }} onClick={handleOpenForgotPasswordModal}>

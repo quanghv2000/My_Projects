@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from 'routes/constants';
-import { MODALS_NAME } from 'app/modals/constants';
-import { openModalAction } from 'app/modals/actions';
+import { MODALS_NAME } from 'utils/constants';
+import { openModalAction } from '../../actions';
 
 export const Header: React.FC = () => {
   /** @Dispacth_Store */

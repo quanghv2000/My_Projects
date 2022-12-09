@@ -18,7 +18,7 @@ export const LoadingSpinner: React.FC<IProps> = (props: IProps) => {
             height: '100%',
             top: 0,
             left: 0,
-            zIndex: 100,
+            zIndex: 9999999,
             display: 'flex',
             justifyContent: 'center'
           }}

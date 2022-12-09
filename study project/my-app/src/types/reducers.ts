@@ -4,5 +4,5 @@ export function actionPayload<T = any>(payload: T) {
 
 export type ActionType<T> = {
   type: string;
-  payload?: T;
+  payload: T;
 };

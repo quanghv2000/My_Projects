@@ -3,9 +3,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from 'react-redux';
-import { MODAL_STATUS } from 'utils/constants';
-import { MODALS_NAME } from 'app/modals/constants';
-import { openModalAction, closeModalAction } from 'app/modals/actions';
+import { MODALS_NAME, MODAL_STATUS } from 'utils/constants';
+import { closeModalAction, openModalAction } from 'app/layouts/main-layout/actions';
 import { IRootState } from 'types/RootState';
 
 type IProps = {};
@@ -13,7 +12,7 @@ type IProps = {};
 export const SignUpModal: React.FC<IProps> = (props) => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
-  const { modalOpening } = storedData.ModalsReducer;
+  const { modalOpening } = storedData.GlobalReducer;
 
   const modalStatus = React.useMemo(() => {
     if (modalOpening === MODALS_NAME.SIGN_UP_MODAL) {

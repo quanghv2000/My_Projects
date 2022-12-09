@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import ModalsReducer from 'app/modals/reducers';
+import GlobalReducer from 'app/layouts/main-layout/reducers';
 
 export const rootReducer = combineReducers({
-  ModalsReducer
+  GlobalReducer
 });
