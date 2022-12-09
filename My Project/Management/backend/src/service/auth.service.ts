@@ -25,7 +25,7 @@ export class AuthService {
         const loginPassword = userLogin.password;
 
         const userFind = await this.userService.findByFields({ where: { login: loginUserName } });
-        
+
         const validPassword = !!userFind && (await bcrypt.compare(loginPassword, userFind.password));
         if (!userFind || !validPassword) {
             throw new HttpException('Invalid login name or password!', HttpStatus.BAD_REQUEST);
@@ -37,7 +37,12 @@ export class AuthService {
 
         const user = await this.findUserWithAuthById(userFind.id);
 
-        const payload: Payload = { id: user.id, username: user.login, authorities: user.authorities };
+        const payload: Payload = {
+            id: user.id,
+            username: user.login,
+            authorities: user.authorities,
+            imageUrl: user.imageUrl,
+        };
 
         /* eslint-disable */
         return {
