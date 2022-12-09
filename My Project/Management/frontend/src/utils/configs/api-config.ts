@@ -59,6 +59,8 @@ axiosInstance.interceptors.response.use(
   },
 
   error => {
+    console.log('error oooo: ', error);
+
     if (!error?.response) {
       showInfoModal(
         'error',
@@ -70,7 +72,6 @@ axiosInstance.interceptors.response.use(
       window.location.href = '/unauthorized';
     }
     if (error?.response?.status === 403) {
-      // localStorage.clear();
       window.location.href = '/forbidden';
     }
     if (error?.response?.status === 500) {
@@ -98,24 +99,24 @@ axiosInstance.interceptors.request.use(
   },
 );
 
-export const requestAPI = {
-  get(apiUrl: string, params?: any) {
-    return axios.get(apiUrl, { params });
-  },
-  post(apiUrl: string, reqBody?: any) {
-    return axios.post(apiUrl, reqBody);
-  },
-  put(apiUrl: string, reqBody?: any) {
-    return axios.put(apiUrl, reqBody);
-  },
-  delete(apiUrl: string, reqBody?: any) {
-    return axios.put(apiUrl, {
-      data: reqBody,
-    });
-  },
-};
+// export const requestAPI = {
+//   get(apiUrl: string, params?: any) {
+//     return axios.get(apiUrl, { params });
+//   },
+//   post(apiUrl: string, reqBody?: any) {
+//     return axios.post(apiUrl, reqBody);
+//   },
+//   put(apiUrl: string, reqBody?: any) {
+//     return axios.put(apiUrl, reqBody);
+//   },
+//   delete(apiUrl: string, reqBody?: any) {
+//     return axios.put(apiUrl, {
+//       data: reqBody,
+//     });
+//   },
+// };
 
-export const requestAPIWithToken = {
+export const requestAPI = {
   get(apiUrl: string, params?: any) {
     return axiosInstance.get(apiUrl, { params });
   },

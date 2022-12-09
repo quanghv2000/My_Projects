@@ -12,7 +12,7 @@ interface IUserInfo {
   authorities?: string[];
 }
 
-export type SignInPageReducerType = {
+export type SignInDialogReducerType = {
   isLoadingPage: boolean;
   userInfo: IUserInfo;
   signInStatus: boolean;

@@ -1,22 +1,22 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { signInActionType } from '../actions';
-import { SignInPageReducerType } from './types';
+import { SignInDialogReducerType } from './types';
 
-export const initialState: SignInPageReducerType = {
+export const initialState: SignInDialogReducerType = {
   isLoadingPage: false,
   signInStatus: false,
   userInfo: {},
   error: {},
 };
 
-export const SignInPageReducer = createReducer(initialState, {
-  [signInActionType.SIGN_IN_REQUEST]: (state: SignInPageReducerType) => {
+export const SignInDialogReducer = createReducer(initialState, {
+  [signInActionType.SIGN_IN_REQUEST]: (state: SignInDialogReducerType) => {
     state.isLoadingPage = true;
 
     return state;
   },
   [signInActionType.SIGN_IN_SUCCESS]: (
-    state: SignInPageReducerType,
+    state: SignInDialogReducerType,
     action,
   ) => {
     const { payload } = action;
@@ -30,10 +30,11 @@ export const SignInPageReducer = createReducer(initialState, {
     };
   },
   [signInActionType.SIGN_IN_FAILURE]: (
-    state: SignInPageReducerType,
+    state: SignInDialogReducerType,
     action,
   ) => {
     const { payload } = action;
+    console.log('sign in failed');
 
     return {
       ...state,

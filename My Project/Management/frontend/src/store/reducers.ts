@@ -4,7 +4,7 @@
 
 import { combineReducers } from '@reduxjs/toolkit';
 // Auth Reducer
-import { SignInPageReducer } from 'app/pages/auth/sign-in-page/reducers';
+import { SignInDialogReducer } from 'app/pages/auth/sign-in-dialog/reducers';
 // Admin Reducer
 import { UserMGMTPageReducer } from 'app/pages/admin/user-mgmt-page/reducers';
 import { CategoryMGMTPageReducer } from 'app/pages/admin/category-mgmt-page/reducers';
@@ -25,7 +25,7 @@ export function createReducer(injectedReducers: InjectedReducersType = {}) {
       ...injectedReducers,
 
       // Auth Reducer
-      SignInPageReducer,
+      SignInDialogReducer,
 
       // Admin Reducer
       UserMGMTPageReducer,

@@ -1,8 +1,6 @@
 import React from 'react';
 import { LocalStorage } from 'utils/constants';
 import { Redirect, Route } from 'react-router-dom';
-import { SignInPage } from 'app/pages/auth';
-import { HomePage, ProfilePage } from 'app/pages/user';
 import {
   AdminCategoryMGMTPage,
   AdminDashboardPage,

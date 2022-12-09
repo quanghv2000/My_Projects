@@ -19,7 +19,9 @@ export const SignInDialog: React.FC<IProps> = (props: IProps) => {
   /** @Stored_Data */
   const storedData = useSelector((state: RootState) => state);
   const { isLoadingPage, userInfo, signInStatus, error } =
-    storedData.SignInPageReducer;
+    storedData.SignInDialogReducer;
+
+  console.log('isLoadingPage: ', isLoadingPage);
 
   /** @Dispatch */
   const dispatch = useDispatch();
@@ -64,11 +66,11 @@ export const SignInDialog: React.FC<IProps> = (props: IProps) => {
         return;
       }
     }
-  }, [signInStatus, userInfo, history]);
+  }, [signInStatus, userInfo, history, closeDialog]);
 
   return (
     <Modal show={dialogStatus} onHide={closeDialog}>
-      <LoadingSpinner isLoading={isLoadingPage} />
+      {/* <LoadingSpinner isLoading={isLoadingPage} /> */}
       <div
         className="container p-5 border border-secondary rounded"
         style={{ width: 500 }}

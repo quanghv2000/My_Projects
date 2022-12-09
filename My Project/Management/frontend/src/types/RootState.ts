@@ -1,6 +1,6 @@
 import { ThemeState } from 'styles/theme/slice/types';
 // Auth Reducer Type
-import { SignInPageReducerType } from 'app/pages/auth/sign-in-page/reducers/types';
+import { SignInDialogReducerType } from 'app/pages/auth/sign-in-dialog/reducers/types';
 
 // Admin Reducer Type
 import { UserMGMTPageReducerType } from 'app/pages/admin/user-mgmt-page/reducers/types';
@@ -18,7 +18,7 @@ export interface RootState {
   theme?: ThemeState;
 
   // Auth Reducer Type
-  SignInPageReducer: SignInPageReducerType;
+  SignInDialogReducer: SignInDialogReducerType;
 
   // Admin Reducer Type
   UserMGMTPageReducer: UserMGMTPageReducerType;
