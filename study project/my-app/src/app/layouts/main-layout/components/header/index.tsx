@@ -10,7 +10,8 @@ import { openModalAction } from '../../actions';
 export const Header: React.FC = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
-  const { userLoggedInfo, authedStatus } = storedData.GlobalReducer;
+  const { userLoggedInfo } = storedData.GlobalReducer;
+  const { authedStatus } = storedData.SignInReducer;
 
   console.log('storedData: ', storedData);
   console.log('userLoggedInfo: ', userLoggedInfo);

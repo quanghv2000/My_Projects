@@ -8,8 +8,8 @@ import { rootReducer } from './reducers';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [''], // elements that will be persisted
-  blacklist: ['ModalsReducer'] // elements that will not be persisted
+  whitelist: ['GlobalReducer', 'SignInReducer'], // elements that will be persisted
+  blacklist: [] // elements that will not be persisted
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,1 +1,3 @@
-export interface IUserLoggedInfo {}
+export interface IUserLoggedInfo {
+  id: number;
+}

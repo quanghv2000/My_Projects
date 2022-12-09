@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { Captcha } from 'app/components';
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from 'types/RootState';
-import { MODALS_NAME, MODAL_STATUS, SIGN_IN_STATUS } from 'utils/constants';
+import { AUTHED_STATUS, MODALS_NAME, MODAL_STATUS } from 'utils/constants';
 import { notifications, showNotification, validations } from 'helpers';
 import { closeModalAction, openModalAction } from 'app/layouts/main-layout/actions';
 import { ForgotPasswordModal } from '../forgot-password-modal';
@@ -17,9 +17,9 @@ export const SignInModal: React.FC = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
   const { modalOpening } = storedData.GlobalReducer;
-  const { signInStatus } = storedData.SignInReducer;
+  const { authedStatus } = storedData.SignInReducer;
 
-  console.log('signInStatus: ', signInStatus);
+  console.log('authedStatus: ', authedStatus);
 
   const modalStatus = React.useMemo(() => {
     if (modalOpening === MODALS_NAME.SIGN_IN_MODAL) {
@@ -102,16 +102,16 @@ export const SignInModal: React.FC = () => {
 
   /** @Effect */
   React.useEffect(() => {
-    if (signInStatus === SIGN_IN_STATUS.FAILED) {
+    if (authedStatus === AUTHED_STATUS.UNAUTHENTICATED) {
       showNotification('error', 'Invalid username or password!');
       dispatch(resetSignInStatusAction());
       return;
     }
 
-    if (signInStatus === SIGN_IN_STATUS.SUCCESSFULLY) {
+    if (authedStatus === AUTHED_STATUS.AUTHENTICATED) {
       dispatch(closeModalAction());
     }
-  }, [signInStatus]);
+  }, [authedStatus]);
 
   return (
     <Modal

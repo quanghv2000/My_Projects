@@ -4,7 +4,6 @@ export type GlobalReducerType = {
   userLoggedInfo: IUserLoggedInfo | any;
   loadingSpinner: boolean;
   modalOpening: string;
-  authedStatus: string;
 };
 
 export type OpenModalPayloadType = string;
