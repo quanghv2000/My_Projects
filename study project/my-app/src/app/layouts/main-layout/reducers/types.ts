@@ -1,9 +1,10 @@
 import { IUserLoggedInfo } from 'models/api-model/response/user-logged-info';
 
 export type GlobalReducerType = {
-  userLoggedInfo: IUserLoggedInfo;
+  userLoggedInfo: IUserLoggedInfo | any;
   loadingSpinner: boolean;
   modalOpening: string;
+  authedStatus: string;
 };
 
 export type OpenModalPayloadType = string;

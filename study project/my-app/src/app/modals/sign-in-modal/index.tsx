@@ -5,18 +5,21 @@ import Form from 'react-bootstrap/Form';
 import { Captcha } from 'app/components';
 import { useSelector, useDispatch } from 'react-redux';
 import { IRootState } from 'types/RootState';
-import { MODALS_NAME, MODAL_STATUS } from 'utils/constants';
-import { notifications, validations } from 'helpers';
+import { MODALS_NAME, MODAL_STATUS, SIGN_IN_STATUS } from 'utils/constants';
+import { notifications, showNotification, validations } from 'helpers';
 import { closeModalAction, openModalAction } from 'app/layouts/main-layout/actions';
 import { ForgotPasswordModal } from '../forgot-password-modal';
 import { ISignInFormData, IUserSignIn } from './models';
 import { initialFormData } from './constants';
-import { signInRequestAction } from './actions';
+import { resetSignInStatusAction, signInRequestAction } from './actions';
 
 export const SignInModal: React.FC = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
   const { modalOpening } = storedData.GlobalReducer;
+  const { signInStatus } = storedData.SignInReducer;
+
+  console.log('signInStatus: ', signInStatus);
 
   const modalStatus = React.useMemo(() => {
     if (modalOpening === MODALS_NAME.SIGN_IN_MODAL) {
@@ -32,8 +35,6 @@ export const SignInModal: React.FC = () => {
   /** @Component_State */
   const [forgotPasswordModalStatus, setForgotPasswordModalStatus] = React.useState<boolean>(MODAL_STATUS.CLOSED);
   const [formData, setFormData] = React.useState<ISignInFormData>(initialFormData);
-
-  console.log('form data: ', formData);
 
   /** @Logic_Handler */
   const handleCloseSignInModal = () => {
@@ -99,18 +100,47 @@ export const SignInModal: React.FC = () => {
     dispatch(signInRequestAction(userSignIn));
   };
 
+  /** @Effect */
+  React.useEffect(() => {
+    if (signInStatus === SIGN_IN_STATUS.FAILED) {
+      showNotification('error', 'Invalid username or password!');
+      dispatch(resetSignInStatusAction());
+      return;
+    }
+
+    if (signInStatus === SIGN_IN_STATUS.SUCCESSFULLY) {
+      dispatch(closeModalAction());
+    }
+  }, [signInStatus]);
+
   return (
-    <Modal show={modalStatus} onHide={handleCloseSignInModal} style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 1 } : {}}>
+    <Modal
+      show={modalStatus}
+      onHide={handleCloseSignInModal}
+      style={forgotPasswordModalStatus === MODAL_STATUS.OPENING ? { zIndex: 1 } : {}}
+    >
       <div style={{ padding: 30, userSelect: 'none' }}>
         <h3 className="text-center m-0">Sign In</h3>
         <Form className="mt-4">
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="text" placeholder="Enter username" name="username" autoComplete="username" onChange={handleChangeFormData} />
+            <Form.Control
+              type="text"
+              placeholder="Enter username"
+              name="username"
+              autoComplete="username"
+              onChange={handleChangeFormData}
+            />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter password" name="password" autoComplete="password" onChange={handleChangeFormData} />
+            <Form.Control
+              type="password"
+              placeholder="Enter password"
+              name="password"
+              autoComplete="password"
+              onChange={handleChangeFormData}
+            />
           </Form.Group>
           <Form.Group className="mb-3 d-flex justify-content-between">
             <div
@@ -149,7 +179,10 @@ export const SignInModal: React.FC = () => {
         </Form>
         <p className="text-center mt-3" style={{ fontSize: 16 }}>
           You don't have an account?{' '}
-          <span style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }} onClick={handleOpenSignUpModal}>
+          <span
+            style={{ cursor: 'pointer', color: '#007BFF', textDecoration: 'underline' }}
+            onClick={handleOpenSignUpModal}
+          >
             Sign up
           </span>
         </p>

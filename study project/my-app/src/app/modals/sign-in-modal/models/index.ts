@@ -4,6 +4,10 @@ export interface IUserSignIn {
   rememberMe: boolean;
 }
 
+export interface ISignInResponse {
+  accessToken: string;
+}
+
 export interface ISignInFormData {
   username: string;
   password: string;

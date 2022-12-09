@@ -6,3 +6,13 @@ export const initialFormData: ISignInFormData = {
   rememberMe: false,
   captcha: ''
 };
+
+export const elementIds = {
+  textFieldUsernameId: 'textFieldUsernameId',
+  textFieldPasswordId: 'textFieldPasswordId',
+  cbxRememberMeId: 'cbxRememberMeId',
+  lblForgotPasswordId: 'lblForgotPasswordId',
+  textFieldCaptchaId: 'textFieldCaptchaId',
+  btnSignInId: 'btnSignInId',
+  lblSignUpId: 'lblSignUpId'
+};

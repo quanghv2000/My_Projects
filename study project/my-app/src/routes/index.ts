@@ -1,7 +1,7 @@
 import { MainLayout } from 'app/layouts';
 import { AboutPage, ContactPage, HomePage, NotFoundPage } from 'app/pages';
 import { ProfilePage } from 'app/pages/profile-page';
-import { UnauthenticatedPage } from 'app/pages/unauthenticated-page';
+import { ForbiddenPage } from 'app/pages/forbidden-page';
 import { UnauthorizedPage } from 'app/pages/unauthorized-page';
 import { IRoute } from './types';
 import { ROUTES } from './constants';
@@ -39,14 +39,14 @@ export const routes: IRoute[] = [
     roles: ['ROLE_ADMIN', 'ROLE_USER']
   },
   {
-    path: '/unauthenticated',
-    page: UnauthenticatedPage,
+    path: ROUTES.UNAUTHORIZED_PAGE_ROUTE,
+    page: UnauthorizedPage,
     layout: MainLayout,
     isProtected: false
   },
   {
-    path: '/unauthorized',
-    page: UnauthorizedPage,
+    path: ROUTES.FORBIDDEN_PAGE_ROUTE,
+    page: ForbiddenPage,
     layout: MainLayout,
     isProtected: false
   },

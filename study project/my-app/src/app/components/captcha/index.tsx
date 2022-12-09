@@ -1,3 +1,4 @@
+import { elementIds } from 'app/modals/sign-in-modal/constants';
 import React from 'react';
 
 type IProps = {
@@ -15,7 +16,14 @@ export const Captcha: React.FC<IProps> = ({ onChangeCaptcha }) => (
         <i className="fa fa-sync-alt" style={{ fontSize: 30, color: '#17A2B8', cursor: 'pointer' }} />
       </div>
       <div className="form-group col-5">
-        <input type="text" className="form-control" name="captcha" placeholder="Enter captcha" onChange={onChangeCaptcha} />
+        <input
+          type="text"
+          className="form-control"
+          name="captcha"
+          placeholder="Enter captcha"
+          id={elementIds.textFieldCaptchaId}
+          onChange={onChangeCaptcha}
+        />
       </div>
     </div>
   </>

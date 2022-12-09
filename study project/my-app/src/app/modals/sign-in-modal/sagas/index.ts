@@ -1,10 +1,9 @@
-import jwt from 'jwt-decode';
-import { errorRespone } from 'helpers';
 import { LocalStorage } from 'utils/constants';
 import { all, takeLatest, call, put, delay } from 'redux-saga/effects';
 import { closeLoadingSpinnerAction, openLoadingSpinnerAction } from 'app/layouts/main-layout/actions';
 import { signInActionType, signInFailureAction, signInRequestAction, signInSuccessAction } from '../actions';
-import { signInService } from '../services/sign-in';
+import { signInService } from '../services';
+import { ISignInResponse } from '../models';
 
 /**
  * Before this function is executed, it is necessary to dispatch GET_USER_REQUEST
@@ -13,23 +12,19 @@ import { signInService } from '../services/sign-in';
 export function* signInSaga(action: ReturnType<typeof signInRequestAction>): Generator {
   const { payload } = action;
 
-  console.log('action: ', action);
-
   try {
     yield put(openLoadingSpinnerAction());
-    yield delay(650);
+    yield delay(1000);
 
-    const signInRes: any = yield call(() => signInService(payload));
-    const { accessToken } = signInRes;
+    const signInResponse: ISignInResponse | any = yield call(() => signInService(payload));
+    const { accessToken } = signInResponse;
 
     localStorage.setItem(LocalStorage.ACCESS_TOKEN, accessToken);
 
-    const userInfo = jwt(accessToken);
-
-    yield put(signInSuccessAction(userInfo));
+    yield put(signInSuccessAction());
     yield put(closeLoadingSpinnerAction());
   } catch (error: any) {
-    yield put(signInFailureAction(errorRespone(error)));
+    yield put(signInFailureAction());
     yield put(closeLoadingSpinnerAction());
   }
 }

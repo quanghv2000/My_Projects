@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from 'routes/constants';
 
-export const UnauthenticatedPage: React.FC = () => {
+export const ForbiddenPage: React.FC = () => {
   const navigate = useNavigate();
 
   const redirectToHomePage = () => {
@@ -12,10 +12,17 @@ export const UnauthenticatedPage: React.FC = () => {
   return (
     <div
       className="mt-5"
-      style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
+      style={{
+        position: 'relative',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+      }}
     >
-      <h1 style={{ fontSize: '4em' }}>Error 401!</h1>
-      <h3 style={{ textTransform: 'uppercase' }}>Unauthenticated</h3>
+      <h1 style={{ fontSize: '4em' }}>Error 403!</h1>
+      <h3 style={{ textTransform: 'uppercase' }}>Forbidden</h3>
       <button type="button" onClick={redirectToHomePage} className="btn btn-warning mt-3">
         Go To Home Page
       </button>

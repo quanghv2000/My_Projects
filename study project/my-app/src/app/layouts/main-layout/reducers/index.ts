@@ -1,13 +1,14 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { ActionType } from 'types/reducers';
-import { LOADING_SPINNER_STATUS } from 'utils/constants';
+import { AUTHED_STATUS, LOADING_SPINNER_STATUS } from 'utils/constants';
 import { globalActionType } from '../actions';
 import { GlobalReducerType, GetUserLoggedInfoPayloadType, OpenModalPayloadType } from './types';
 
 const initialState: GlobalReducerType = {
   userLoggedInfo: {},
   loadingSpinner: false,
-  modalOpening: ''
+  modalOpening: '',
+  authedStatus: AUTHED_STATUS.UNDEFINED
 };
 
 const GlobalReducer = createReducer(initialState, {
@@ -16,12 +17,25 @@ const GlobalReducer = createReducer(initialState, {
     return { ...state, modalOpening: payload };
   },
   [globalActionType.CLOSE_MODAL]: (state: GlobalReducerType) => ({ ...state, modalOpening: '' }),
-  [globalActionType.OPEN_LOADING_SPINNER]: (state: GlobalReducerType) => ({ ...state, loadingSpinner: LOADING_SPINNER_STATUS.OPENING }),
-  [globalActionType.CLOSE_LOADING_SPINNER]: (state: GlobalReducerType) => ({ ...state, loadingSpinner: LOADING_SPINNER_STATUS.CLOSED }),
-  [globalActionType.GET_USER_INFO_LOGGED]: (state: GlobalReducerType, action: ActionType<GetUserLoggedInfoPayloadType>) => {
+  [globalActionType.OPEN_LOADING_SPINNER]: (state: GlobalReducerType) => ({
+    ...state,
+    loadingSpinner: LOADING_SPINNER_STATUS.OPENING
+  }),
+  [globalActionType.CLOSE_LOADING_SPINNER]: (state: GlobalReducerType) => ({
+    ...state,
+    loadingSpinner: LOADING_SPINNER_STATUS.CLOSED
+  }),
+  [globalActionType.GET_USER_LOGGED_INFO_SUCCESS]: (
+    state: GlobalReducerType,
+    action: ActionType<GetUserLoggedInfoPayloadType>
+  ) => {
     const { payload: userLoggedInfo } = action;
-    return { ...state, userLoggedInfo };
-  }
+    return { ...state, userLoggedInfo, authedStatus: AUTHED_STATUS.AUTHENTICATED };
+  },
+  [globalActionType.GET_USER_LOGGED_INFO_FAILURE]: (state: GlobalReducerType) => ({
+    ...state,
+    authedStatus: AUTHED_STATUS.UNAUTHENTICATED
+  })
 });
 
 export default GlobalReducer;

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { notifications } from 'helpers';
+import { ROUTES } from 'routes/constants';
 
 import { LocalStorage } from 'utils/constants';
 
@@ -39,10 +40,10 @@ axiosInstance.interceptors.response.use(
     }
     if (error?.response?.status === 401) {
       localStorage.clear();
-      window.location.href = '/unauthorized';
+      window.location.href = ROUTES.UNAUTHORIZED_PAGE_ROUTE;
     }
     if (error?.response?.status === 403) {
-      window.location.href = '/forbidden';
+      window.location.href = ROUTES.FORBIDDEN_PAGE_ROUTE;
     }
     if (error?.response?.status === 500) {
       notifications.show('error', 'Hệ thống đang xảy ra lỗi. Vui lòng thử lại sau!');
