@@ -7,6 +7,8 @@ import { IRootState } from 'types/RootState';
 import { AUTHED_STATUS, MODALS_NAME } from 'utils/constants';
 import { openModalAction } from '../../actions';
 
+import './header.css';
+
 export const Header: React.FC = () => {
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
@@ -27,6 +29,11 @@ export const Header: React.FC = () => {
 
   const handleOpenSignUpModal = () => {
     dispatch(openModalAction(MODALS_NAME.SIGN_UP_MODAL));
+  };
+
+  const handleSignOut = () => {
+    localStorage.clear();
+    window.location.href = ROUTES.HOME_PAGE_ROUTE;
   };
 
   return (
@@ -66,7 +73,7 @@ export const Header: React.FC = () => {
           </form>
 
           {authedStatus === AUTHED_STATUS.AUTHENTICATED ? (
-            <Dropdown align="end">
+            <Dropdown align="end" className="dropdown-account">
               <Dropdown.Toggle
                 variant="warning"
                 id="dropdown-basic"
@@ -96,11 +103,13 @@ export const Header: React.FC = () => {
                   <p className="m-0 p-0">Sign in as</p>
                   <b>{userLoggedInfo.login}</b>
                 </div>
-                <hr style={{ margin: '8px 0px' }} />
-                <Dropdown.Item href="#/action-1">My profile</Dropdown.Item>
-                <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
-                <hr style={{ margin: '8px 0px' }} />
-                <div style={{ padding: '0px 16px' }}>Sign out</div>
+                <hr style={{ margin: '4px 0px' }} />
+                <Dropdown.Item>My profile</Dropdown.Item>
+                <Dropdown.Item>Settings</Dropdown.Item>
+                <hr style={{ margin: '4px 0px' }} />
+                <Dropdown.Item style={{ margin: '0px' }} onClick={handleSignOut}>
+                  Sign out
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           ) : (

@@ -12,6 +12,11 @@ export const LocalStorage = {
   ACCESS_TOKEN: 'ACCESS_TOKEN'
 };
 
+export const ROLES = {
+  ROLE_ADMIN: 'ROLE_ADMIN',
+  ROLE_USER: 'ROLE_USER'
+};
+
 export const MODAL_STATUS = {
   OPENING: true,
   CLOSED: false

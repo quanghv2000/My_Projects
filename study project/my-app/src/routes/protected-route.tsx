@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { ROUTES } from './constants';
 
 type IProps = {
   page: FunctionComponent<any>;
@@ -13,9 +14,9 @@ export const ProtectedRoute: React.FC<IProps> = (props) => {
   const authorized = true;
 
   if (!authed) {
-    window.location.href = '/unauthenticated';
+    window.location.href = ROUTES.UNAUTHORIZED_PAGE_ROUTE;
   } else if (!authorized) {
-    window.location.href = '/unauthorized';
+    window.location.href = ROUTES.FORBIDDEN_PAGE_ROUTE;
   }
 
   return <>{authed && authorized && <Layout content={Page} />}</>;
