@@ -40,7 +40,7 @@ export const Header: React.FC = () => {
     <header className="p-3 bg-dark text-white">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{marginLeft: '-16px'}}>
             <li>
               <NavLink to={ROUTES.HOME_PAGE_ROUTE} className="nav-link text-white">
                 Home
@@ -54,11 +54,6 @@ export const Header: React.FC = () => {
             <li>
               <NavLink to={ROUTES.CONTACT_PAGE_ROUTE} className="nav-link text-white">
                 Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={ROUTES.PROFILE_PAGE_ROUTE} className="nav-link text-white">
-                Profile
               </NavLink>
             </li>
           </ul>
