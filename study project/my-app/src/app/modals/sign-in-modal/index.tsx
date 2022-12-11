@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -8,6 +9,7 @@ import { IRootState } from 'types/RootState';
 import { AUTHED_STATUS, MODALS_NAME, MODAL_STATUS } from 'utils/constants';
 import { notifications, showNotification, validations } from 'helpers';
 import { closeModalAction, openModalAction } from 'app/layouts/main-layout/actions';
+import { useForm } from 'react-hook-form';
 import { ForgotPasswordModal } from '../forgot-password-modal';
 import { ISignInFormData, IUserSignIn } from './models';
 import { initialFormData } from './constants';
@@ -32,9 +34,17 @@ export const SignInModal: React.FC = () => {
   /** @Dispacth_Store */
   const dispatch = useDispatch();
 
+  /** @Use_Form */
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    getValues,
+    setValue
+  } = useForm<IUserSignIn>();
+
   /** @Component_State */
   const [forgotPasswordModalStatus, setForgotPasswordModalStatus] = React.useState<boolean>(MODAL_STATUS.CLOSED);
-  const [formData, setFormData] = React.useState<ISignInFormData>(initialFormData);
 
   /** @Logic_Handler */
   const handleCloseSignInModal = () => {
@@ -53,12 +63,6 @@ export const SignInModal: React.FC = () => {
     setForgotPasswordModalStatus(MODAL_STATUS.CLOSED);
   };
 
-  const handleChangeFormData = (e: any) => {
-    const { name, value } = e.target;
-
-    setFormData({ ...formData, [name]: value });
-  };
-
   /** @Validation */
   const isCaptchaValid = (captcha: string) => {
     if (!captcha) {
@@ -69,10 +73,10 @@ export const SignInModal: React.FC = () => {
   };
 
   /** @Submit_Handler */
-  const handleSignIn = async (e: any) => {
-    e.preventDefault();
-
-    const { username, password, rememberMe, captcha } = formData;
+  const handleSignIn = async (formData: IUserSignIn) => {
+    const { username, password, rememberMe } = formData;
+    console.log('form state error: ', errors);
+    console.log('form values: ', formData);
 
     const usernameValidation = validations.username(username);
     if (!usernameValidation.isValid) {
@@ -86,10 +90,10 @@ export const SignInModal: React.FC = () => {
       return;
     }
 
-    if (!isCaptchaValid(captcha)) {
-      notifications.show('error', 'Captcha is invalid!');
-      return;
-    }
+    // if (!isCaptchaValid(captcha)) {
+    //   notifications.show('error', 'Captcha is invalid!');
+    //   return;
+    // }
 
     const userSignIn: IUserSignIn = {
       username,
@@ -121,15 +125,14 @@ export const SignInModal: React.FC = () => {
     >
       <div style={{ padding: 30, userSelect: 'none' }}>
         <h3 className="text-center m-0">Sign In</h3>
-        <Form className="mt-4">
+        <Form className="mt-4" onSubmit={handleSubmit(handleSignIn)}>
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter username"
-              name="username"
               autoComplete="username"
-              onChange={handleChangeFormData}
+              {...register('username', { required: 'true' })}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -137,42 +140,36 @@ export const SignInModal: React.FC = () => {
             <Form.Control
               type="password"
               placeholder="Enter password"
-              name="password"
               autoComplete="password"
-              onChange={handleChangeFormData}
+              {...register('password', { required: 'true' })}
             />
           </Form.Group>
           <Form.Group className="mb-3 d-flex justify-content-between">
-            <div
-              style={{ cursor: 'pointer' }}
-              className="d-flex align-items-center"
-              onClick={() => {
-                setFormData({ ...formData, rememberMe: !formData.rememberMe });
-              }}
-            >
+            <div style={{ cursor: 'pointer' }} className="d-flex align-items-center">
               <input
                 type="checkbox"
-                name="rememberMe"
-                checked={formData.rememberMe}
-                style={{ width: 15, height: 15 }}
+                style={{ width: 15, height: 15, cursor: 'pointer' }}
                 className="me-1"
-                onChange={() => {
-                  setFormData({ ...formData, rememberMe: !formData.rememberMe });
-                }}
+                {...register('rememberMe')}
               />
-              <span>Remember me</span>
+              <span
+                onClick={() => {
+                  setValue('rememberMe', !getValues('rememberMe'));
+                }}
+              >
+                Remember me
+              </span>
             </div>
             <Form.Label style={{ cursor: 'pointer' }} onClick={handleOpenForgotPasswordModal}>
               Forgot password?
             </Form.Label>
           </Form.Group>
-          <Captcha onChangeCaptcha={handleChangeFormData} />
+          <Captcha onChangeCaptcha={() => {}} />
           <Button
             variant="primary"
             type="submit"
             className="w-100 bg-success border-success"
             style={{ fontWeight: 'bold', marginTop: 30 }}
-            onClick={handleSignIn}
           >
             Sign In
           </Button>

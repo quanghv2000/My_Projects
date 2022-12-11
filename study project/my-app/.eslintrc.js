@@ -24,6 +24,7 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-undef': 'off',
     'no-unsafe-optional-chaining': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react-hooks/exhaustive-deps': 'off',
     'react/require-default-props': 'off',
     'react/jsx-no-useless-fragment': 'off',
