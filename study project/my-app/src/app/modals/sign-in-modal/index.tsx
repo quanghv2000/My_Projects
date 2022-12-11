@@ -42,6 +42,7 @@ export const SignInModal: React.FC = () => {
     getValues,
     setValue
   } = useForm<IUserSignIn>();
+  console.log('form state error: ', errors);
 
   /** @Component_State */
   const [forgotPasswordModalStatus, setForgotPasswordModalStatus] = React.useState<boolean>(MODAL_STATUS.CLOSED);
@@ -75,7 +76,6 @@ export const SignInModal: React.FC = () => {
   /** @Submit_Handler */
   const handleSignIn = async (formData: IUserSignIn) => {
     const { username, password, rememberMe } = formData;
-    console.log('form state error: ', errors);
     console.log('form values: ', formData);
 
     const usernameValidation = validations.username(username);
@@ -131,18 +131,18 @@ export const SignInModal: React.FC = () => {
             <Form.Control
               type="text"
               placeholder="Enter username"
-              autoComplete="username"
               {...register('username', { required: 'true' })}
             />
+            {errors?.username?.type === 'required' && <small className="text-danger">Username is required!</small>}
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Enter password"
-              autoComplete="password"
               {...register('password', { required: 'true' })}
             />
+            {errors?.password?.type === 'required' && <small className="text-danger">Password is required!</small>}
           </Form.Group>
           <Form.Group className="mb-3 d-flex justify-content-between">
             <div style={{ cursor: 'pointer' }} className="d-flex align-items-center">

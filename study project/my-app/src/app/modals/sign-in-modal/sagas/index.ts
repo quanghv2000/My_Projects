@@ -1,4 +1,4 @@
-import { LocalStorage } from 'utils/constants';
+import { DELAY_TIME, LocalStorage } from 'utils/constants';
 import { all, takeLatest, call, put, delay } from 'redux-saga/effects';
 import {
   closeLoadingSpinnerAction,
@@ -20,7 +20,7 @@ export function* signInSaga(action: ReturnType<typeof signInRequestAction>): Gen
 
   try {
     yield put(openLoadingSpinnerAction());
-    yield delay(1000);
+    yield delay(DELAY_TIME);
 
     const signInResponse: ISignInResponse = yield call(() => signInService(payload));
     const { accessToken } = signInResponse;
