@@ -23,7 +23,7 @@ export class UserJWTController {
         console.log('send request login....');
 
         const jwt = await this.authService.login(user);
-        
+
         res.setHeader('Authorization', 'Bearer ' + jwt.accessToken);
         return res.json(jwt);
     }

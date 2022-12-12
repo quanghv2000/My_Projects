@@ -41,7 +41,6 @@ export class AuthService {
             id: user.id,
             username: user.login,
             authorities: user.authorities,
-            imageUrl: user.imageUrl,
         };
 
         /* eslint-disable */
