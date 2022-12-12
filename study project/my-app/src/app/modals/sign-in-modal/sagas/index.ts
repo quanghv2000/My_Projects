@@ -5,7 +5,7 @@ import {
   getUserInfoLoggedAction,
   openLoadingSpinnerAction
 } from 'app/layouts/main-layout/actions';
-import { IUserLoggedInfo } from 'models/api-model/response/user-logged-info';
+import { IUserLoggedInfo } from 'models/api-model/response/user-infos/user-logged-info';
 import { getAccountService } from 'app/layouts/main-layout/services';
 import { signInActionType, signInFailureAction, signInRequestAction, signInSuccessAction } from '../actions';
 import { signInService } from '../services';

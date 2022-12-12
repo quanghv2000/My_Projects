@@ -9,7 +9,7 @@ const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['GlobalReducer', 'SignInReducer'], // elements that will be persisted
-  blacklist: [] // elements that will not be persisted
+  blacklist: ['ListPageReducer'] // elements that will not be persisted
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

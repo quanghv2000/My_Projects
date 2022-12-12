@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -11,8 +10,7 @@ import { notifications, showNotification, validations } from 'helpers';
 import { closeModalAction, openModalAction } from 'app/layouts/main-layout/actions';
 import { useForm } from 'react-hook-form';
 import { ForgotPasswordModal } from '../forgot-password-modal';
-import { ISignInFormData, IUserSignIn } from './models';
-import { initialFormData } from './constants';
+import { IUserSignIn } from './models';
 import { resetSignInStatusAction, signInRequestAction } from './actions';
 
 export const SignInModal: React.FC = () => {
@@ -20,8 +18,6 @@ export const SignInModal: React.FC = () => {
   const storedData = useSelector((state: IRootState) => state);
   const { modalOpening } = storedData.GlobalReducer;
   const { authedStatus } = storedData.SignInReducer;
-
-  console.log('authedStatus: ', authedStatus);
 
   const modalStatus = React.useMemo(() => {
     if (modalOpening === MODALS_NAME.SIGN_IN_MODAL) {
@@ -42,7 +38,6 @@ export const SignInModal: React.FC = () => {
     getValues,
     setValue
   } = useForm<IUserSignIn>();
-  console.log('form state error: ', errors);
 
   /** @Component_State */
   const [forgotPasswordModalStatus, setForgotPasswordModalStatus] = React.useState<boolean>(MODAL_STATUS.CLOSED);
@@ -65,18 +60,17 @@ export const SignInModal: React.FC = () => {
   };
 
   /** @Validation */
-  const isCaptchaValid = (captcha: string) => {
-    if (!captcha) {
-      return false;
-    }
+  // const isCaptchaValid = (captcha: string) => {
+  //   if (!captcha) {
+  //     return false;
+  //   }
 
-    return true;
-  };
+  //   return true;
+  // };
 
   /** @Submit_Handler */
   const handleSignIn = async (formData: IUserSignIn) => {
     const { username, password, rememberMe } = formData;
-    console.log('form values: ', formData);
 
     const usernameValidation = validations.username(username);
     if (!usernameValidation.isValid) {
@@ -128,11 +122,7 @@ export const SignInModal: React.FC = () => {
         <Form className="mt-4" onSubmit={handleSubmit(handleSignIn)}>
           <Form.Group className="mb-3">
             <Form.Label>Username</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter username"
-              {...register('username', { required: 'true' })}
-            />
+            <Form.Control type="text" placeholder="Enter username" {...register('username', { required: 'true' })} />
             {errors?.username?.type === 'required' && <small className="text-danger">Username is required!</small>}
           </Form.Group>
           <Form.Group className="mb-3">

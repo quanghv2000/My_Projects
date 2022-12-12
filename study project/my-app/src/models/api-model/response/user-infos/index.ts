@@ -1,0 +1,19 @@
+export interface IUserInfo {
+  id?: number;
+  createdBy?: string;
+  createdDate?: Date;
+  lastModifiedBy?: string;
+  lastModifiedDate?: Date;
+  login?: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  activated?: boolean;
+  langKey?: string;
+  imageUrl?: string;
+  activationKey?: any;
+  resetKey?: string | null;
+  resetDate?: Date | null;
+  authorities?: string[];
+}

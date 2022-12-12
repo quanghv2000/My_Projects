@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { actionPayload } from 'types/reducers';
-import { IUserLoggedInfo } from 'models/api-model/response/user-logged-info';
+import { IUserLoggedInfo } from 'models/api-model/response/user-infos/user-logged-info';
 
 export const globalActionType = {
   OPEN_LOADING_SPINNER: 'APP/OPEN_LOADING_SPINNER',

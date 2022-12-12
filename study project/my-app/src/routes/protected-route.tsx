@@ -1,23 +1,44 @@
 import React, { FunctionComponent } from 'react';
-import { ROUTES } from './constants';
+import { useSelector } from 'react-redux';
+import { IRootState } from 'types/RootState';
+import jwtDecode from 'jwt-decode';
+import { AUTHED_STATUS, LocalStorage } from 'utils/constants';
+import { UnauthorizedPage } from 'app/pages/unauthorized-page';
+import { ForbiddenPage } from 'app/pages/forbidden-page';
+import { IUserLoggedInfo } from 'models/api-model/response/user-infos/user-logged-info';
 
 type IProps = {
   page: FunctionComponent<any>;
   layout: FunctionComponent<any>;
+  authorities?: string[];
 };
 
 export const ProtectedRoute: React.FC<IProps> = (props) => {
   /** @Props_Value */
-  const { page: Page, layout: Layout } = props;
+  const { page: Page, layout: Layout, authorities: routeAuthorities } = props;
 
-  const authed = true;
-  const authorized = true;
+  /** @Localstorage_Data */
+  const accessToken = localStorage.getItem(LocalStorage.ACCESS_TOKEN);
 
-  if (!authed) {
-    window.location.href = ROUTES.UNAUTHORIZED_PAGE_ROUTE;
-  } else if (!authorized) {
-    window.location.href = ROUTES.FORBIDDEN_PAGE_ROUTE;
+  /** @Stored_Data */
+  const storedData = useSelector((state: IRootState) => state);
+  const { authedStatus } = storedData.SignInReducer;
+
+  /** @Declare */
+  const isAuthed = authedStatus === AUTHED_STATUS.AUTHENTICATED && accessToken;
+
+  /** @Logic_Handler */
+  if (!isAuthed) {
+    return <Layout content={UnauthorizedPage} />;
   }
 
-  return <>{authed && authorized && <Layout content={Page} />}</>;
+  const userLoggedInfo: IUserLoggedInfo = jwtDecode(accessToken);
+
+  const isAuthorized = routeAuthorities?.includes(userLoggedInfo?.authorities[0]);
+
+  if (!isAuthorized) {
+    return <Layout content={ForbiddenPage} />;
+  }
+
+  return <Layout content={Page} />;
 };

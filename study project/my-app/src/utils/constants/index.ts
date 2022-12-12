@@ -4,7 +4,8 @@ export const APP_API = {
   MY_APP: {
     SIGN_IN_REQUEST: `${API_URL}/api/authenticate`,
     SIGN_UP_REQUEST: `${API_URL}/api/register`,
-    GET_ACCOUNT_REQUEST: `${API_URL}/api/account`
+    GET_ACCOUNT_REQUEST: `${API_URL}/api/account`,
+    GET_ALL_USERS: `${API_URL}/api/admin/users`
   }
 };
 

@@ -1,4 +1,4 @@
-import { IUserLoggedInfo } from 'models/api-model/response/user-logged-info';
+import { IUserLoggedInfo } from 'models/api-model/response/user-infos/user-logged-info';
 
 export type GlobalReducerType = {
   userLoggedInfo: IUserLoggedInfo | any;

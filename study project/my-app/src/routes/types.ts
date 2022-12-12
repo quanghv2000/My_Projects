@@ -5,5 +5,5 @@ export type IRoute = {
   page: FunctionComponent<any>;
   layout: FunctionComponent<any>;
   isProtected: boolean;
-  roles?: string[];
+  authorities?: string[];
 };

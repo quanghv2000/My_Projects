@@ -4,20 +4,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from 'routes/constants';
 import { IRootState } from 'types/RootState';
-import { AUTHED_STATUS, MODALS_NAME } from 'utils/constants';
+import { AUTHED_STATUS, LocalStorage, MODALS_NAME } from 'utils/constants';
 import { openModalAction } from '../../actions';
 
 import './header.css';
 
 export const Header: React.FC = () => {
+  /** @Localstorage_Data */
+  const accessToken = localStorage.getItem(LocalStorage.ACCESS_TOKEN);
+
   /** @Stored_Data */
   const storedData = useSelector((state: IRootState) => state);
   const { userLoggedInfo } = storedData.GlobalReducer;
   const { authedStatus } = storedData.SignInReducer;
-
-  console.log('storedData: ', storedData);
-  console.log('userLoggedInfo: ', userLoggedInfo);
-  console.log('authedStatus: ', authedStatus);
+  const isAuthed = authedStatus === AUTHED_STATUS.AUTHENTICATED && accessToken;
 
   /** @Dispacth_Store */
   const dispatch = useDispatch();
@@ -40,7 +40,10 @@ export const Header: React.FC = () => {
     <header className="p-3 bg-dark text-white">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style={{marginLeft: '-16px'}}>
+          <ul
+            className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+            style={{ marginLeft: '-16px' }}
+          >
             <li>
               <NavLink to={ROUTES.HOME_PAGE_ROUTE} className="nav-link text-white">
                 Home
@@ -56,6 +59,11 @@ export const Header: React.FC = () => {
                 Contact
               </NavLink>
             </li>
+            <li>
+              <NavLink to={ROUTES.LIST_PAGE_ROUTE} className="nav-link text-white">
+                List
+              </NavLink>
+            </li>
           </ul>
 
           <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -67,7 +75,7 @@ export const Header: React.FC = () => {
             />
           </form>
 
-          {authedStatus === AUTHED_STATUS.AUTHENTICATED ? (
+          {isAuthed ? (
             <Dropdown align="end" className="dropdown-account">
               <Dropdown.Toggle
                 variant="warning"
