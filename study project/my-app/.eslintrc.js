@@ -16,6 +16,7 @@ module.exports = {
     jest: true
   },
   rules: {
+    'new-cap': 'off',
     'no-shadow': 'off',
     'no-unused-vars': 'off',
     'no-param-reassign': 'off',
