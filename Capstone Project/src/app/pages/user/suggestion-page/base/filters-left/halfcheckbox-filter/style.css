@@ -1,0 +1,19 @@
+.halfcheckbox-filter__wrap {
+  padding: 3px;
+  padding-right: 5px;
+}
+.halfcheckbox-filter__wrap .halfcheckbox-style {
+  padding: 16px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: #fff;
+  font-size: 15px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(232, 232, 232) 0px 1px 2px 0px;
+  color: rgb(109, 125, 134);
+  font-size: 0.8rem;
+  text-align: start;
+  -webkit-box-align: center;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

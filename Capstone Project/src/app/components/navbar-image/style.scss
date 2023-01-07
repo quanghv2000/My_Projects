@@ -1,0 +1,186 @@
+.menuBar-v2 {
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    max-width: 1350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leftMenu-v2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 36px;
+    .leftMenu-v2-item {
+        color: white !important;
+        margin-left: 30px !important;
+        font-size: 17px !important;
+        &:hover {
+            border-bottom: solid 2px #e8e8e8;
+        }
+    }
+}
+
+.rightMenu-v2 {
+    display: flex;
+    justify-content: center;
+    .rightMenu-v2-item {
+        margin-top: 20px;
+        color: white !important;
+        margin-left: 20px !important;
+        font-size: 17px !important;
+    }
+    .rightMenu-v2-item-signIn {
+        display: flex;
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+        border-radius: 12px;
+        font-size: 16px !important;
+        height: 40px;
+        background-color: white;
+        font-weight: 500;
+        color: black !important;
+    }
+}
+
+.logo-v2 {
+    display: flex;
+    justify-content: center;
+    float: left;
+    .logo-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 0px !important;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+}
+
+.logo a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 15px 17px;
+    text-transform: capitalize;
+}
+
+.menuCon-v2 {
+    width: calc(100% - 150px);
+    float: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+// .menuCon-v2 .ant-menu-item {
+//     padding: 0px 5px;
+// }
+// .menuCon-v2 .ant-menu-submenu-title {
+//     padding: 10px 20px;
+// }
+// .menuCon-v2.ant-menu-item a,
+// .menuCon-v2 .ant-menu-submenu-title a {
+//     padding: 10px 15px;
+// }
+.menuCon-v2 .ant-menu-horizontal {
+    border-bottom: none;
+}
+
+.menuCon-v2 .leftMenu {
+    float: left;
+    width: 300px;
+}
+
+.menuCon-v2 .rightMenu {
+    float: right;
+    width: 400px;
+}
+
+.barsMenu {
+    float: right;
+    height: 32px;
+    padding: 6px;
+    margin-top: 8px;
+    display: none;
+    background: none;
+}
+
+.barsBtn-v2 {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: white;
+    position: relative;
+}
+
+.barsBtn-v2:after,
+.barsBtn-v2:before {
+    content: attr(x);
+    width: 20px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    height: 2px;
+    background: white;
+}
+
+.barsBtn-v2:after {
+    top: auto;
+    bottom: -6px;
+}
+
+.ant-drawer-body {
+    padding: 0;
+}
+
+.barsMenu>span {
+    display: block;
+}
+
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item,
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-submenu {
+    display: inline-block;
+    width: 100%;
+}
+
+.ant-drawer-body .ant-menu-horizontal {
+    border-bottom: none;
+}
+
+.ant-drawer-body .ant-menu-horizontal>.ant-menu-item:hover {
+    border-bottom-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .menuBar-v2 {
+        padding: 15px 20px;
+    }
+    .logo-v2-image {
+        height: 50px !important;
+    }
+    .barsMenu {
+        display: inline-block;
+    }
+    .leftMenu-v2,
+    .rightMenu-v2 {
+        display: none;
+    }
+    .logo a {
+        margin-left: -20px;
+    }
+    .menuCon-v2 .ant-menu-item,
+    .menuCon-v2 .ant-menu-submenu-title {
+        padding: 1px 20px;
+    }
+    .logo a {
+        padding: 15px 20px;
+    }
+    .logo {
+        padding: 5px;
+    }
+}

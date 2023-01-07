@@ -1,0 +1,153 @@
+.wishList__container {
+  width: 100%;
+
+  .wishlist-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+
+    &__no {
+      display: flex;
+      flex-direction: column;
+
+      max-width: 23%;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        color: red;
+      }
+
+      &-imgs {
+        border-radius: 14px;
+        overflow: hidden;
+
+        position: relative;
+
+        .no-imgs {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .no-imgs__addFav {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+
+          .add-icon {
+            font-size: 23px;
+            color: rgb(67, 50, 50);
+            cursor: pointer;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+
+          .icon-fill {
+            color: rgb(247, 49, 49);
+          }
+        }
+      }
+
+      &-desc {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0;
+
+        .no-name {
+          padding-top: 15px;
+          font-weight: 600;
+          font-size: 13px;
+        }
+
+        .no-data {
+          margin-top: 5px;
+
+          display: flex;
+          justify-content: space-between;
+
+          &__price {
+            color: rgb(28, 164, 218);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.amenities__row {
+  display: flex;
+  // justify-content: space-between;
+  flex-flow: row wrap;
+  z-index: 99;
+
+  .room__suggestion--item {
+    cursor: pointer;
+    // padding: 0px 10px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .format__title {
+      display: inline-block;
+      width: 180px;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+    }
+
+    // &:hover {
+    //     opacity: 0.8;
+    // }
+    // &:active {
+    //     color: rgb(247, 82, 82);
+    // }
+    .room__suggestion--item--image {
+      width: 100%;
+      // height: 100%;
+      height: 250px;
+      // width: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .room__suggestion--item--title {
+      padding-top: 15px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .room__suggestion--item--sub {
+      width: 100%;
+
+      .room__suggestion--item--sub--detail {
+        display: flex;
+        // padding-right: 25px;
+        padding-bottom: 5px;
+        justify-content: space-between;
+
+        .room__suggestion--item--sub--detail--price {
+          color: rgb(28, 164, 218);
+          font-weight: 500;
+        }
+      }
+    }
+
+    .room__suggestion--item--star {
+      font-size: 17px;
+    }
+
+    .room__suggestion--item--numberOfFeedback {
+      padding-top: 10px;
+      margin-left: 5px;
+    }
+  }
+}

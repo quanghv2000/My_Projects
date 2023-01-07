@@ -1,0 +1,28 @@
+.room__type__container {
+    margin-bottom: 50px;
+    margin-top: 40px;
+    .room__type--item {
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        .room__type--item--image {
+            height: 250px;
+            // width: 300px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .room__type--item--title {
+            padding-top: 15px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .room__type--item--subTitle {
+            width: 100%;
+            & p {
+                display: flex;
+                justify-content: center;
+                width: 90%;
+            }
+        }
+    }
+}

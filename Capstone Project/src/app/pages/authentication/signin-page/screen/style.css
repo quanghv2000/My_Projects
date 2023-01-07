@@ -1,0 +1,14 @@
+.signin {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  background: url(../../../../../assets/authentication/bg-logo.jpg) center !important;
+}
+.signin__header {
+  background-color: inherit;
+}
+.signin__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+.room__information__row {
+  padding-top: 20px;
+}
+
+.room__information__title {
+  font-weight: bold;
+  margin-top: 30px;
+  font-size: 20px;
+  padding-bottom: 0px !important;
+  margin-bottom: 5px !important;
+}
+
+.room__information__item-title {
+  color: #666666;
+  font-weight: 500;
+}/*# sourceMappingURL=style.css.map */

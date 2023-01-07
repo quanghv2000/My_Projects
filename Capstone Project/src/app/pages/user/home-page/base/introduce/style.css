@@ -1,0 +1,9 @@
+.introduce__container {
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+.introduce__container .introduce__container--link {
+  margin-right: 5px;
+  margin-left: 2px;
+  color: rgb(28, 164, 218);
+}/*# sourceMappingURL=style.css.map */

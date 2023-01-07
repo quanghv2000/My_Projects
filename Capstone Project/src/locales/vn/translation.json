@@ -1,0 +1,14 @@
+{
+  "navbarFeature": {
+    "blog": "Diễn đàn",
+    "sign_in": "Đăng nhập",
+    "sign_up": "Đăng ký",
+    "host": "Chủ trọ",
+    "search_placeholder": "Tìm kiếm...",
+    "map": "Bản đồ",
+    "helpCenter": "Hỗ trợn"
+  },
+  "i18nFeature": {
+    "selectLanguage": "Chọn ngôn ngữ"
+  }
+}

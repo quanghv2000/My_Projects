@@ -1,0 +1,110 @@
+.signin__form {
+  margin: 0 auto;
+  padding: 50px 80px;
+  max-width: 80%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column !important;
+  background-color: #fff;
+  border-radius: 15px;
+}
+@media screen and (max-width: 768px) {
+  .signin__form {
+    padding: 30px;
+    max-width: 80%;
+  }
+}
+.signin__form-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column !important;
+  text-align: center;
+}
+.signin__form-container .signin__form-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.25rem;
+  line-height: 30px;
+}
+.signin__form-container .signin__form-paragraph {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 1.25rem;
+  line-height: 21px;
+}
+.signin__form-data {
+  margin-top: 30px !important;
+}
+.signin__form-data .form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 6px 0;
+}
+.signin__form-data .login-form-forgot {
+  display: flex;
+  justify-content: flex-end;
+  color: gray;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.signin__form-data .login-form-forgot:hover {
+  opacity: 0.8;
+}
+.signin__form-data .button-form {
+  margin-top: 10px;
+}
+.signin__form-data .button-form .login-form-button ~ .login-form-button {
+  margin-top: 15px;
+  color: #915151;
+}
+.signin__form-data .button-form .login-form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  width: 100%;
+}
+.signin__form-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  font-size: 13.5px;
+  line-height: 20px;
+}
+.signin__form-signup .signup:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.login-form-verify-again {
+  cursor: pointer;
+  color: rgb(56, 182, 56);
+}
+.login-form-verify-again:hover {
+  color: rgb(56, 182, 56);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+{
+    "navbarFeature": {
+        "blog": "Blog",
+        "sign_in": "Sign in",
+        "sign_up": "Sign up",
+        "host": "Host",
+        "search_placeholder": "Search...",
+        "map": "Map",
+        "helpCenter": "Help Center"
+    },
+    "i18nFeature": {
+        "selectLanguage": "Select Language"
+    }
+}

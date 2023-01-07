@@ -1,0 +1,21 @@
+.amenities__detail-house .checkbox-group {
+  max-width: 600px;
+  max-height: 150px;
+  overflow-y: auto;
+  display: grid;
+}
+.amenities__detail-house .ant-checkbox-group {
+  display: inline-block;
+}
+.amenities__detail-house .ant-checkbox-group-item > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.amenities__detail-house .ant-checkbox-group-item {
+  display: block;
+  margin-right: 0;
+}
+.amenities__detail-house .ant-checkbox-wrapper {
+  display: flex;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

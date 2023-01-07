@@ -1,0 +1,90 @@
+.search-box {
+    box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+    transition: transform .4s;
+    border-radius: 5px;
+    display: flex;
+    padding: 3px;
+    max-width: 535px;
+    width: 100%;
+    height: 46px;
+    background-color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    .ant-select-focused .ant-select-selector,
+    .ant-select-selector:focus,
+    .ant-select-selector:active,
+    .ant-select-open .ant-select-selector {
+        border-color: #d9d9d9 !important;
+        box-shadow: none !important;
+    }
+    .search-box__area {
+        & .ant-select-selector {
+            border: none !important;
+            border-right: 1px solid #e7e7e7 !important;
+        }
+    }
+    .search-box-form__search {
+        border-radius: 5px;
+        .search-box__placeholder {
+            margin-left: 5px;
+            font-size: 15px;
+        }
+        & .ant-select-selector {
+            border: none !important;
+        }
+    }
+    .search-box__devide {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 40%;
+        top: 50%;
+        background: #e7e7e7;
+        transform: translateY(-50%);
+    }
+    .search-box__map {
+        border-left: 1px solid #f2f2f2 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 18px 0px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 12px;
+        .search-box__map__title {
+            margin-top: 3px !important;
+            color: black;
+            & :hover {
+                text-decoration: none !important;
+                color: rgb(28, 164, 218) !important;
+            }
+        }
+        .map__icon {
+            height: 18px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.search-box__button__container {
+    display: flex;
+    align-items: center;
+    padding-right: 3px;
+    .search-box__button {
+        padding: 0px 21px;
+        box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+        height: 38px;
+        transition: transform .4s;
+        border-radius: 5px;
+        background: rgb(28, 164, 218);
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 870px) {
+    .search-box {
+        max-width: 400px;
+    }
+}

@@ -1,0 +1,109 @@
+.signin__form {
+    margin: 0 auto;
+    padding: 50px 80px;
+    max-width: 80%;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
+    background-color: #fff;
+    border-radius: 15px;
+    @media screen and (max-width: 768px) {
+        padding: 30px;
+        max-width: 80%;
+    }
+    &-container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column !important;
+        text-align: center;
+        .signin__form-title {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 2.25rem;
+            line-height: 30px;
+        }
+        .signin__form-paragraph {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 1.25rem;
+            line-height: 21px;
+        }
+    }
+    &-data {
+        // margin: 0 !important;
+        margin-top: 30px !important;
+        .form-data {
+            display: flex;
+            flex-direction: column;
+            gap: 6px 0;
+        }
+        .login-form-forgot {
+            display: flex;
+            justify-content: flex-end;
+            color: gray;
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .button-form {
+            margin-top: 10px;
+            .login-form-button~.login-form-button {
+                margin-top: 15px;
+                color: #915151;
+            }
+            .login-form-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 20px;
+                width: 100%;
+            }
+        }
+    }
+    &-signup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 10px;
+        font-size: 13.5px;
+        line-height: 20px;
+        .signup {
+            &:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+.ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.login-form-verify-again{
+    cursor: pointer;
+    color: rgb(56, 182, 56);
+    &:hover{
+        color: rgb(56, 182, 56);
+    }
+}

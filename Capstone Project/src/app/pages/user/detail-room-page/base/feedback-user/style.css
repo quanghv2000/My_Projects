@@ -1,0 +1,19 @@
+.feedback__user {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 15px 10px 0px 10px;
+  border-radius: 12px;
+}
+.feedback__user .feedback__user__rating {
+  margin-left: 40px;
+}
+
+.feedback__user--title {
+  font-weight: bold;
+  margin-top: 60px;
+  font-size: 20px;
+  padding-bottom: 0px !important;
+  margin-bottom: 5px !important;
+}/*# sourceMappingURL=style.css.map */

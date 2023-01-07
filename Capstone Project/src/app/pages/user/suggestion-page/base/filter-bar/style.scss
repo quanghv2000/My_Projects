@@ -1,0 +1,148 @@
+.filter__bar__container__fixed {
+  width: 100%;
+  // position: fixed;
+  background-color: #ffffff !important;
+  z-index: 99;
+
+  // padding-bottom: 160px;
+  .filter__bar__container {
+    padding-top: 100px;
+    max-width: 1600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff !important;
+    margin: 0 auto;
+
+    .filter__bar--item {
+      display: flex;
+
+      .filter__bar--itemChild {
+        padding: 0px 10px;
+      }
+    }
+  }
+
+  .ant-tooltip-arrow-content:before {
+    background: white !important;
+  }
+}
+
+.scroll__active {
+  border-bottom: solid 1px #f4f4f4;
+  box-shadow: rgb(0 0 0 / 16%) 0 0 6px;
+}
+
+.ant-tooltip-inner {
+  background-color: white !important;
+  width: 300px;
+}
+
+.ant-tooltip-arrow-content:before {
+  background: white !important;
+}
+
+// .ant-tooltip-placement-bottom .ant-tooltip-arrow, .ant-tooltip-placement-bottomLeft .ant-tooltip-arrow, .ant-tooltip-placement-bottomRight .ant-tooltip-arrow {
+//     border-bottom-color: white !important;
+// }
+
+// .ant-tooltip-arrow::before{
+//     background-color: white;
+// }
+
+// .ant-tooltip-arrow::after{
+//     background-color: white;
+// }
+
+.ant-checkbox-inner {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.search-filter__button {
+  font-size: .875rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  height: 36px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+}
+
+.btn {
+  outline: 0;
+  cursor: pointer;
+  // color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  transition: all .3s;
+  text-align: center;
+}
+
+
+.budget-filter__container {
+  padding: 5px 0px;
+  padding-right: 5px;
+
+  .budget-filter__wrap {
+    width: 100%;
+  }
+
+  .budget-filter__input {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 20px;
+    width: 100%;
+
+    .budget-price {
+      padding: 5px;
+      width: 100%;
+
+      border: 1px solid rgb(232, 232, 232);
+      border-radius: 6px;
+
+      .budget-title {
+        padding: 0 5px;
+        font-size: 0.875rem;
+        color: rgb(109, 125, 134);
+        line-height: 2.25;
+
+        font-weight: bolder;
+      }
+
+      .budget-number {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
+@media (max-width: 767px) {
+  .filter__responsive {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1980px) {
+  .filter__responsive {
+    display: flex;
+    justify-content: space-between
+  }
+}
+
+@media (min-width: 1980px) {
+  .filter__responsive {
+    display: flex;
+    justify-content: space-between
+  }
+}
+
+.filter__responsive {
+  display: flex;
+  justify-content: space-between
+}

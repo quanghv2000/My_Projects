@@ -1,0 +1,33 @@
+.google__login__container {
+  display: flex;
+  justify-content: "center";
+  border-radius: 2px;
+  width: 100%;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+.google__login__container .google__login__item {
+  padding: 3px 0px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.google__login__container .google__login__item .google__login--btn {
+  width: 100%;
+  display: flex;
+  background-color: #f5f5f5;
+  border: none !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+  color: rgba(0, 0, 0, 0.54);
+}
+.google__login__container .google__login__item .google__login--image--container {
+  width: 20%;
+}
+.google__login__container .google__login__item .google__login--image--container .google__login--image {
+  height: 23px !important;
+  margin-right: 10px;
+  max-width: 100%;
+}
+.google__login__container .google__login__item .google__login--title {
+  width: 80%;
+  margin-right: 15px;
+}/*# sourceMappingURL=style.css.map */

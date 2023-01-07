@@ -1,0 +1,11 @@
+.roomReceiveNotification__container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  border: 1px solid #1ca4da;
+  padding: 6px 9px;
+  border-radius: 8px;
+  color: #1ca4da;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

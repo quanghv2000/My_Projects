@@ -1,0 +1,97 @@
+.account-informatio__container {
+  position: relative;
+  width: 100%;
+}
+.account-informatio__container .ai__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+}
+.account-informatio__container .ai__wrap .ai-avatar {
+  cursor: pointer;
+  max-width: 150px;
+  max-height: 150px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.account-informatio__container .ai__wrap .ai-avatar .avt {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.account-informatio__container .ai__wrap .ai-avatar__camera {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.account-informatio__container .ai__wrap .ai-avatar__camera .input_image {
+  display: none;
+}
+.account-informatio__container .ai__wrap .ai-avatar__camera .edit-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  bottom: 0%;
+  font-size: 20px;
+  padding: 5px;
+  background-color: rgb(215, 121, 121);
+}
+.account-informatio__container .ai__wrap .ai-avatar__camera .edit-icon:hover {
+  opacity: 0.7;
+}
+.account-informatio__container .ai__wrap .ai-username {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.account-informatio__container .ai__wrap .ai-form__nickname,
+.account-informatio__container .ai__wrap .ai-form__email,
+.account-informatio__container .ai__wrap .ai-form__phone,
+.account-informatio__container .ai__wrap .ai-form__address,
+.account-informatio__container .ai__wrap .ai-form__dob {
+  margin-top: 10px;
+  max-width: 100%;
+  width: 100% !important;
+}
+.account-informatio__container .ai__wrap .ai-form__phone .phoneNumer {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+.account-informatio__container .ai__wrap .ai-button-submit {
+  margin-top: 20px;
+  align-self: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.register-be-landlords {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.form-register-be-landlords {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-register-be-landlords .layout-form {
+  display: flex;
+  flex-flow: column wrap !important;
+  padding: 0 !important;
+}
+.form-register-be-landlords .ant-col-4 {
+  max-width: 100% !important;
+}/*# sourceMappingURL=style.css.map */

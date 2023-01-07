@@ -1,0 +1,105 @@
+.signup_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup_container .signup__form {
+  border-radius: 15px;
+  position: relative;
+  padding: 40px 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column !important;
+  background-color: #fff;
+  max-width: 460px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.signup_container .signup__form-container {
+  display: flex;
+  flex-direction: column !important;
+  text-align: center;
+}
+.signup_container .signup__form-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+}
+.signup_container .signup__form-paragraph {
+  margin-top: -10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 17px;
+  line-height: 21px;
+}
+.signup_container .signup__form-data {
+  margin-top: 15px;
+}
+.signup_container .signup__form-data .form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 7px 0;
+}
+.signup_container .signup__form-catag {
+  margin: 0px !important;
+}
+.signup_container .signup__form .button-form {
+  margin-top: 15px;
+}
+.signup_container .signup__form .button-form .login-form-button ~ .login-form-button {
+  margin-top: 15px;
+  color: #915151;
+}
+.signup_container .signup__form .button-form .login-form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+}
+.signup_container .signup__form-signup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  line-height: 20px;
+}
+.signup_container .signup__form-signup .signup:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.signup_container .signup__account-type {
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  transition: all 0.3 ease-in-out;
+}
+.signup_container .tenant_slide {
+  right: 100%;
+}
+.signup_container .landlord_slide {
+  left: 100%;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+  float: left;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.tabs-width {
+  width: 150px;
+}/*# sourceMappingURL=style.css.map */

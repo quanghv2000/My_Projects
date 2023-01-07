@@ -1,0 +1,46 @@
+{
+  "projectName": "fpt-student-accommodation",
+  "projectOwner": "sun-team-fpt",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 80,
+  "commit": true,
+  "contributors": [
+    {
+      "name": "Nguyen Thanh Long",
+      "avatar_url": "https://res.cloudinary.com/dloxtfvsw/image/upload/v1649001375/contributors/long_gbizzg.jpg",
+      "profile": "https://github.com/LongBody",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "review",
+      ]
+    },
+    {
+      "name": "Dao Manh Hung",
+      "avatar_url": "",
+      "profile": "https://github.com/manhhung",
+      "contributions": [
+        "code",
+        "ideas",
+        "design"
+      ]
+    },
+    {
+      "name": "Ha Van Quang",
+      "avatar_url": "",
+      "profile": "https://github.com/quangcoosi",
+      "contributions": [
+        "doc",
+        "ideas",
+        "test"
+      ]
+    },
+  ],
+  "contributorsPerLine": 8,
+  "commitConvention": "none"
+}

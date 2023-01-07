@@ -1,0 +1,30 @@
+.budget-filter__container {
+  padding: 5px 0px;
+  padding-right: 5px;
+}
+.budget-filter__container .budget-filter__wrap {
+  width: 100%;
+}
+.budget-filter__container .budget-filter__input {
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0 20px;
+  width: 100%;
+}
+.budget-filter__container .budget-filter__input .budget-price {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 6px;
+}
+.budget-filter__container .budget-filter__input .budget-price .budget-title {
+  padding: 0 5px;
+  font-size: 0.875rem;
+  color: rgb(109, 125, 134);
+  line-height: 2.25;
+  font-weight: bolder;
+}
+.budget-filter__container .budget-filter__input .budget-price .budget-number {
+  margin-top: 5px;
+}/*# sourceMappingURL=style.css.map */

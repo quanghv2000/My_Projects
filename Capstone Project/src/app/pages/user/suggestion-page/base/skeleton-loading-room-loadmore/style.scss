@@ -1,0 +1,172 @@
+.suggesstion-lists-container {
+    width: 100%;
+    &-totalroom {
+        font-size: 16px;
+        line-height: 20px;
+        color: #222222;
+        font-weight: 550;
+    }
+    &-items {
+        // margin-top: 0px;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(0, 1fr);
+        grid-gap: 20px;
+        gap: 20px;
+        &-item {
+            width: 100%;
+            padding-bottom: 30px;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: box-shadow 0.3s;
+            // &:hover {
+            //     opacity: 0.8;
+            //     box-shadow: 0 0 10px #878787;
+            //     cursor: pointer;
+            // }
+            .suggesstion-lists__no-imgs {
+                overflow: hidden;
+            }
+            .suggesstion-lists__no-desc {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 5px;
+                .no-name {
+                    margin-top: 5px;
+                    font-size: 13px;
+                    color: rgba(0, 0, 0, 0.85);
+                    line-height: 20px;
+                    font-weight: 600;
+                }
+                .no-data {
+                    margin-top: 5px;
+                    display: flex;
+                    justify-content: space-between;
+                    &__price {
+                        font-size: 14px;
+                        color: #1ca4da;
+                        line-height: 22px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    .suggesstion-lists-container-items-item {
+        margin-top: 20px;
+    }
+    .fouritems {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-rows: minmax(0, 1fr);
+        grid-gap: 20px;
+        gap: 20px;
+    }
+}
+
+.room__suggestion-list__container {
+    padding-top: 190px;
+    z-index: 10;
+    .room__suggestion__container-toptite {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        .view-more {
+            text-decoration: underline;
+            font-size: 17px;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    .amenities__row {
+        display: flex;
+        // justify-content: space-between;
+        flex-flow: row wrap;
+        z-index: 99;
+        .room__suggestion--item {
+            cursor: pointer;
+            // padding: 0px 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            // &:hover {
+            //     opacity: 0.8;
+            // }
+            // &:active {
+            //     color: rgb(247, 82, 82);
+            // }
+            .room__suggestion--item--image {
+                width: 100%;
+                // height: 100%;
+                height: 250px;
+                width: 300px;
+                object-fit: cover;
+                border-radius: 12px;
+            }
+            .room__suggestion--item--title {
+                padding-top: 15px;
+                font-weight: 600;
+                font-size: 15px;
+            }
+            .room__suggestion--item--sub {
+                width: 100%;
+                .room__suggestion--item--sub--detail {
+                    display: flex;
+                    // padding-right: 25px;
+                    padding-bottom: 5px;
+                    justify-content: space-between;
+                    .room__suggestion--item--sub--detail--price {
+                        color: rgb(28, 164, 218);
+                        font-weight: 500;
+                    }
+                }
+            }
+            .room__suggestion--item--star {
+                font-size: 17px;
+            }
+            .room__suggestion--item--numberOfFeedback {
+                padding-top: 10px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// ------
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}

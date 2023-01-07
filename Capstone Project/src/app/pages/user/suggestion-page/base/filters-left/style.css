@@ -1,0 +1,31 @@
+.filter-left__container {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px 20px;
+}
+.filter-left__container .filter__types {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.filter-left__container .filter__types__types {
+  margin-top: 10px;
+  width: 100%;
+}
+.filter-left__container .filterTitle {
+  color: rgb(110, 144, 156);
+  font-size: 0.875rem;
+  font-weight: bolder;
+}
+.filter-left__container .filter__places,
+.filter-left__container .filter__budget,
+.filter-left__container .filter__demand,
+.filter-left__container .filter__tenants,
+.filter-left__container .filter__landlord,
+.filter-left__container .filter__furniture,
+.filter-left__container .filter__bedroom,
+.filter-left__container .filter__rulues {
+  margin-top: 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px 0;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,121 @@
+.user-profile__container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0px 20px;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  &-information {
+    .user-information {
+      max-width: 401px;
+      width: 100%;
+      border: 1px solid rgb(244, 195, 195);
+
+      border-radius: 10px;
+      overflow: hidden;
+
+      &__images {
+        position: relative;
+
+        margin: 0 auto;
+
+        .image-banner {
+        }
+
+        .user-avatar {
+          position: absolute;
+          bottom: -25%;
+          left: 40%;
+
+          border: 5px solid #fff;
+          border-radius: 100%;
+
+          .avatar {
+            // width: 100%;
+            // height: 100%;
+            // object-fit: cover;
+          }
+        }
+      }
+
+      &__infor {
+        margin-top: 60px;
+        display: flex;
+        width: 100%;
+
+        padding-bottom: 20px;
+
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 14px;
+
+        .user-name {
+          font-family: 'Helvetica Neue';
+          font-size: 23px;
+          font-weight: bold;
+        }
+
+        .user-phone {
+          margin-top: 5px;
+        }
+
+        .user-email {
+          margin-top: 5px;
+          font-size: 17px;
+          color: rgb(107, 107, 107);
+        }
+      }
+    }
+
+    .user-isLandlords {
+      margin-top: 20px;
+      max-width: 402px;
+      width: 100%;
+
+      border: 1px solid rgb(244, 195, 195);
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      .landlords-status {
+        font-size: 17px;
+        font-weight: bolder;
+
+        padding: 15px;
+      }
+    }
+  }
+
+  &-description {
+    .description-overview__top {
+    }
+
+    .user-about {
+      margin-top: 20px;
+
+      &__description {
+        margin-top: 20px;
+      }
+    }
+
+    .user-infor-wrap {
+      width: 100%;
+      border: 1px solid rgb(244, 195, 195);
+
+      border-radius: 10px;
+      padding: 20px;
+
+      .user-title {
+        font-size: 17px;
+        font-weight: bolder;
+      }
+    }
+
+    .user-fav__room {
+      margin-top: 20px;
+    }
+  }
+}

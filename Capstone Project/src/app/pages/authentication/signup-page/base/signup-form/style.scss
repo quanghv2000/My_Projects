@@ -1,0 +1,107 @@
+.signup_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .signup__form {
+        border-radius: 15px;
+        position: relative;
+        padding: 40px 60px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column !important;
+        background-color: #fff;
+        max-width: 460px;
+        height: fit-content;
+        &-container {
+            display: flex;
+            flex-direction: column !important;
+            text-align: center;
+        }
+        &-title {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 30px;
+        }
+        &-paragraph {
+            margin-top: -10px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 17px;
+            line-height: 21px;
+        }
+        &-data {
+            // margin: 0 !important;
+            margin-top: 15px;
+            .form-data {
+                display: flex;
+                flex-direction: column;
+                gap: 7px 0;
+            }
+        }
+        &-catag {
+            margin: 0px !important;
+        }
+        .button-form {
+            margin-top: 15px;
+            .login-form-button~.login-form-button {
+                margin-top: 15px;
+                color: #915151;
+            }
+            .login-form-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+        &-signup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // gap: 0 10px;
+            font-size: 13.5px;
+            line-height: 20px;
+            .signup {
+                &:hover {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .signup__account-type {
+        position: absolute;
+        width: 100%;
+        top: 0%;
+        transition: all 0.3 ease-in-out;
+    }
+    .tenant_slide {
+        right: 100%;
+    }
+    .landlord_slide {
+        left: 100%;
+    }
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.tabs-width {
+    width: 150px;
+}

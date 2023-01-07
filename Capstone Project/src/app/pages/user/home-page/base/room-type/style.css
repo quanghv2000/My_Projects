@@ -1,0 +1,27 @@
+.room__type__container {
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+.room__type__container .room__type--item {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+.room__type__container .room__type--item .room__type--item--image {
+  height: 250px;
+  width: 100%;
+  border-radius: 8px;
+}
+.room__type__container .room__type--item .room__type--item--title {
+  padding-top: 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.room__type__container .room__type--item .room__type--item--subTitle {
+  width: 100%;
+}
+.room__type__container .room__type--item .room__type--item--subTitle p {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}/*# sourceMappingURL=style.css.map */

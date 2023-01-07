@@ -1,0 +1,19 @@
+.signup {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  background: url(../../../../../assets/authentication/bg-logo.jpg) center !important;
+  &__header {
+    background-color: inherit;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  overflow-y: scroll;
+}
+
+@media (max-width: 768px) {
+}

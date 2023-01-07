@@ -1,0 +1,100 @@
+.accommodationContent-container {
+  position: relative;
+
+  .AddToFavourite-Accommodation {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    z-index: 19;
+
+    padding: 5px;
+    .add-icon {
+      font-size: 20px;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .accommodaion-items {
+    min-height: 180px;
+    margin-left: 5px;
+
+    width: 100%;
+
+    width: 100%;
+
+    position: relative;
+    padding: 10px 16px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    gap: 0 10px;
+
+    margin-bottom: 16px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(184, 181, 181) 0px 1px 2px 0px;
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    .items-images {
+      user-select: none;
+
+      border-radius: 10px;
+      width: 200px;
+      max-height: 300px;
+    }
+
+    .items-data {
+      user-select: none;
+
+      max-height: 300px;
+
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      &__location {
+        display: flex;
+        align-items: center;
+
+        color: rgb(71, 71, 250);
+        font-weight: bold;
+      }
+
+      &__details {
+        margin-top: 10px;
+        // max-width: 80%;
+
+        text-align: justify;
+        font-size: 0.8rem;
+      }
+
+      &__rate {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .money__rate {
+          color: rgb(198, 102, 102);
+        }
+      }
+
+      &__availableRoom {
+      }
+    }
+  }
+}
