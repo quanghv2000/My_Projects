@@ -1,0 +1,23 @@
+.btn-pdf {
+  color: rgb(156, 0, 6) !important;
+  background-color: rgb(255, 199, 206) !important;
+  border-color: rgb(255, 199, 206) !important;
+}
+
+.btn-pdf:hover {
+  color: rgb(156, 0, 6) !important;
+  background-color: rgb(255, 199, 206) !important;
+  border-color: rgb(255, 199, 206) !important;
+}
+
+.btn-csv {
+  color: rgb(0, 97, 0) !important;
+  background-color: rgb(198, 239, 206) !important;
+  border-color: rgb(198, 239, 206) !important;
+}
+
+.btn-csv:hover {
+  color: rgb(0, 97, 0) !important;
+  background-color: rgb(198, 239, 206) !important;
+  border-color: rgb(198, 239, 206) !important;
+}

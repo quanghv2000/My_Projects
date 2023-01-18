@@ -1,0 +1,42 @@
+.user-select-none {
+  user-select: none;
+}
+
+.btn-disabled {
+  background-color: grey !important;
+  border-color: grey !important;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.p-30 {
+  padding: 30px;
+}
+
+.h-38 {
+  height: 38px;
+}
+
+.focus-item:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  border-radius: 1.5px;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.retry-button {
+  border: none;
+  margin: 0 0 0 16px;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  outline: none;
+}
